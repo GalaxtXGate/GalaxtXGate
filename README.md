@@ -1,4 +1,6 @@
 # GalaxtXGate App
+![PicsArt_03-30-12 33 06-removebg-preview](https://github.com/GalaxtXGate/GalaxtXGate/assets/56634722/1dd0875a-b0ab-42f3-aeb4-08ecc17e1c5b)
+
 
 Welcome to GalaxtXGate, your ultimate companion for exploring the cosmos! This app is currently under development, aiming to become your go-to platform for space exploration. Seamlessly integrating with Firebase authentication for smooth user registration and login, GalaxtXGate offers a wide range of features designed to satisfy your curiosity about space:
 
