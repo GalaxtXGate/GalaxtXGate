@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
-import 'package:galaxyxgate/features/splash/view/splash.dart';
+import 'package:galaxyxgate/features/home/view/home.dart';
 
 class AppRouter {
   MaterialPageRoute generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.splashScreen:
-        return MaterialPageRoute(builder: (context) => const Splash());
+      case Routes.home:
+        return MaterialPageRoute(builder: (context) => const Home());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(
