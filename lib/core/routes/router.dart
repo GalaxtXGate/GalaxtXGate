@@ -10,7 +10,8 @@ class AppRouter {
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const Home());
       case Routes.getStartNowScreen:
-        return MaterialPageRoute(builder: (context) => const GetStartNowScreen());
+        return MaterialPageRoute(
+            builder: (context) => const GetStartNowScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(
