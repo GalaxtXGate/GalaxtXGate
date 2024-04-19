@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/features/home/view/home.dart';
 
-import '../../features/Get Started now/view/GetStartedNow_screen.dart';
+import '../../features/getStartedNow/screen/getStartedNow_screen.dart';
 
 class AppRouter {
   MaterialPageRoute generateRoute(RouteSettings settings) {

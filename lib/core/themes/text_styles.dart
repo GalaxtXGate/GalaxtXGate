@@ -17,6 +17,7 @@ class TextStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: "Space Grotesk",
   );
   static TextStyle textstyle16 = TextStyle(
     fontSize: 16.sp,
@@ -56,9 +57,9 @@ class TextStyles {
       foreground: Paint()
         ..shader = LinearGradient(
           colors: <Color>[
-            AppColors.textGradientColor1,
-            AppColors.textGradientColor2,
-            AppColors.textGradientColor3
+            AppColors.loginTextGradientPurple,
+            AppColors.loginTextGradientBlue,
+            AppColors.loginTextGradientGreen
           ],
         ).createShader(const Rect.fromLTWH(110.0, 70.0, 200.0, 70.0)));
   static TextStyle textStyle34 = TextStyle(
@@ -67,27 +68,11 @@ class TextStyles {
     fontWeight: FontWeight.w300,
     color: AppColors.white,);
 
-  static TextStyle textStyle14300 = TextStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w300,
-    color: AppColors.lightGrey,
-    fontFamily: "Space Grotesk",
-  );
-  static TextStyle textStyleOfWhite16300 = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w300,
-    color: AppColors.offWhite,
-  );
-  static TextStyle textStyle16400 = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w400,
-    color: AppColors.offWhite2,
-  );
-  static TextStyle textStyle14400 = TextStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w400,
-    color: AppColors.offWhite2,
-  );
+  // static TextStyle textStyle14400 = TextStyle(
+  //   fontSize: 14.sp,
+  //   fontWeight: FontWeight.w400,
+  //   color: AppColors.offWhite2,
+  // );
 
 
 }

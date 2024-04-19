@@ -32,7 +32,7 @@ class SignUpButton extends StatelessWidget {
             SizedBox(
               width: 10.w,
             ),
-            Text(title,style:  TextStyles.textStyleOfWhite16300 ,)
+            Text(title,style:  TextStyles.textstyle16.copyWith(fontWeight: FontWeight.w300,color: AppColors.offWhite) ,)
           ],
         ),
       ),

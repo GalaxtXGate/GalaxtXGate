@@ -20,7 +20,7 @@ class CustomDivider extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text("or",style:TextStyles.textStyle16400,),
+            child: Text("or",style:TextStyles.textstyle16.copyWith(fontWeight: FontWeight.w400,color: AppColors.offWhite2)),
           ),
           Expanded(
             child: Container(

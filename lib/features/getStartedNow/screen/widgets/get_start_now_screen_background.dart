@@ -9,7 +9,7 @@ class GetStartNowScreenBackground extends StatelessWidget {
     return   Container(
       height: 900.h,
       width: double.infinity,
-      color: AppColors.black,
+      color: AppColors.deepBlack,
     );
   }
 }

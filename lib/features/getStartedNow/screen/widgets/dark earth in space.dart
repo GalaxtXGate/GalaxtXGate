@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/themes/app_colors.dart';
-import '../../../../core/themes/app_images.dart';
+import '../../../../utils/app_images.dart';
 class DarkEarthInSpace extends StatelessWidget {
   const DarkEarthInSpace({super.key});
 

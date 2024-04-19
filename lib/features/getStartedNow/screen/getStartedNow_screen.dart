@@ -1,24 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:galaxyxgate/features/Get%20Started%20now/view/widgets/dark%20earth%20in%20space.dart';
-import 'package:galaxyxgate/features/Get%20Started%20now/view/widgets/get_start_now_screen_background.dart';
-import 'package:galaxyxgate/features/Get%20Started%20now/view/widgets/signup.dart';
+import 'package:galaxyxgate/features/getStartedNow/screen/widgets/dark%20earth%20in%20space.dart';
+import 'package:galaxyxgate/features/getStartedNow/screen/widgets/get_start_now_screen_background.dart';
+import 'package:galaxyxgate/features/getStartedNow/screen/widgets/signup.dart';
 
-
-class GetStartNowScreen extends StatefulWidget {
+class GetStartNowScreen extends StatelessWidget {
   const GetStartNowScreen({super.key});
-
-  @override
-  State<GetStartNowScreen> createState() => _GetStartNowScreenState();
-}
-
-class _GetStartNowScreenState extends State<GetStartNowScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

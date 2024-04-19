@@ -11,9 +11,9 @@ class SignInButton extends StatelessWidget {
         shaderCallback: (Rect bounds) {
           return const LinearGradient(
             colors: [
-              AppColors.textGradientColor1,
-              AppColors.textGradientColor2,
-              AppColors.textGradientColor3], // Gradient colors
+              AppColors.loginTextGradientPurple,
+              AppColors.loginTextGradientBlue,
+              AppColors.loginTextGradientGreen], // Gradient colors
             begin: Alignment.topLeft, // Gradient start position
             end: Alignment.topCenter, // Gradient end position
           ).createShader(bounds);

@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:galaxyxgate/core/themes/app_images.dart';
+import 'package:galaxyxgate/utils/app_images.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 
 class AppLogoAndName extends StatelessWidget {

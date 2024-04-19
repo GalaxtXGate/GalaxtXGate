@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:galaxyxgate/features/Get%20Started%20now/view/widgets/sign_in_button.dart';
-import 'package:galaxyxgate/features/Get%20Started%20now/view/widgets/signup_button.dart';
-import '../../../../core/themes/app_images.dart';
+import 'package:galaxyxgate/features/getStartedNow/screen/widgets/sign_in_button.dart';
+import 'package:galaxyxgate/features/getStartedNow/screen/widgets/signup_button.dart';
+import '../../../../utils/app_images.dart';
 import '../../../../core/themes/text_styles.dart';
 import 'custom_divider.dart';
 class SignUp extends StatelessWidget {
@@ -31,7 +31,7 @@ class SignUp extends StatelessWidget {
         ),
         Text(
           "Sign in or create account",
-          style:TextStyles.textStyle14300,
+          style:TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w300,color: AppColors.lightGrey),
         ),
         const SizedBox(
           height: 20,
@@ -57,22 +57,14 @@ class SignUp extends StatelessWidget {
           children: [
             Text(
               "Already have an account ?",
-              style: TextStyles.textStyle14400 ,
+              style: TextStyles.textstyle14.copyWith(
+                color: AppColors.offWhite2,
+                fontWeight: FontWeight.w400
+              ) ,
             ),
             SignInButton()
           ],
         ),
-        SizedBox(
-          height: 40.h,
-        ),
-        Container(
-         height: 5.h,
-          width: 167.w,
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(3.r)
-          ),
-        )
       ],
     );
   }
