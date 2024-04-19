@@ -16,7 +16,7 @@ class AppLogoAndName extends StatelessWidget {
         ),
         Text(
           "Galaxy X Gate",
-          style: TextStyles.textstyle40.copyWith(),
+          style: TextStyles.font40WhiteBold,
         )
       ],
     );
