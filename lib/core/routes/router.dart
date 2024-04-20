@@ -4,7 +4,7 @@ import 'package:galaxyxgate/features/bottom_nav_bar/view/bottom_nav_bar.dart';
 import 'package:galaxyxgate/features/home_screen/view/home_screen.dart';
 
 class AppRouter {
-  MaterialPageRoute generateRoute(RouteSettings settings) {
+  Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
