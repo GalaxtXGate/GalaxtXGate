@@ -5,6 +5,7 @@ class GradientText extends StatefulWidget {
   final List<Color> colors;
 
   const GradientText({
+    super.key,
     required this.child,
     required this.colors,
   });

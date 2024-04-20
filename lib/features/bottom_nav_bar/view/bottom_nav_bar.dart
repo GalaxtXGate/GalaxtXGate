@@ -15,10 +15,10 @@ class BottomNavBar extends StatelessWidget {
         AppIcons.favIcon,
         AppIcons.personIcon,
       ],
-      screens: [
-        Home(),
-        Home(),
-        Home(),
+      screens: const [
+        HomeScreen(),
+        HomeScreen(),
+        HomeScreen(),
       ],
       gradientColors: AppColors.maingGradientColor,
       notSelectedColor: AppColors.white,

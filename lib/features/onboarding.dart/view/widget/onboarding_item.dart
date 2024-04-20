@@ -10,6 +10,7 @@ class OnBoardingItem extends StatelessWidget {
   final int currentIndex;
 
   const OnBoardingItem({
+    super.key,
     required this.content,
     required this.currentIndex,
   });

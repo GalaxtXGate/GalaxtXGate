@@ -15,9 +15,5 @@ class MyApp extends StatelessWidget {
     return GalaxyXGateApp(
       router: AppRouter(),
     );
-
-
-
-    
   }
 }

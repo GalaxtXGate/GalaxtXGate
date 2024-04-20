@@ -7,6 +7,7 @@ class AnimatedPageIndicator extends StatelessWidget {
   final Duration duration;
 
   const AnimatedPageIndicator({
+    super.key,
     required this.isSelected,
     required this.duration,
   });
@@ -24,7 +25,7 @@ class AnimatedPageIndicator extends StatelessWidget {
                 colors: [AppColors.purple, AppColors.blue, AppColors.cyan],
               )
             : const LinearGradient(
-                colors: [AppColors.grey, AppColors.grey],
+                colors: [Colors.grey, Colors.grey],
               ),
         borderRadius: BorderRadius.circular(3),
       ),
