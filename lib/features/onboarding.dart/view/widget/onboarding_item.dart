@@ -31,7 +31,7 @@ class OnBoardingItem extends StatelessWidget {
             colors: const [AppColors.purple, AppColors.blue, AppColors.cyan],
             child: Text(
               content.text,
-              style: TextStyles.textstyle16.copyWith(),
+              style: TextStyles.font16White700w.copyWith(),
             ),
           ),
         ),
@@ -39,7 +39,7 @@ class OnBoardingItem extends StatelessWidget {
         Text(
           content.title,
           textAlign: TextAlign.left,
-          style: TextStyles.textstyle24.copyWith(
+          style: TextStyles.font24White700w.copyWith(
             fontWeight: FontWeight.normal,
           ),
         ),
@@ -47,7 +47,7 @@ class OnBoardingItem extends StatelessWidget {
         Text(
           content.subTitle,
           textAlign: TextAlign.left,
-          style: TextStyles.textstyle16.copyWith(
+          style: TextStyles.font16White700w.copyWith(
             fontWeight: FontWeight.normal,
           ),
         ),

@@ -22,7 +22,7 @@ class GalaxyXGateApp extends StatelessWidget {
         title: 'GalaxyXGate',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: AppColors.mainPurple,
+          primaryColor: AppColors.purple,
           scaffoldBackgroundColor: AppColors.black,
         ),
         initialRoute: Routes.onboarding,

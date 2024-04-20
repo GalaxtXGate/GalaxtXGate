@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:galaxyxgate/core/helpers/navigation_extention.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
-import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/app_images.dart';
 import 'package:galaxyxgate/features/onboarding.dart/data/models/content.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/widget/animated_page_indicator.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/widget/onboarding_item.dart';
+import 'package:galaxyxgate/features/onboarding.dart/view/widget/custom_floatin_action_button.dart';
+import 'package:galaxyxgate/features/onboarding.dart/view/widget/page_indicator.dart';
+import 'package:galaxyxgate/features/onboarding.dart/view/widget/page_view.dart';
 import 'package:galaxyxgate/features/onboarding.dart/view/widget/positioned_star_with_animation.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -19,25 +17,37 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen>
     with SingleTickerProviderStateMixin {
-  int currentIndex = 0;
+  int _currentIndex = 0;
   PageController? _controller;
   late AnimationController _animationController;
-  late Animation<double> _animation1, _animation2, _animation3;
+  late Animation<double> _animatedStar1, _animatedStar2, _animatedStar3;
 
   @override
   void initState() {
+    initializePageController();
+    initializeAnimationController();
+    initializeAnimatedStars();
+    super.initState();
+  }
+
+  void initializePageController() {
     _controller = PageController(initialPage: 0);
+  }
+
+  void initializeAnimationController() {
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
     )..repeat(reverse: true);
-    _animation1 =
+  }
+
+  void initializeAnimatedStars() {
+    _animatedStar1 =
         Tween<double>(begin: 0.1, end: 1).animate(_animationController);
-    _animation2 =
+    _animatedStar2 =
         Tween<double>(begin: 0.3, end: 1.3).animate(_animationController);
-    _animation3 =
+    _animatedStar3 =
         Tween<double>(begin: 0.5, end: 1.5).animate(_animationController);
-    super.initState();
   }
 
   @override
@@ -54,51 +64,36 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
         padding: const EdgeInsets.all(8.0),
         child: Stack(
           children: [
-            // OnBoarding Content
-            PageView.builder(
+            //page view
+            OnBoardingPageView(
               controller: _controller,
-              itemCount: content.length,
+              currentIndex: _currentIndex,
               onPageChanged: (int index) {
                 setState(() {
-                  currentIndex = index;
+                  _currentIndex = index;
                 });
               },
-              itemBuilder: (context, index) => OnBoardingItem(
-                content: content[index],
-                currentIndex: currentIndex,
-              ),
             ),
             //Page Indicator
-            Positioned(
-              right: 0,
-              left: 0,
-              top: MediaQuery.of(context).size.height * 0.54.h,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  content.length,
-                  (index) => AnimatedPageIndicator(
-                    isSelected: currentIndex == index,
-                    duration: const Duration(milliseconds: 500),
-                  ),
-                ),
-              ),
+            PageIndicator(
+              currentIndex: _currentIndex,
+              contentLength: content.length,
             ),
             // Star #1
             PositionedStarWithAnimation(
-              animation: _animation1,
+              animation: _animatedStar1,
               bottom: 310.h,
               right: 60.w,
             ),
             // Star #2
             PositionedStarWithAnimation(
-              animation: _animation2,
+              animation: _animatedStar2,
               bottom: 180.h,
               right: 10.w,
             ),
             // Star #3
             PositionedStarWithAnimation(
-              animation: _animation3,
+              animation: _animatedStar3,
               bottom: 100.h,
               right: 320.w,
             ),
@@ -106,25 +101,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
         ),
       ),
       // FloatingActionButton
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.transparent,
-        foregroundColor: AppColors.white,
-        shape: const CircleBorder(
-          side: BorderSide(color: AppColors.white, width: 1),
-        ),
-        onPressed: () {
-          if (currentIndex == content.length - 1) {
-            context.navigateToAndReplace(Routes.home);
-          }
-          _controller!.nextPage(
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeInOut);
-        },
-        child: SvgPicture.asset(
-          AppImages.arrows,
-          height: 20.h,
-          width: 10.w,
-        ),
+      floatingActionButton: CustomFloatingActionButton(
+        controller: _controller,
+        currentIndex: _currentIndex,
+        contentLength: content.length,
+        route: Routes.home,
+        svgAssetPath: AppImages.arrows,
       ),
     );
   }
