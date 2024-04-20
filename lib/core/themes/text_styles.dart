@@ -3,52 +3,60 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 
 class TextStyles {
-  static TextStyle textstyle10 = TextStyle(
+  static TextStyle font10White700w = TextStyle(
     fontSize: 10.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
-  static TextStyle textstyle12 = TextStyle(
+  static TextStyle font12White700w = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
-  static TextStyle textstyle14 = TextStyle(
+  static TextStyle font14White700w = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
-    fontFamily: "Space Grotesk",
+    fontFamily: 'SpaceGrotesk',
   );
-  static TextStyle textstyle16 = TextStyle(
+  static TextStyle font16White700w = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
-  static TextStyle textstyle18 = TextStyle(
+  static TextStyle font18White700w = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
-  static TextStyle textstyle20 = TextStyle(
+  static TextStyle font20White700w = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
-  static TextStyle textstyle22 = TextStyle(
+  static TextStyle font22White700w = TextStyle(
     fontSize: 22.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
-  static TextStyle textstyle24 = TextStyle(
+  static TextStyle font24White700w = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w700,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
 
-  static TextStyle textstyle40 = TextStyle(
+  static TextStyle font40WhiteBold = TextStyle(
     fontSize: 40.sp,
     fontWeight: FontWeight.bold,
     color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
   );
   static TextStyle textStyleGradient = TextStyle(
       fontFamily: "Space Grotesk",
@@ -68,11 +76,6 @@ class TextStyles {
     fontWeight: FontWeight.w300,
     color: AppColors.white,);
 
-  // static TextStyle textStyle14400 = TextStyle(
-  //   fontSize: 14.sp,
-  //   fontWeight: FontWeight.w400,
-  //   color: AppColors.offWhite2,
-  // );
 
 
 }

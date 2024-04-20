@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
           Center(
             child: Text(
               "Home",
-              style: TextStyles.textstyle40.copyWith(),
+              style: TextStyles.font40WhiteBold,
             ),
           )
         ],
