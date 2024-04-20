@@ -7,7 +7,7 @@ class AppRouter {
   MaterialPageRoute generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.home:
-        return MaterialPageRoute(builder: (context) => const Home());
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       case Routes.bottomNavBar:
         return MaterialPageRoute(builder: (context) => const BottomNavBar());
       default:
