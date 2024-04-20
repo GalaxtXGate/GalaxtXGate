@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/app_images.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
-import 'package:galaxyxgate/features/auth_by_email/screen/widgets/custom_text_field.dart';
+import 'package:galaxyxgate/features/auth_by_email/view/widgets/custom_text_field.dart';
 
-class SignInTextAndFields extends StatelessWidget {
-  const SignInTextAndFields({super.key});
+class SignUpTextAndFields extends StatelessWidget {
+  const SignUpTextAndFields({super.key});
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -13,26 +13,32 @@ class SignInTextAndFields extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding:  EdgeInsets.only(
+          padding: EdgeInsets.only(
             top: screenHeight * 0.05,
-            bottom: screenHeight * 0.03,
+            bottom: screenHeight * 0.02,
           ),
           child: Image.asset(AppImages.appLogo),
         ),
-        Text('Sign In', style: TextStyles.textStyle34),
+        Text('Sign Up', style: TextStyles.textStyle34),
         SizedBox(
-          height: screenHeight * 0.01,
+          height: screenHeight * 0.001,
         ),
-        Text('get back in to continue exploring', style: TextStyles.textStyle14300),
+        Text('Create your account to continue exploring',
+            style: TextStyles.textStyle14300),
         SizedBox(
-          height: screenHeight * 0.1,
+          height: screenHeight * 0.04,
         ),
         const CustomTextField(hintText: 'Enter Your Email', labelText: 'Email'),
         SizedBox(
-          height: screenHeight * 0.05,
+          height: screenHeight * 0.03,
         ),
         const CustomTextField(
             hintText: 'Enter Your Password', labelText: 'Password'),
+        SizedBox(
+          height: screenHeight * 0.03,
+        ),
+        const CustomTextField(
+            hintText: 'Enter Your Password', labelText: 'Confirm Password'),
       ],
     );
   }

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/widgets/continue_button.dart';
-import 'package:galaxyxgate/features/auth_by_email/screen/widgets/sign_in_text_and_field.dart';
+import 'package:galaxyxgate/features/auth_by_email/view/widgets/sign_in_texts_and_fields.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key});
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.black,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

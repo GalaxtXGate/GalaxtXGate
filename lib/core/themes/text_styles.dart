@@ -82,6 +82,7 @@ class TextStyles {
     color: AppColors.lightGrey,
     fontFamily: "SpaceGrotesk",
   );
+   
   static TextStyle textStyleOfWhite16300 = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w300,
@@ -97,6 +98,11 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.offWhite2,
   );
-
+ static TextStyle textStyle12400 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.borderGrey,
+    fontFamily: "SpaceGrotesk",
+  );
 
 }
