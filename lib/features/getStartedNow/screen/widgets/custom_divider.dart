@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/themes/app_colors.dart';
 import '../../../../core/themes/text_styles.dart';
+
 class CustomDivider extends StatelessWidget {
   const CustomDivider({super.key});
 
@@ -20,7 +21,9 @@ class CustomDivider extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text("or",style:TextStyles.textstyle16.copyWith(fontWeight: FontWeight.w400,color: AppColors.offWhite2)),
+            child: Text("or",
+                style: TextStyles.font16White700w.copyWith(
+                    fontWeight: FontWeight.w400, color: AppColors.offWhite2)),
           ),
           Expanded(
             child: Container(

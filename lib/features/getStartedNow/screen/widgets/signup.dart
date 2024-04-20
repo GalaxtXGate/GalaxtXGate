@@ -7,6 +7,7 @@ import 'package:galaxyxgate/features/getStartedNow/screen/widgets/signup_button.
 import '../../../../utils/app_images.dart';
 import '../../../../core/themes/text_styles.dart';
 import 'custom_divider.dart';
+
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
@@ -17,38 +18,48 @@ class SignUp extends StatelessWidget {
       children: [
         Text(
           "Let’s Know More",
-          style:TextStyles.textStyleGradient,
+          style: TextStyles.textStyleGradient,
         ),
         const SizedBox(
           height: 5,
         ),
         Text(
           "Get Started Now",
-          style:TextStyles.textStyle34,
+          style: TextStyles.textStyle34,
         ),
         const SizedBox(
           height: 2,
         ),
         Text(
           "Sign in or create account",
-          style:TextStyles.textstyle14.copyWith(fontWeight: FontWeight.w300,color: AppColors.lightGrey),
+          style: TextStyles.font14White700w.copyWith(
+              fontWeight: FontWeight.w300, color: AppColors.lightGrey),
         ),
         const SizedBox(
           height: 20,
         ),
-        SignUpButton(logoPath: AppImages.googleLogo,title: "Sign Up With Google",),
+        const SignUpButton(
+          logoPath: AppImages.googleLogo,
+          title: "Sign Up With Google",
+        ),
         SizedBox(
           height: 20.h,
         ),
-        SignUpButton(logoPath: AppImages.faceBookLogo,title: "Sign Up With Facebook",),
+        const SignUpButton(
+          logoPath: AppImages.faceBookLogo,
+          title: "Sign Up With Facebook",
+        ),
         SizedBox(
           height: 20.h,
         ),
-        CustomDivider(),
+        const CustomDivider(),
         SizedBox(
           height: 20.h,
         ),
-        SignUpButton(logoPath: null,title: "Sign Up With Mail",),
+        const SignUpButton(
+          logoPath: null,
+          title: "Sign Up With Mail",
+        ),
         SizedBox(
           height: 40.h,
         ),
@@ -57,12 +68,10 @@ class SignUp extends StatelessWidget {
           children: [
             Text(
               "Already have an account ?",
-              style: TextStyles.textstyle14.copyWith(
-                color: AppColors.offWhite2,
-                fontWeight: FontWeight.w400
-              ) ,
+              style: TextStyles.font14White700w.copyWith(
+                  color: AppColors.offWhite2, fontWeight: FontWeight.w400),
             ),
-            SignInButton()
+            const SignInButton()
           ],
         ),
       ],
