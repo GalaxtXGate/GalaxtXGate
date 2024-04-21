@@ -30,6 +30,7 @@ class _BluredBottomNavBarState extends State<BluredBottomNavBar> {
         children: [
           Positioned.fill(
             child: PageView(
+              physics: const NeverScrollableScrollPhysics(),
               controller: pageController,
               children: widget.screens,
               onPageChanged: (value) {},
