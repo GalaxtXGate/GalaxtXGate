@@ -28,17 +28,19 @@ class SignUpTextAndFields extends StatelessWidget {
         SizedBox(
           height: screenHeight * 0.04,
         ),
-         CustomTextField(hintText: 'Enter Your Email', labelText: 'Email'),
+        const CustomTextField(hintText: 'Enter Your Email', labelText: 'Email'),
         SizedBox(
           height: screenHeight * 0.03,
         ),
-         CustomTextField(
+        const CustomTextField(
             hintText: 'Enter Your Password', labelText: 'Password'),
         SizedBox(
           height: screenHeight * 0.03,
         ),
-       const  CustomTextField(
-            hintText: 'Enter Your Password', labelText: 'Confirm Password',),
+        const CustomTextField(
+          hintText: 'Enter Your Password',
+          labelText: 'Confirm Password',
+        ),
       ],
     );
   }
