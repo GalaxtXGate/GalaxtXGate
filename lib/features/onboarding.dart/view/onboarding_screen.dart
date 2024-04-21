@@ -105,7 +105,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
         controller: _controller,
         currentIndex: _currentIndex,
         contentLength: content.length,
-        route: Routes.home,
+        route: Routes.homeScreen,
         svgAssetPath: AppImages.arrows,
       ),
     );

@@ -8,7 +8,7 @@ class DarkEarthInSpace extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShaderMask(
         shaderCallback: (Rect bounds) {
-          return LinearGradient(
+          return const LinearGradient(
             colors: [AppColors.deepGrey,AppColors.borderGrey,AppColors.lightGrey],
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,

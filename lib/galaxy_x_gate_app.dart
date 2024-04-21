@@ -25,7 +25,7 @@ class GalaxyXGateApp extends StatelessWidget {
           primaryColor: AppColors.purple,
           scaffoldBackgroundColor: AppColors.lightBlack,
         ),
-        initialRoute: Routes.bottomNavBar,
+        initialRoute: Routes.onboarding,
         onGenerateRoute: router.generateRoute,
       ),
     );

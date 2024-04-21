@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/features/getStartedNow/screen/widgets/dark%20earth%20in%20space.dart';
@@ -13,14 +15,14 @@ class GetStartNowScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-           const GetStartNowScreenBackground(),
+            const GetStartNowScreenBackground(),
             const DarkEarthInSpace(),
-            Positioned(
+            Positioned.fill(
               top: MediaQuery.of(context).size.height * 0.42.h,
-              width: MediaQuery.of(context).size.width,
-              child:Padding(
-                padding: EdgeInsets.fromLTRB(19.w, 0,19.w, 13.h),
-                child: SignUp(),
+              // width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(19.w, 0, 19.w, 13.h),
+                child: const SignUp(),
               ),
             )
           ],
