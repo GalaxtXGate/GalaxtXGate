@@ -32,7 +32,8 @@ class SignInTextAndFields extends StatelessWidget {
           height: screenHeight * 0.03,
         ),
         const CustomTextField(
-            hintText: 'Enter Your Password', labelText: 'Password'),
+          
+            hintText: 'Enter Your Password', labelText: 'Password', ),
       ],
     );
   }

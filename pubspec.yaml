@@ -39,6 +39,9 @@ dependencies:
   flutter_svg: ^1.1.6
   flutter_native_splash: ^2.4.0
   iconify_flutter: ^0.0.5
+  image_picker: ^1.1.0
+  firebase_auth: ^4.19.2
+  flutter_bloc: ^8.1.5
 
 dev_dependencies:
   flutter_test:

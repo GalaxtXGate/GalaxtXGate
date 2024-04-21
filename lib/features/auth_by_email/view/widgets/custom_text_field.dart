@@ -3,8 +3,8 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {super.key, required this.hintText, required this.labelText, this.icon});
+   const CustomTextField(
+      {super.key, required this.hintText, required this.labelText, this.icon,});
   final String hintText;
   final String labelText;
   final Icon? icon;

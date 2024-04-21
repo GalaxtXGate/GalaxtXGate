@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
+import 'package:galaxyxgate/features/auth_by_email/view/sign_up.dart';
 
 import '../../../../core/themes/text_styles.dart';
 
