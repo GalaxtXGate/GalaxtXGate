@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           horizontal: 25.w,
           vertical: 50.h,
         ),
-        child: Column(
+        child: ListView(
           children: [
             // Home Header Row < Profile Pic, Welcome and Name, Notifications Container >
             const HomeHeaderRow(),
@@ -103,7 +103,10 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ],
-            )
+            ),
+            SizedBox(
+              height: 100.h,
+            ),
           ],
         ),
       )),
