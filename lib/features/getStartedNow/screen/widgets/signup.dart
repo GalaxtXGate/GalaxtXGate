@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
+import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/features/getStartedNow/screen/widgets/sign_in_button.dart';
 import 'package:galaxyxgate/features/getStartedNow/screen/widgets/signup_button.dart';
-import '../../../../utils/app_images.dart';
 import '../../../../core/themes/text_styles.dart';
 import 'custom_divider.dart';
 
@@ -39,8 +39,8 @@ class SignUp extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-         SignUpButton(
-             onTap: () {
+        SignUpButton(
+          onTap: () {
             Navigator.pushNamed(
               context,
               Routes.bottomNavBar,
@@ -52,8 +52,8 @@ class SignUp extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-         SignUpButton(
-             onTap: () {
+        SignUpButton(
+          onTap: () {
             Navigator.pushNamed(
               context,
               Routes.bottomNavBar,

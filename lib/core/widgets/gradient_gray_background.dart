@@ -20,7 +20,9 @@ class GradientGrayBackground extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     AppColors.black.withOpacity(0.1),
+                    AppColors.deepGrey.withOpacity(0.1),
                     AppColors.white.withOpacity(0.2),
+                    AppColors.deepGrey.withOpacity(0.1),
                     AppColors.black.withOpacity(0.1),
                   ],
                   begin: Alignment.topLeft,

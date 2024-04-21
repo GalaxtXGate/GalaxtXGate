@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:galaxyxgate/core/themes/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_images.dart';
 
 class PositionedStarWithAnimation extends StatelessWidget {
   const PositionedStarWithAnimation({

@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
-import 'package:galaxyxgate/features/home_screen/view/widgets/containers/category_container.dart';
-import 'package:galaxyxgate/features/home_screen/view/widgets/rows/home_header_row.dart';
+import 'package:galaxyxgate/features/home/view/widgets/containers/category_container.dart';
+import 'package:galaxyxgate/features/home/view/widgets/rows/home_header_row.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
