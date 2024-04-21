@@ -8,7 +8,7 @@ class CustomFloatingActionButton extends StatelessWidget {
   final String route;
   final String svgAssetPath;
 
-  const CustomFloatingActionButton({
+  const CustomFloatingActionButton({super.key, 
     required this.controller,
     required this.currentIndex,
     required this.contentLength,

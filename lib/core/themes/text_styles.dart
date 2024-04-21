@@ -63,7 +63,7 @@ class TextStyles {
       fontWeight: FontWeight.w500,
       fontSize: 12.sp,
       foreground: Paint()
-        ..shader = LinearGradient(
+        ..shader = const LinearGradient(
           colors: <Color>[
             AppColors.loginTextGradientPurple,
             AppColors.loginTextGradientBlue,
@@ -74,8 +74,6 @@ class TextStyles {
     fontSize: 34.sp,
     fontFamily: "Space Grotesk",
     fontWeight: FontWeight.w300,
-    color: AppColors.white,);
-
-
-
+    color: AppColors.white,
+  );
 }

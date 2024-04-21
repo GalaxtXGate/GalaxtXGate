@@ -36,9 +36,9 @@ class CompanyInfoModel {
 
   CompanyInfoModel.fromJson(Map<String, dynamic> json) {
     headquarters = json['headquarters'] != null
-        ? new Headquarters.fromJson(json['headquarters'])
+        ? Headquarters.fromJson(json['headquarters'])
         : null;
-    links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    links = json['links'] != null ? Links.fromJson(json['links']) : null;
     name = json['name'];
     founder = json['founder'];
     founded = json['founded'];
@@ -56,27 +56,27 @@ class CompanyInfoModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.headquarters != null) {
-      data['headquarters'] = this.headquarters!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (headquarters != null) {
+      data['headquarters'] = headquarters!.toJson();
     }
-    if (this.links != null) {
-      data['links'] = this.links!.toJson();
+    if (links != null) {
+      data['links'] = links!.toJson();
     }
-    data['name'] = this.name;
-    data['founder'] = this.founder;
-    data['founded'] = this.founded;
-    data['employees'] = this.employees;
-    data['vehicles'] = this.vehicles;
-    data['launch_sites'] = this.launchSites;
-    data['test_sites'] = this.testSites;
-    data['ceo'] = this.ceo;
-    data['cto'] = this.cto;
-    data['coo'] = this.coo;
-    data['cto_propulsion'] = this.ctoPropulsion;
-    data['valuation'] = this.valuation;
-    data['summary'] = this.summary;
-    data['id'] = this.id;
+    data['name'] = name;
+    data['founder'] = founder;
+    data['founded'] = founded;
+    data['employees'] = employees;
+    data['vehicles'] = vehicles;
+    data['launch_sites'] = launchSites;
+    data['test_sites'] = testSites;
+    data['ceo'] = ceo;
+    data['cto'] = cto;
+    data['coo'] = coo;
+    data['cto_propulsion'] = ctoPropulsion;
+    data['valuation'] = valuation;
+    data['summary'] = summary;
+    data['id'] = id;
     return data;
   }
 }
@@ -95,10 +95,10 @@ class Headquarters {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['address'] = this.address;
-    data['city'] = this.city;
-    data['state'] = this.state;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['address'] = address;
+    data['city'] = city;
+    data['state'] = state;
     return data;
   }
 }
@@ -119,11 +119,11 @@ class Links {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['website'] = this.website;
-    data['flickr'] = this.flickr;
-    data['twitter'] = this.twitter;
-    data['elon_twitter'] = this.elonTwitter;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['website'] = website;
+    data['flickr'] = flickr;
+    data['twitter'] = twitter;
+    data['elon_twitter'] = elonTwitter;
     return data;
   }
 }

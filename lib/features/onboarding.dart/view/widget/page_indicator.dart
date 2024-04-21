@@ -8,11 +8,11 @@ class PageIndicator extends StatelessWidget {
   final Duration animationDuration;
 
   const PageIndicator({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.contentLength,
     this.animationDuration = const Duration(milliseconds: 500),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

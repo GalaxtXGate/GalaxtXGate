@@ -27,14 +27,14 @@ class CrewModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['agency'] = this.agency;
-    data['image'] = this.image;
-    data['wikipedia'] = this.wikipedia;
-    data['launches'] = this.launches;
-    data['status'] = this.status;
-    data['id'] = this.id;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['agency'] = agency;
+    data['image'] = image;
+    data['wikipedia'] = wikipedia;
+    data['launches'] = launches;
+    data['status'] = status;
+    data['id'] = id;
     return data;
   }
 }
