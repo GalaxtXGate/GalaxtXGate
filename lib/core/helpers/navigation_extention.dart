@@ -13,10 +13,6 @@ extension Navigation on BuildContext {
     Navigator.of(this).pushReplacementNamed(routeName);
   }
 
-  void navigateToAndReplaceUntil(String routeName) {
-    Navigator.of(this).pushReplacementNamed(routeName);
-  }
-
   void navigateBack() {
     Navigator.of(this).pop();
   }

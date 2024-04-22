@@ -5,13 +5,20 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import '../../../../core/themes/text_styles.dart';
 
 class SignUpButton extends StatelessWidget {
+  const SignUpButton({
+    super.key,
+    required this.logoPath,
+    required this.title,
+    this.onTap,
+  });
   final String? logoPath;
   final String title;
-  const SignUpButton({super.key, required this.logoPath, required this.title});
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Container(
         height: 60.h,
         decoration: BoxDecoration(

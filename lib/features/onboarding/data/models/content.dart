@@ -1,4 +1,4 @@
-import 'package:galaxyxgate/core/themes/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_images.dart';
 
 class Content {
   String image;

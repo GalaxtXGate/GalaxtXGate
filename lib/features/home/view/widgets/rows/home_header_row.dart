@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/features/home_screen/view/widgets/containers/notifications_container.dart';
-import 'package:galaxyxgate/features/home_screen/view/widgets/profile_pic.dart';
-import 'package:galaxyxgate/features/home_screen/view/widgets/wlecom_and_name.dart';
+import 'package:galaxyxgate/features/home/view/widgets/containers/notifications_container.dart';
+import 'package:galaxyxgate/features/home/view/widgets/profile_pic.dart';
+import 'package:galaxyxgate/features/home/view/widgets/wlecom_and_name.dart';
 
 class HomeHeaderRow extends StatelessWidget {
   const HomeHeaderRow({

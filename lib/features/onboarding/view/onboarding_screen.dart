@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
-import 'package:galaxyxgate/core/themes/app_images.dart';
-import 'package:galaxyxgate/features/onboarding.dart/data/models/content.dart';
+import 'package:galaxyxgate/core/themes/app_colors.dart';
+import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/features/onboarding/data/models/content.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/widget/custom_floatin_action_button.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/widget/page_indicator.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/widget/page_view.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/widget/positioned_star_with_animation.dart';
+import 'package:galaxyxgate/features/onboarding/view/widget/custom_floatin_action_button.dart';
+import 'package:galaxyxgate/features/onboarding/view/widget/page_indicator.dart';
+import 'package:galaxyxgate/features/onboarding/view/widget/onboarding_page_view.dart';
+import 'package:galaxyxgate/features/onboarding/view/widget/positioned_star_with_animation.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -24,10 +25,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
   @override
   void initState() {
+       super.initState();
     initializePageController();
     initializeAnimationController();
     initializeAnimatedStars();
-    super.initState();
   }
 
   void initializePageController() {
@@ -60,52 +61,53 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Stack(
-          children: [
-            //page view
-            OnBoardingPageView(
-              controller: _controller,
-              currentIndex: _currentIndex,
-              onPageChanged: (int index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            ),
-            //Page Indicator
-            PageIndicator(
-              currentIndex: _currentIndex,
-              contentLength: content.length,
-            ),
-            // Star #1
-            PositionedStarWithAnimation(
-              animation: _animatedStar1,
-              bottom: 310.h,
-              right: 60.w,
-            ),
-            // Star #2
-            PositionedStarWithAnimation(
-              animation: _animatedStar2,
-              bottom: 180.h,
-              right: 10.w,
-            ),
-            // Star #3
-            PositionedStarWithAnimation(
-              animation: _animatedStar3,
-              bottom: 100.h,
-              right: 320.w,
-            ),
-          ],
-        ),
+      backgroundColor: AppColors.black,
+      body: Stack(
+        children: [
+          //page view
+          OnBoardingPageView(
+            controller: _controller,
+            currentIndex: _currentIndex,
+            onPageChanged: (int index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+          ),
+          //Page Indicator
+          PageIndicator(
+            currentIndex: _currentIndex,
+            contentLength: content.length,
+          ),
+          // Star #1
+          PositionedStarWithAnimation(
+            animation: _animatedStar1,
+            bottom: 310.h,
+            right: 60.w,
+            scale: 1.5,
+          ),
+          // Star #2
+          PositionedStarWithAnimation(
+            animation: _animatedStar2,
+            bottom: 180.h,
+            right: 10.w,
+            scale: 0.5,
+          ),
+          // Star #3
+          PositionedStarWithAnimation(
+            animation: _animatedStar3,
+            bottom: 100.h,
+            right: 320.w,
+            scale: 1.1,
+          ),
+        ],
       ),
       // FloatingActionButton
       floatingActionButton: CustomFloatingActionButton(
         controller: _controller,
         currentIndex: _currentIndex,
         contentLength: content.length,
-        route: Routes.homeScreen,
+        route: Routes.getStartNowScreen,
         svgAssetPath: AppImages.arrows,
       ),
     );
