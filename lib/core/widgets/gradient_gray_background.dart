@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
+import 'package:galaxyxgate/core/utils/app_animations.dart';
+import 'package:lottie/lottie.dart';
 
 class GradientGrayBackground extends StatelessWidget {
   const GradientGrayBackground({
@@ -15,9 +17,14 @@ class GradientGrayBackground extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
+            child: Lottie.asset(
+              AppAnimations.starts,
+            ),
+          ),
+          Positioned.fill(
             child: Container(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: RadialGradient(
                   colors: [
                     AppColors.black.withOpacity(0.1),
                     AppColors.deepGrey.withOpacity(0.1),
@@ -25,8 +32,6 @@ class GradientGrayBackground extends StatelessWidget {
                     AppColors.deepGrey.withOpacity(0.1),
                     AppColors.black.withOpacity(0.1),
                   ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
                 ),
               ),
             ),

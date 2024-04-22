@@ -28,47 +28,15 @@ class CategoryContainer extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.r),
           ),
-          child: Stack(
-            children: [
-              ShaderMask(
-                shaderCallback: (Rect rect) => const LinearGradient(
-                  colors: [
-                    AppColors.white,
-                    AppColors.white,
-                    AppColors.black,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ).createShader(rect),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.r),
-                  child: Image.asset(
-                    height: height,
-                    width: width,
-                    backgroundImg,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyles.font16White700w,
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  Text(
-                    description,
-                    style: TextStyles.font12White700w,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ],
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15.r),
+            child: Image.asset(
+              height: height,
+              width: width,
+              backgroundImg,
+              fit: BoxFit.cover,
+              colorBlendMode: BlendMode.srcATop,
+            ),
           ),
         ),
         Material(

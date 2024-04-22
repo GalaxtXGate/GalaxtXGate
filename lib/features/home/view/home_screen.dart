@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: GradientGrayBackground(
           child: Padding(
         padding: EdgeInsets.symmetric(

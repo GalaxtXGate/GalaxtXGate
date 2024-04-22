@@ -80,7 +80,7 @@ class SignUp extends StatelessWidget {
           title: "Sign Up With Mail",
         ),
         SizedBox(
-          height: 40.h,
+          height: 10.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
