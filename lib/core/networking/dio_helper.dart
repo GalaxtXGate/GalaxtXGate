@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:galaxyxgate/core/utils/apis_constant.dart';
+import 'package:galaxyxgate/core/networking/apis_constant.dart';
 
 class DioHelper {
   DioHelper({Dio? dio}) {

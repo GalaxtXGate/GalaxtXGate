@@ -11,20 +11,20 @@ extension InternetConnection on BuildContext {
     var result = await Connectivity().checkConnectivity();
     if (result.contains(ConnectivityResult.mobile) ||
         result.contains(ConnectivityResult.wifi)) {
-      if (APPGeneral.noConnection.value) {
+      if (AppGeneral.noConnection.value) {
         ScaffoldMessenger.of(this).showSnackBar(messageSnackBar(
             message: "online",
             color: Colors.green,
             imagePath: "assets/images/retriveConnection.svg"));
-        APPGeneral.noConnection.value = false;
+        AppGeneral.noConnection.value = false;
       }
     } else {
-      if (!APPGeneral.noConnection.value) {
+      if (!AppGeneral.noConnection.value) {
         ScaffoldMessenger.of(this).showSnackBar(messageSnackBar(
             message: "offline",
             color: Colors.red,
             imagePath: "assets/images/lostConnection.svg"));
-        APPGeneral.noConnection.value = true;
+        AppGeneral.noConnection.value = true;
       }
     }
   }

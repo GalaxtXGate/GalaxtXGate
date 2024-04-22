@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
-import 'package:galaxyxgate/features/onboarding.dart/data/models/content.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/widget/gradient_Text.dart';
+import 'package:galaxyxgate/features/onboarding/data/models/content.dart';
+import 'package:galaxyxgate/features/onboarding/view/widget/gradient_Text.dart';
 
 class OnBoardingItem extends StatelessWidget {
   final Content content;

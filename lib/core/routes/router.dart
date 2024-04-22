@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/features/bottom_nav_bar/view/bottom_nav_bar.dart';
 import 'package:galaxyxgate/features/home/view/home_screen.dart';
-import 'package:galaxyxgate/features/onboarding.dart/view/onboarding_screen.dart';
+import 'package:galaxyxgate/features/onboarding/view/onboarding_screen.dart';
 import '../../features/getStartedNow/screen/getStartedNow_screen.dart';
 
 class AppRouter {

@@ -66,7 +66,7 @@ class ServerFailure {
         );
       //there is an error in the network
       case DioExceptionType.connectionError:
-        if (APPGeneral.noConnection.value) {
+        if (AppGeneral.noConnection.value) {
           return ServerFailure(
               errMessage:
                   'Server is under Maintenance, Please try again later');

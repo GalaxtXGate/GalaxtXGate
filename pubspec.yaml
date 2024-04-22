@@ -24,7 +24,7 @@ dependencies:
   cached_network_image: ^3.3.1
   flutter_svg: ^2.0.10+1
 
-# Loaing  
+# Loading  
   flutter_spinkit: ^5.2.1
 
 # FireBase & cloud  
