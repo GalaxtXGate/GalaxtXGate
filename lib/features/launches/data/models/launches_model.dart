@@ -29,38 +29,37 @@ class Launches {
 
   Launches(
       {this.fairings,
-        this.links,
-        this.staticFireDateUtc,
-        this.staticFireDateUnix,
-        this.net,
-        this.window,
-        this.rocket,
-        this.success,
-        this.failures,
-        this.details,
-        this.crew,
-        this.ships,
-        this.capsules,
-        this.payloads,
-        this.launchpad,
-        this.flightNumber,
-        this.name,
-        this.dateUtc,
-        this.dateUnix,
-        this.dateLocal,
-        this.datePrecision,
-        this.upcoming,
-        this.cores,
-        this.autoUpdate,
-        this.tbd,
-        this.launchLibraryId,
-        this.id});
+      this.links,
+      this.staticFireDateUtc,
+      this.staticFireDateUnix,
+      this.net,
+      this.window,
+      this.rocket,
+      this.success,
+      this.failures,
+      this.details,
+      this.crew,
+      this.ships,
+      this.capsules,
+      this.payloads,
+      this.launchpad,
+      this.flightNumber,
+      this.name,
+      this.dateUtc,
+      this.dateUnix,
+      this.dateLocal,
+      this.datePrecision,
+      this.upcoming,
+      this.cores,
+      this.autoUpdate,
+      this.tbd,
+      this.launchLibraryId,
+      this.id});
 
   Launches.fromJson(Map<String, dynamic> json) {
-    fairings = json['fairings'] != null
-        ? new Fairings.fromJson(json['fairings'])
-        : null;
-    links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    fairings =
+        json['fairings'] != null ? Fairings.fromJson(json['fairings']) : null;
+    links = json['links'] != null ? Links.fromJson(json['links']) : null;
     staticFireDateUtc = json['static_fire_date_utc'];
     staticFireDateUnix = json['static_fire_date_unix'];
     net = json['net'];
@@ -70,7 +69,7 @@ class Launches {
     if (json['failures'] != null) {
       failures = <Failures>[];
       json['failures'].forEach((v) {
-        failures!.add(new Failures.fromJson(v));
+        failures!.add(Failures.fromJson(v));
       });
     }
     details = json['details'];
@@ -80,8 +79,8 @@ class Launches {
     if (json['ships'] != null) {
       ships = List<String>.from(json['ships']);
     }
-    if (json['capsules']!= null) {
-      capsules= List<String>.from(json['capsules']);
+    if (json['capsules'] != null) {
+      capsules = List<String>.from(json['capsules']);
     }
     payloads = json['payloads'].cast<String>();
     launchpad = json['launchpad'];
@@ -95,7 +94,7 @@ class Launches {
     if (json['cores'] != null) {
       cores = <Cores>[];
       json['cores'].forEach((v) {
-        cores!.add(new Cores.fromJson(v));
+        cores!.add(Cores.fromJson(v));
       });
     }
     autoUpdate = json['auto_update'];
@@ -105,42 +104,42 @@ class Launches {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.fairings != null) {
-      data['fairings'] = this.fairings!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (fairings != null) {
+      data['fairings'] = fairings!.toJson();
     }
-    if (this.links != null) {
-      data['links'] = this.links!.toJson();
+    if (links != null) {
+      data['links'] = links!.toJson();
     }
-    data['static_fire_date_utc'] = this.staticFireDateUtc;
-    data['static_fire_date_unix'] = this.staticFireDateUnix;
-    data['net'] = this.net;
-    data['window'] = this.window;
-    data['rocket'] = this.rocket;
-    data['success'] = this.success;
-    if (this.failures != null) {
-      data['failures'] = this.failures!.map((v) => v.toJson()).toList();
+    data['static_fire_date_utc'] = staticFireDateUtc;
+    data['static_fire_date_unix'] = staticFireDateUnix;
+    data['net'] = net;
+    data['window'] = window;
+    data['rocket'] = rocket;
+    data['success'] = success;
+    if (failures != null) {
+      data['failures'] = failures!.map((v) => v.toJson()).toList();
     }
-    data['details'] = this.details;
+    data['details'] = details;
     data['crew'] = crew;
-    data['ships']=ships;
-    data['capsules']=capsules;
-    data['payloads'] = this.payloads;
-    data['launchpad'] = this.launchpad;
-    data['flight_number'] = this.flightNumber;
-    data['name'] = this.name;
-    data['date_utc'] = this.dateUtc;
-    data['date_unix'] = this.dateUnix;
-    data['date_local'] = this.dateLocal;
-    data['date_precision'] = this.datePrecision;
-    data['upcoming'] = this.upcoming;
-    if (this.cores != null) {
-      data['cores'] = this.cores!.map((v) => v.toJson()).toList();
+    data['ships'] = ships;
+    data['capsules'] = capsules;
+    data['payloads'] = payloads;
+    data['launchpad'] = launchpad;
+    data['flight_number'] = flightNumber;
+    data['name'] = name;
+    data['date_utc'] = dateUtc;
+    data['date_unix'] = dateUnix;
+    data['date_local'] = dateLocal;
+    data['date_precision'] = datePrecision;
+    data['upcoming'] = upcoming;
+    if (cores != null) {
+      data['cores'] = cores!.map((v) => v.toJson()).toList();
     }
-    data['auto_update'] = this.autoUpdate;
-    data['tbd'] = this.tbd;
-    data['launch_library_id'] = this.launchLibraryId;
-    data['id'] = this.id;
+    data['auto_update'] = autoUpdate;
+    data['tbd'] = tbd;
+    data['launch_library_id'] = launchLibraryId;
+    data['id'] = id;
     return data;
   }
 }
@@ -172,7 +171,6 @@ class Fairings {
   }
 }
 
-
 class Links {
   Patch? patch;
   Reddit? reddit;
@@ -185,20 +183,18 @@ class Links {
 
   Links(
       {this.patch,
-        this.reddit,
-        this.flickr,
-        this.presskit,
-        this.webcast,
-        this.youtubeId,
-        this.article,
-        this.wikipedia});
+      this.reddit,
+      this.flickr,
+      this.presskit,
+      this.webcast,
+      this.youtubeId,
+      this.article,
+      this.wikipedia});
 
   Links.fromJson(Map<String, dynamic> json) {
-    patch = json['patch'] != null ? new Patch.fromJson(json['patch']) : null;
-    reddit =
-    json['reddit'] != null ? new Reddit.fromJson(json['reddit']) : null;
-    flickr =
-    json['flickr'] != null ? new Flickr.fromJson(json['flickr']) : null;
+    patch = json['patch'] != null ? Patch.fromJson(json['patch']) : null;
+    reddit = json['reddit'] != null ? Reddit.fromJson(json['reddit']) : null;
+    flickr = json['flickr'] != null ? Flickr.fromJson(json['flickr']) : null;
     presskit = json['presskit'];
     webcast = json['webcast'];
     youtubeId = json['youtube_id'];
@@ -207,21 +203,21 @@ class Links {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.patch != null) {
-      data['patch'] = this.patch!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (patch != null) {
+      data['patch'] = patch!.toJson();
     }
-    if (this.reddit != null) {
-      data['reddit'] = this.reddit!.toJson();
+    if (reddit != null) {
+      data['reddit'] = reddit!.toJson();
     }
-    if (this.flickr != null) {
-      data['flickr'] = this.flickr!.toJson();
+    if (flickr != null) {
+      data['flickr'] = flickr!.toJson();
     }
-    data['presskit'] = this.presskit;
-    data['webcast'] = this.webcast;
-    data['youtube_id'] = this.youtubeId;
-    data['article'] = this.article;
-    data['wikipedia'] = this.wikipedia;
+    data['presskit'] = presskit;
+    data['webcast'] = webcast;
+    data['youtube_id'] = youtubeId;
+    data['article'] = article;
+    data['wikipedia'] = wikipedia;
     return data;
   }
 }
@@ -238,9 +234,9 @@ class Patch {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['small'] = this.small;
-    data['large'] = this.large;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['small'] = small;
+    data['large'] = large;
     return data;
   }
 }
@@ -261,11 +257,11 @@ class Reddit {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['campaign'] = this.campaign;
-    data['launch'] = this.launch;
-    data['media'] = this.media;
-    data['recovery'] = this.recovery;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['campaign'] = campaign;
+    data['launch'] = launch;
+    data['media'] = media;
+    data['recovery'] = recovery;
     return data;
   }
 }
@@ -311,10 +307,10 @@ class Failures {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['time'] = this.time;
-    data['altitude'] = this.altitude;
-    data['reason'] = this.reason;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['time'] = time;
+    data['altitude'] = altitude;
+    data['reason'] = reason;
     return data;
   }
 }
@@ -332,14 +328,14 @@ class Cores {
 
   Cores(
       {this.core,
-        this.flight,
-        this.gridfins,
-        this.legs,
-        this.reused,
-        this.landingAttempt,
-        this.landingSuccess,
-        this.landingType,
-        this.landpad});
+      this.flight,
+      this.gridfins,
+      this.legs,
+      this.reused,
+      this.landingAttempt,
+      this.landingSuccess,
+      this.landingType,
+      this.landpad});
 
   Cores.fromJson(Map<String, dynamic> json) {
     core = json['core'];
@@ -354,16 +350,16 @@ class Cores {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['core'] = this.core;
-    data['flight'] = this.flight;
-    data['gridfins'] = this.gridfins;
-    data['legs'] = this.legs;
-    data['reused'] = this.reused;
-    data['landing_attempt'] = this.landingAttempt;
-    data['landing_success'] = this.landingSuccess;
-    data['landing_type'] = this.landingType;
-    data['landpad'] = this.landpad;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['core'] = core;
+    data['flight'] = flight;
+    data['gridfins'] = gridfins;
+    data['legs'] = legs;
+    data['reused'] = reused;
+    data['landing_attempt'] = landingAttempt;
+    data['landing_success'] = landingSuccess;
+    data['landing_type'] = landingType;
+    data['landpad'] = landpad;
     return data;
   }
 }

@@ -42,3 +42,4 @@ class SignUpButton extends StatelessWidget {
     );
   }
 }
+

@@ -33,8 +33,6 @@ Welcome to GalaxtXGate, your ultimate companion for exploring the cosmos! This a
    - Personalize your experience by favoriting specific launches, rockets, or capsules.
    - Easily access your favorites in a separate section for quick reference.
 
-9. 💬 **Chat**:
-   - Engage with other users in real-time chat discussions, creating a space for shared excitement and knowledge exchange.
 
 ## How to Use:
 

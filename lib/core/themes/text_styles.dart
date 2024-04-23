@@ -52,6 +52,13 @@ class TextStyles {
     fontFamily: 'SpaceGrotesk',
   );
 
+  static TextStyle font34White700w = TextStyle(
+    fontSize: 34.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
+  );
+
   static TextStyle font40WhiteBold = TextStyle(
     fontSize: 40.sp,
     fontWeight: FontWeight.bold,
@@ -63,11 +70,11 @@ class TextStyles {
       fontWeight: FontWeight.w500,
       fontSize: 12.sp,
       foreground: Paint()
-        ..shader = LinearGradient(
+        ..shader = const LinearGradient(
           colors: <Color>[
-            AppColors.textGradientColor1,
-            AppColors.textGradientColor2,
-            AppColors.textGradientColor3
+            AppColors.loginTextGradientPurple,
+            AppColors.loginTextGradientBlue,
+            AppColors.loginTextGradientGreen
           ],
         ).createShader(const Rect.fromLTWH(110.0, 70.0, 200.0, 70.0)));
   static TextStyle textStyle34 = TextStyle(
