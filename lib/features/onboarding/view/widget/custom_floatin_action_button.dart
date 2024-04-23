@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -8,7 +9,8 @@ class CustomFloatingActionButton extends StatelessWidget {
   final String route;
   final String svgAssetPath;
 
-  const CustomFloatingActionButton({super.key, 
+  const CustomFloatingActionButton({
+    super.key,
     required this.controller,
     required this.currentIndex,
     required this.contentLength,
@@ -18,7 +20,7 @@ class CustomFloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
+    return FloatingActionButton.large(
       backgroundColor: Colors.transparent,
       foregroundColor: Colors.white,
       shape: const CircleBorder(
@@ -35,8 +37,8 @@ class CustomFloatingActionButton extends StatelessWidget {
       },
       child: SvgPicture.asset(
         svgAssetPath,
-        height: 20.0,
-        width: 10.0,
+        height: 30.w,
+        width: 30.w,
       ),
     );
   }
