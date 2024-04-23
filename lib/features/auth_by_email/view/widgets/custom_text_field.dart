@@ -32,7 +32,7 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
           filled: true,
-          fillColor: AppColors.black,
+          fillColor: AppColors.textFieldsGrey,
           hintText: hintText,
           labelText: labelText,
           hintStyle:  TextStyles.textStyle12400,

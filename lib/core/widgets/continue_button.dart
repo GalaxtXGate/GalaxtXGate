@@ -15,9 +15,9 @@ class CustomGradientButton extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
-           AppColors.textGradientColor1,
-            AppColors.textGradientColor2,
-            AppColors.textGradientColor3,
+            AppColors.loginTextGradientPurple,
+            AppColors.loginTextGradientBlue,
+            AppColors.loginTextGradientGreen
           ],
         ),
         borderRadius: BorderRadius.circular(15),
@@ -25,10 +25,10 @@ class CustomGradientButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(1.0),
         child: Container(
-          width: screenWidth*0.86,
-          height: screenHeight* 0.089,
+          width: screenWidth * 0.86,
+          height: screenHeight * 0.089,
           decoration: BoxDecoration(
-            color:  AppColors.black,
+            color: AppColors.lightBlack,
             borderRadius: BorderRadius.circular(15),
           ),
           child: Center(
@@ -42,15 +42,17 @@ class CustomGradientButton extends StatelessWidget {
                 ),
               ),
               child: SizedBox(
-                width: screenWidth*0.86,
-                height: screenHeight* 0.089,
+                width: screenWidth * 0.86,
+                height: screenHeight * 0.089,
                 child: Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "Continue",
-                        style: TextStyles.font16White700w.copyWith(fontWeight: FontWeight.w300, ),
+                        style: TextStyles.font16White700w.copyWith(
+                          fontWeight: FontWeight.w300,
+                        ),
                       ),
                       const SizedBox(
                         width: 10,

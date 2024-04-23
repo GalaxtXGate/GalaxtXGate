@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/features/profile_picture/logic/cubits/profile_picture_cubit.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/octicon.dart';
 
 class AddProfilePicture extends StatelessWidget {
   const AddProfilePicture({super.key});
@@ -32,14 +30,17 @@ class AddProfilePicture extends StatelessWidget {
                         shaderCallback: (Rect bounds) {
                           return const LinearGradient(
                             colors: [
-                              AppColors.textGradientColor1,
-                              AppColors.textGradientColor2,
-                              AppColors.textGradientColor3
+                              AppColors.loginTextGradientPurple,
+                              AppColors.loginTextGradientBlue,
+                              AppColors.loginTextGradientGreen,
                             ],
                           ).createShader(bounds);
                         },
-                        child: const Iconify(Octicon.person_16,
-                            size: 34, color: Colors.white),
+                        child: const Icon(
+                          Icons.person,
+                          size: 80,
+                          color: Colors.white,
+                        ),
                       ),
               ),
             ),
