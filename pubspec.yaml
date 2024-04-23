@@ -22,7 +22,6 @@ dependencies:
 
 # Image
   cached_network_image: ^3.3.1
-  flutter_svg: ^2.0.10+1
 
 # Loading  
   flutter_spinkit: ^5.2.1
@@ -33,16 +32,20 @@ dependencies:
   cloud_firestore: ^4.17.0
 
 # DI
-  get_it: ^7.7.0
+  get_it: ^7.6.8
 
 # Networking  
   dio: ^5.4.3+1
 
 # Local Storage
-  shared_preferences: ^2.2.3
+  shared_preferences: ^2.2.2
 
 # Network Connection
   connectivity_plus: ^6.0.2
+  flutter_bloc: ^8.1.5
+  image_picker: ^1.1.0
+  iconify_flutter: ^0.0.4
+  flutter_svg: 1.1.6
 
 dev_dependencies:
   flutter_test:

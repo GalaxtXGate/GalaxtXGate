@@ -24,4 +24,5 @@ class AppColors {
   static const Color offWhite = Color(0xFFFFFDF6);
   static const Color borderGrey = Color(0xFF717171);
   static const Color offWhite2 = Color(0xFFD5D5D5);
+  static const Color textFieldsGrey = Color(0xFF3D3D3D33);
 }

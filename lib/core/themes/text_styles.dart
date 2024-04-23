@@ -79,8 +79,37 @@ class TextStyles {
         ).createShader(const Rect.fromLTWH(110.0, 70.0, 200.0, 70.0)));
   static TextStyle textStyle34 = TextStyle(
     fontSize: 34.sp,
-    fontFamily: "Space Grotesk",
+    fontFamily: "SpaceGrotesk",
     fontWeight: FontWeight.w300,
-    color: AppColors.white,
+    color: AppColors.white,);
+
+  static TextStyle textStyle14300 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w300,
+    color: AppColors.lightGrey,
+    fontFamily: "SpaceGrotesk",
   );
+   
+  static TextStyle textStyleOfWhite16300 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w300,
+    color: AppColors.offWhite,
+  );
+  static TextStyle textStyle16400 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.offWhite2,
+  );
+  static TextStyle textStyle14400 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.offWhite2,
+  );
+ static TextStyle textStyle12400 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.borderGrey,
+    fontFamily: "SpaceGrotesk",
+  );
+
 }
