@@ -47,6 +47,9 @@ dependencies:
   iconify_flutter: ^0.0.4
   flutter_svg: 1.1.6
 
+# Localization
+  easy_localization: ^3.0.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -61,6 +64,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/translations/
 
 # Fonts
   fonts:
