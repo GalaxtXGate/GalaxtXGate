@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/app_images.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
-import 'package:galaxyxgate/features/auth_by_email/view/widgets/custom_text_field.dart';
+import 'package:galaxyxgate/features/auth_by_email/screen/widgets/custom_text_field.dart';
 
 class SignInTextAndFields extends StatelessWidget {
   const SignInTextAndFields({super.key});

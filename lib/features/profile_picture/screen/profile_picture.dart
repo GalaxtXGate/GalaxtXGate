@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/core/widgets/continue_button.dart';
 import 'package:galaxyxgate/features/profile_picture/logic/cubits/profile_picture_cubit.dart';
-import 'package:galaxyxgate/features/profile_picture/view/widgets/add_profile_picture.dart';
-import 'package:galaxyxgate/features/profile_picture/view/widgets/texts.dart';
+import 'package:galaxyxgate/features/profile_picture/screen/widgets/add_profile_picture.dart';
+import 'package:galaxyxgate/features/profile_picture/screen/widgets/texts.dart';
+import 'package:galaxyxgate/core/themes/app_colors.dart';
 
 class ProfilePicture extends StatelessWidget {
   const ProfilePicture({super.key});
@@ -13,6 +14,7 @@ class ProfilePicture extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: AppColors.deepBlack,
       body: BlocProvider(
         create: (context) => ProfilePictureCubit(),
         child: SafeArea(

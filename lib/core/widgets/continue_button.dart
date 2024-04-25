@@ -28,7 +28,7 @@ class CustomGradientButton extends StatelessWidget {
           width: screenWidth * 0.86,
           height: screenHeight * 0.089,
           decoration: BoxDecoration(
-            color: AppColors.lightBlack,
+            color : AppColors.deepBlack,
             borderRadius: BorderRadius.circular(15),
           ),
           child: Center(

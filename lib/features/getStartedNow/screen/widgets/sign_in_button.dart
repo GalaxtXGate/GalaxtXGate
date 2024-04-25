@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/features/auth_by_email/view/sign_up.dart';
+import 'package:galaxyxgate/features/auth_by_email/screen/sign_up.dart';
 
 import '../../../../core/themes/app_colors.dart';
 class SignInButton extends StatelessWidget {
