@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/home/view/widgets/containers/category_container.dart';
 import 'package:galaxyxgate/features/home/view/widgets/rows/home_header_row.dart';
+import 'package:galaxyxgate/features/launches/screens/launches_bloc_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -49,6 +51,8 @@ class HomeScreen extends StatelessWidget {
                       title: "Space ships",
                       description:
                           "Know about active rockets, their description, company and more",
+                      onTap: () {},
+                      tag: 'Space ships',
                     ),
                     SizedBox(
                       height: 15.h,
@@ -61,6 +65,8 @@ class HomeScreen extends StatelessWidget {
                       title: "Rockets",
                       description:
                           "Know about active rockets, their description, company and more",
+                      onTap: () {},
+                      tag: 'Rockets',
                     ),
                   ],
                 ),
@@ -72,9 +78,17 @@ class HomeScreen extends StatelessWidget {
                       height: 185.h,
                       width: 150.w,
                       backgroundImg: AppImages.launchesCategory,
-                      title: "launches",
+                      title: "Launches",
                       description:
                           "know about the launches name, state, details and more",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(
+                              page: const LauchesBlocProvider()),
+                        );
+                      },
+                      tag: 'Launches',
                     ),
                     SizedBox(
                       height: 15.h,
@@ -87,6 +101,8 @@ class HomeScreen extends StatelessWidget {
                       title: "Capsules",
                       description:
                           "know about active capsules, their country and more",
+                      onTap: () {},
+                      tag: 'Capsules',
                     ),
                     SizedBox(
                       height: 15.h,
@@ -99,6 +115,8 @@ class HomeScreen extends StatelessWidget {
                       title: "Crew",
                       description:
                           "know about the launches name, state, details and more",
+                      onTap: () {},
+                      tag: 'Crew',
                     ),
                   ],
                 ),

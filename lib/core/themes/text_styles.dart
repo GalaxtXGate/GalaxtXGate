@@ -51,6 +51,12 @@ class TextStyles {
     color: AppColors.white,
     fontFamily: 'SpaceGrotesk',
   );
+  static TextStyle font28White700w = TextStyle(
+    fontSize: 28.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+    fontFamily: 'SpaceGrotesk',
+  );
 
   static TextStyle font34White700w = TextStyle(
     fontSize: 34.sp,
@@ -81,7 +87,8 @@ class TextStyles {
     fontSize: 34.sp,
     fontFamily: "SpaceGrotesk",
     fontWeight: FontWeight.w300,
-    color: AppColors.white,);
+    color: AppColors.white,
+  );
 
   static TextStyle textStyle14300 = TextStyle(
     fontSize: 14.sp,
@@ -89,7 +96,7 @@ class TextStyles {
     color: AppColors.lightGrey,
     fontFamily: "SpaceGrotesk",
   );
-   
+
   static TextStyle textStyleOfWhite16300 = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w300,
@@ -105,11 +112,10 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.offWhite2,
   );
- static TextStyle textStyle12400 = TextStyle(
+  static TextStyle textStyle12400 = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.borderGrey,
     fontFamily: "SpaceGrotesk",
   );
-
 }
