@@ -8,6 +8,7 @@ import 'core/utils/app_assets.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   CacheHelper.init();
+  await EasyLocalization.ensureInitialized();
   runApp(
       EasyLocalization(
         path: AppAssets.appTranslations,

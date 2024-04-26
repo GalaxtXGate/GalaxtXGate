@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/features/getStartedNow/screen/widgets/sign_in_button.dart';
 import 'package:galaxyxgate/features/getStartedNow/screen/widgets/signup_button.dart';
 import '../../../../core/themes/text_styles.dart';
+import '../../../../core/utils/app_strings.dart';
 import 'custom_divider.dart';
 
 class SignUp extends StatelessWidget {
@@ -18,21 +20,21 @@ class SignUp extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          "Let’s Know More",
+          AppStrings.letsKnowMore.tr(),
           style: TextStyles.textStyleGradient,
         ),
         const SizedBox(
           height: 5,
         ),
         Text(
-          "Get Started Now",
+          AppStrings.getStartedNow.tr(),
           style: TextStyles.textStyle34,
         ),
         const SizedBox(
           height: 2,
         ),
         Text(
-          "Sign in or create account",
+          AppStrings.signInOrCreateAccount.tr(),
           style: TextStyles.font14White700w.copyWith(
               fontWeight: FontWeight.w300, color: AppColors.lightGrey),
         ),
@@ -47,7 +49,7 @@ class SignUp extends StatelessWidget {
             );
           },
           logoPath: AppImages.googleLogo,
-          title: "Sign Up With Google",
+          title: AppStrings.signUpWithGoogle.tr(),
         ),
         SizedBox(
           height: 20.h,
@@ -60,7 +62,7 @@ class SignUp extends StatelessWidget {
             );
           },
           logoPath: AppImages.faceBookLogo,
-          title: "Sign Up With Facebook",
+          title: AppStrings.signUpWithFacebook.tr(),
         ),
         SizedBox(
           height: 20.h,
@@ -77,7 +79,7 @@ class SignUp extends StatelessWidget {
             );
           },
           logoPath: null,
-          title: "Sign Up With Mail",
+          title: AppStrings.signUpWithMail.tr(),
         ),
         SizedBox(
           height: 40.h,
@@ -86,7 +88,7 @@ class SignUp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Already have an account ?",
+              AppStrings.alreadyHaveAnAccount.tr(),
               style: TextStyles.font14White700w.copyWith(
                   color: AppColors.offWhite2, fontWeight: FontWeight.w400),
             ),

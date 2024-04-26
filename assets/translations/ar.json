@@ -1,9 +1,17 @@
 {
-
-  "register now": "Register",
-  "welcome to cemex": "welcome to cemex",
-  "name": "name",
-  "phone number": "phone number",
-  "city": "city",
-  "region": "region"
+  "Welcome To": "مرحبا فى",
+  "We Provide": "نحن نقدم",
+  "Be updated with all the Rockets, \ncapsules, crew and more": "احصل على تحديث بجميع الصواريخ والكبسولات والطاقم والمزيد",
+  "Reliable Information": "معلومات موثوقة",
+  "Galaxy X Gate": "بوابة جالاكسي اكس",
+  "Your guide to knowing all about \nspace X launches": "دليلك لمعرفة كل شيء عن إطلاق الفضاء",
+  "Let’s Know More": "دعونا نعرف المزيد",
+  "Get Started Now": "نبدأ الآن",
+  "Sign in or create account": "تسجيل الدخول أو إنشاء حساب",
+  "Sign Up With Google": "اشتراك عبر حساب جوجل",
+  "Sign Up With Facebook":  "اشترك عبر حساب فايسبوك",
+  "Sign Up With Mail": "اشترك عبر حساب البريد",
+  "Already have an account ?":"هل لديك حساب ؟",
+  "Sign In": "تسجبل دخول"
 }
+
