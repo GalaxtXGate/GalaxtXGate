@@ -20,5 +20,24 @@ class AppStrings {
   static const String signUpWithMail="Sign Up With Mail";
   static const String alreadyHaveAnAccount="Already have an account ?";
   static const String signIn="Sign In";
+  static const String welcomeBack="Welcome Back,";
+  static const String exploreOurTopics="Explore Our Topics";
+  static const String spaceShips="Space ships";
+  static const String knowAboutActiveRocketsTheirDescriptionCompany="Know about active rockets, their description, company and more";
+  static const String rockets="Rockets";
+  static const String launches="launches";
+  static const String knowAboutTheLaunchesNameStateDetails ="know about the launches name, state, details and more";
+  static const String capsules="Capsules";
+  static const String knowAboutActiveCapsulesTheirCountryAndMore= "know about active capsules, their country and more";
+  static const String crew="Crew";
+  static const String signUp="Sign Up";
+  static const String createYourAccountToContinueExploring="Create your account to continue exploring";
+  static const String enterYourEmail="Enter Your Email";
+  static const String enterYourPassword="Enter Your Password";
+  static const String confirmPassword="Confirm Password";
+  static const String email="Email";
+  static const String password="Password";
+  static const String continueSign="Continue";
+  static const String getBackInToContinueExploring="get back in to continue exploring";
 }
 
