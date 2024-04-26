@@ -1,5 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+
+import '../../../../core/utils/app_strings.dart';
 
 class Texts extends StatelessWidget {
   const Texts({super.key});
@@ -8,12 +11,12 @@ class Texts extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Add your profile picture', style: TextStyles.textStyle34),
+        Text(AppStrings.addYourProfilePicture.tr(), style: TextStyles.textStyle34),
         const SizedBox(
           height: 6,
         ),
         Text(
-          'You can change your picture at anytime',
+          AppStrings.youCanChangeYourPictureAtAnytime.tr(),
           style: TextStyles.textStyle14300,
         ),
       ],

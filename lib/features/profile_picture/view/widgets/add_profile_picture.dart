@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/features/profile_picture/logic/cubits/profile_picture_cubit.dart';
 
 class AddProfilePicture extends StatelessWidget {
@@ -56,7 +58,7 @@ class AddProfilePicture extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Add Picture',
+                      AppStrings.addPicture.tr(),
                       style: TextStyles.textStyle14300,
                     ),
                     const SizedBox(width: 5),

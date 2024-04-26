@@ -39,5 +39,9 @@ class AppStrings {
   static const String password="Password";
   static const String continueSign="Continue";
   static const String getBackInToContinueExploring="get back in to continue exploring";
+  static const String addYourProfilePicture= "Add your profile picture";
+  static const String youCanChangeYourPictureAtAnytime=  "You can change your picture at anytime";
+  static const String addPicture="Add Picture";
+
 }
 
