@@ -28,15 +28,53 @@ class CategoryContainer extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.r),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(15.r),
-            child: Image.asset(
-              height: height,
-              width: width,
-              backgroundImg,
-              fit: BoxFit.cover,
-              colorBlendMode: BlendMode.srcATop,
-            ),
+          child: Stack(
+            children: [
+              ShaderMask(
+                shaderCallback: (Rect rect) => const LinearGradient(
+                  colors: [
+                    AppColors.white,
+                    AppColors.white,
+                    AppColors.black,
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ).createShader(rect),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.r),
+                  child: Image.asset(
+                    height: height,
+                    width: width,
+                    backgroundImg,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyles.font16White700w,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    Text(
+                      description,
+                      style: TextStyles.font12White700w.copyWith(
+                        color: AppColors.white.withOpacity(0.7),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
         Material(

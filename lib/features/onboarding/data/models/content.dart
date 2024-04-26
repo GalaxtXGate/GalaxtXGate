@@ -19,7 +19,7 @@ List<Content> content = [
       title: "Galaxy X Gate",
       subTitle: "Your guide to knowing all about \nspace X launches"),
   Content(
-      image: AppAnimations.rocket,
+      image: AppAnimations.galaxy,
       text: "We Provide",
       title: "Reliable Information",
       subTitle: "Be updated with all the Rockets, \ncapsules, crew and more"),

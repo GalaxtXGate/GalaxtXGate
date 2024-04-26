@@ -106,6 +106,17 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
+              height: 15.h,
+            ),
+            CategoryContainer(
+              height: 110.h,
+              width: double.infinity,
+              backgroundImg: AppImages.aboutSpaceX,
+              title: "About Space X",
+              description:
+                  "Know all about Space X details",
+            ),
+            SizedBox(
               height: 100.h,
             ),
           ],

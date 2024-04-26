@@ -19,10 +19,9 @@ class OnBoardingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.zero,
       children: [
         Transform.scale(
-          scale: currentIndex == 0 ? 1.3 : 1.0,
+          scale: 0.9,
           child: ShaderMask(
               shaderCallback: (Rect rect) => const LinearGradient(
                       begin: Alignment.topCenter,
@@ -30,7 +29,6 @@ class OnBoardingItem extends StatelessWidget {
                       colors: [
                         AppColors.white,
                         AppColors.white,
-                        AppColors.deepGrey,
                         AppColors.black,
                       ]).createShader(rect),
               child: Lottie.asset(
