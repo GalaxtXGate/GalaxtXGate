@@ -5,6 +5,8 @@ import 'package:galaxyxgate/features/profile_picture/logic/cubits/profile_pictur
 import 'package:galaxyxgate/features/profile_picture/view/widgets/add_profile_picture.dart';
 import 'package:galaxyxgate/features/profile_picture/view/widgets/texts.dart';
 
+import '../../../core/themes/app_colors.dart';
+
 class ProfilePicture extends StatelessWidget {
   const ProfilePicture({super.key});
   @override
@@ -32,8 +34,10 @@ class ProfilePicture extends StatelessWidget {
                   height: screenHeight * 0.23,
                 ),
                 CustomGradientButton(
-                  onPressed: () {},
-                ),
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const ProfilePicture()));
+                  },
+                )
               ],
             ),
           ),

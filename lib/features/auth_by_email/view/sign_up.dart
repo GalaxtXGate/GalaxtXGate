@@ -3,6 +3,8 @@ import 'package:galaxyxgate/core/widgets/continue_button.dart';
 import 'package:galaxyxgate/features/auth_by_email/view/sign_in.dart';
 import 'package:galaxyxgate/features/auth_by_email/view/widgets/sign_up_texts_and_fields.dart';
 
+import '../../../core/themes/app_colors.dart';
+
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
@@ -21,7 +23,6 @@ class SignUp extends StatelessWidget {
               Center(
                 child: CustomGradientButton(
                   onPressed: () {
-                    
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SignIn()));                  },
                 ),
               ),
