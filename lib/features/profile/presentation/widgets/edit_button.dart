@@ -6,8 +6,10 @@ import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_icons.dart';
 
 class EditGradientButton extends StatelessWidget {
-  const EditGradientButton({super.key, required this.onPressed});
+  const EditGradientButton({super.key, required this.onPressed,this.suffixIcon,required this.title});
   final VoidCallback onPressed;
+  final Widget? suffixIcon;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -46,12 +48,12 @@ class EditGradientButton extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(AppIcons.edit),
+                      suffixIcon??SizedBox(),
                       const SizedBox(
                         width: 10,
                       ),
                       Text(
-                        "Edit Profile",
+                        title,
                         style: TextStyles.font16White700w.copyWith(
                           fontWeight: FontWeight.w300,
                         ),

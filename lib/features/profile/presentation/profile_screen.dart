@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:galaxyxgate/core/themes/text_styles.dart';
-import 'package:galaxyxgate/core/utils/app_icons.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/features/profile/presentation/widgets/custom_app_bar.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
+import 'package:galaxyxgate/features/profile/presentation/widgets/edit_profile_data.dart';
 import 'package:galaxyxgate/features/profile/presentation/widgets/semi_circle_with_animation.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/user_email.dart';
-
-import '../../../core/widgets/continue_button.dart';
+import 'package:galaxyxgate/features/profile/presentation/widgets/view_profile_data.dart';
+import '../../../core/helpers/injection.dart';
 import '../../onboarding/view/widget/positioned_star_with_animation.dart';
+import '../logic/profile_cubit.dart';
+import '../logic/profile_states.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -63,91 +63,63 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.black,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(0, 10.h, 0,20.h),
-              child: CustomAppBar(),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 30.h),
-              child: Stack(
+    return BlocProvider(
+      create: (context) => sl<ProfileCubit>(),
+      child: BlocConsumer<ProfileCubit, ProfileStates>(
+        listener: (context,state){},
+        builder: (context,state)
+      {
+        var _cubit=ProfileCubit.get(context);
+        return Scaffold(
+          backgroundColor: AppColors.black,
+          body: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.r),
-                        border: Border.all(color: AppColors.borderGreyWhite, width: 1.w)),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 30.h
-                      ),
-                      child: Center(
-                        child: Column(
-                          children: [
-                            Image.asset(AppImages.spaceManImage),
-                            SizedBox(
-                              height: 16.h,
-                            ),
-                            Text(
-                              "Shehab Tarek",
-                              style: TextStyles.font16White700w.copyWith(
-                                  fontWeight: FontWeight.w600, fontSize: 28.sp),
-                            ),
-                            Text(
-                              "Member since 2024",
-                              style: TextStyles.font16White700w.copyWith(
-                                  fontWeight: FontWeight.w300,
-                              color: AppColors.darkGrey),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(50.w, 50.h, 50.w, 0.h),
-                              child: EditGradientButton(
-                                onPressed: ()  {},
-                              )
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 30.h),
-                              child: UserEmail(),
-                            )
-                          ],
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 10.h, 0,20.h),
+                    child: CustomAppBar(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 30.h),
+                    child: Stack(
+                      children: [
+                        _cubit.isProfileEdit?EditProfileData():ViewProfileData(),
+                        _cubit.isProfileEdit?SizedBox():PositionedStarWithAnimation(
+                          animation: _animatedStar1,
+                          bottom: 420.h,
+                          right: 60.w,
+                          scale: 1.5,
                         ),
-                      ),
+                        _cubit.isProfileEdit?SizedBox():PositionedStarWithAnimation(
+                          animation: _animatedStar2,
+                          bottom: 330.h,
+                          right: 225.w,
+                          scale: 0.7,
+                        ),
+                        PositionedSemiCircleWithAnimation(
+                          animation: _animatedSemiCircle1,
+                          top:50.h,
+                          right:-10.w,
+                          scale: _cubit.isProfileEdit?2:1.5,
+                          imagePath: AppImages.semicircleImage,
+                        ),
+                        PositionedSemiCircleWithAnimation(
+                          animation: _animatedSemiCircle2,
+                          top: _cubit.isProfileEdit?250.h:160.h,
+                          right:200,
+                          scale: _cubit.isProfileEdit?0.5:1,
+                          imagePath: AppImages.rotatedSemicircleImage,
+                        ),
+                      ],
                     ),
-                  ),
-                  PositionedStarWithAnimation(
-                    animation: _animatedStar1,
-                    bottom: 420.h,
-                    right: 60.w,
-                    scale: 1.5,
-                  ),
-                  PositionedStarWithAnimation(
-                    animation: _animatedStar2,
-                    bottom: 330.h,
-                    right: 225.w,
-                    scale: 0.7,
-                  ),
-                  PositionedSemiCircleWithAnimation(
-                    animation: _animatedSemiCircle1,
-                    top:50.h,
-                    right:-10.w,
-                    scale: 1.5,
-                    imagePath: AppImages.semicircleImage,
-                  ),
-                  PositionedSemiCircleWithAnimation(
-                    animation: _animatedSemiCircle2,
-                    top: 160.h,
-                    right:200,
-                    scale: 1,
-                    imagePath: AppImages.rotatedSemicircleImage,
-                  ),
+                  )
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+        );
+      },
       ),
     );
   }
