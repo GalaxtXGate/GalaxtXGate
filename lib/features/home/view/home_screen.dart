@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  AppStrings. exploreOurTopics.tr(),
+                  AppStrings.exploreOurTopics.tr(),
                   style: TextStyles.font16White700w,
                 ),
               ],
@@ -52,12 +52,12 @@ class HomeScreen extends StatelessWidget {
                       height: 300.h,
                       width: 150.w,
                       backgroundImg: AppImages.spaceShipsCategory,
-                      title:  AppStrings.spaceShips.tr(),
-                      description:
-                          AppStrings.knowAboutActiveRocketsTheirDescriptionCompany.tr(),
+                      title: AppStrings.spaceShips.tr(),
+                      description: AppStrings
+                          .knowAboutActiveRocketsTheirDescriptionCompany
+                          .tr(),
                       onTap: () {},
                       tag: 'Space ships',
-
                     ),
                     SizedBox(
                       height: 15.h,
@@ -67,9 +67,10 @@ class HomeScreen extends StatelessWidget {
                       height: 235.h,
                       width: 150.w,
                       backgroundImg: AppImages.rocketsCategory,
-                      title:  AppStrings.rockets.tr(),
-                      description:
-                        AppStrings.knowAboutActiveRocketsTheirDescriptionCompany.tr(),
+                      title: AppStrings.rockets.tr(),
+                      description: AppStrings
+                          .knowAboutActiveRocketsTheirDescriptionCompany
+                          .tr(),
                       onTap: () {},
                       tag: 'Rockets',
                     ),
@@ -84,7 +85,8 @@ class HomeScreen extends StatelessWidget {
                       width: 150.w,
                       backgroundImg: AppImages.launchesCategory,
                       title: AppStrings.launches.tr(),
-                        description:AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                      description:
+                          AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -93,7 +95,6 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                       tag: AppStrings.launches.tr(),
-
                     ),
                     SizedBox(
                       height: 15.h,
@@ -103,12 +104,12 @@ class HomeScreen extends StatelessWidget {
                       height: 164.h,
                       width: 150.w,
                       backgroundImg: AppImages.capsulesCategory,
-
                       title: AppStrings.capsules.tr(),
-                      description: AppStrings.knowAboutActiveCapsulesTheirCountryAndMore.tr(),
+                      description: AppStrings
+                          .knowAboutActiveCapsulesTheirCountryAndMore
+                          .tr(),
                       onTap: () {},
                       tag: AppStrings.capsules.tr(),
-
                     ),
                     SizedBox(
                       height: 15.h,
@@ -118,11 +119,10 @@ class HomeScreen extends StatelessWidget {
                       height: 175.h,
                       width: 150.w,
                       backgroundImg: AppImages.crewCategory,
-                      title:  AppStrings.crew.tr(),
+                      title: AppStrings.crew.tr(),
                       description:
-
-                      AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
-                       onTap: () {},
+                          AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                      onTap: () {},
                       tag: AppStrings.crew.tr(),
                     ),
                   ],
@@ -137,8 +137,9 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               backgroundImg: AppImages.aboutSpaceX,
               title: "About Space X",
-              description:
-                  "Know all about Space X details",
+              description: "Know all about Space X details",
+              onTap: () {},
+              tag: 'About Space X',
             ),
             SizedBox(
               height: 100.h,
