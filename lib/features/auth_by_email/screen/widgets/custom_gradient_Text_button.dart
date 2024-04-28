@@ -3,14 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/features/auth_by_email/screen/sign_up.dart';
 
 import '../../../../core/themes/app_colors.dart';
-class SignInButton extends StatelessWidget {
-  const SignInButton({super.key,});
-
+class CustomGradientTextButton extends StatelessWidget {
+  const CustomGradientTextButton({super.key, this.onTap, required this.title,});
+ final void Function()? onTap;
+ final String title;
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: (){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SignUp()));
-    }, child:ShaderMask(
+    return TextButton(onPressed: onTap, child:ShaderMask(
         shaderCallback: (Rect bounds) {
           return const LinearGradient(
             colors: [
@@ -21,7 +20,7 @@ class SignInButton extends StatelessWidget {
             end: Alignment.topCenter, // Gradient end position
           ).createShader(bounds);
         },
-        child: Text("Sign In",style: TextStyle(
+        child: Text(title,style: TextStyle(
           fontWeight: FontWeight.w400,
           fontSize: 14.sp,
           fontFamily: "Space Grotesk",

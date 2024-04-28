@@ -5,23 +5,23 @@ import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/continue_button.dart';
 import 'package:galaxyxgate/features/auth_by_email/logic/sign_up/sign_up_cubit.dart';
 import 'package:galaxyxgate/features/auth_by_email/screen/sign_in.dart';
+import 'package:galaxyxgate/features/auth_by_email/screen/widgets/custom_gradient_Text_button.dart';
 import 'package:galaxyxgate/features/auth_by_email/screen/widgets/custom_text_field.dart';
+import 'package:galaxyxgate/features/getStartedNow/screen/widgets/sign_in_button.dart';
 
 class SignUpTextAndFields extends StatelessWidget {
-   SignUpTextAndFields({Key? key}) : super(key: key);
+  SignUpTextAndFields({Key? key}) : super(key: key);
   TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController confirmPasswordController = TextEditingController();
-    final formKey = GlobalKey<FormState>();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
-    bool isPasswordVisible = true;
-    bool isPasswordNotVisible = true;
-    
-    
+  bool isPasswordVisible = true;
+  bool isPasswordNotVisible = true;
+
   @override
   Widget build(BuildContext context) {
-  
-  double screenHeight = MediaQuery.of(context).size.height;
+    double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
@@ -103,7 +103,7 @@ class SignUpTextAndFields extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: screenHeight * 0.18,
+                  height: screenHeight * 0.12,
                 ),
                 Center(
                   child: state is SignUpLoading
@@ -119,6 +119,30 @@ class SignUpTextAndFields extends StatelessWidget {
                             ;
                           },
                         ),
+                ),
+                SizedBox(
+                  height: screenHeight * 0.02,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account ?',
+                      style: TextStyles.textStyle14400,
+                    ),
+                    SizedBox(
+                      width: 7,
+                    ),
+                    CustomGradientTextButton(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignIn()));
+                      },
+                      title: 'Sign In',
+                    ),
+                  ],
                 ),
               ],
             ),

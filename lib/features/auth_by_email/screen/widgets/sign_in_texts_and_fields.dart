@@ -6,6 +6,8 @@ import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/continue_button.dart';
 import 'package:galaxyxgate/features/auth_by_email/logic/sign_in/sign_in_cubit.dart';
 import 'package:galaxyxgate/features/auth_by_email/screen/sign_in.dart';
+import 'package:galaxyxgate/features/auth_by_email/screen/sign_up.dart';
+import 'package:galaxyxgate/features/auth_by_email/screen/widgets/custom_gradient_Text_button.dart';
 import 'package:galaxyxgate/features/auth_by_email/screen/widgets/custom_text_field.dart';
 import 'package:galaxyxgate/features/profile_picture/screen/profile_picture.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -91,7 +93,7 @@ class SignInTextAndFields extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: screenHeight * 0.18,
+                  height: screenHeight * 0.13,
                 ),
                 Center(
                   child: state is SignInLoading
@@ -106,6 +108,28 @@ class SignInTextAndFields extends StatelessWidget {
                             }
                           },
                         ),
+                ),
+                SizedBox(height: screenHeight * 0.02),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Don’t have an account ?',
+                      style: TextStyles.textStyle14400,
+                    ),
+                    SizedBox(
+                      width: 7,
+                    ),
+                    CustomGradientTextButton(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUp()));
+                      },
+                      title: 'Sign Up',
+                    ),
+                  ],
                 ),
               ],
             ),

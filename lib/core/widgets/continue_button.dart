@@ -4,7 +4,7 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 
 class CustomGradientButton extends StatelessWidget {
-  const CustomGradientButton({super.key, required this.onPressed});
+  const CustomGradientButton({super.key, required this.onPressed,});
   final VoidCallback onPressed;
 
   @override
