@@ -17,35 +17,45 @@ class SignUpButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 60.h,
-        decoration: BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(15.r),
-            border: Border.all(width: 1.w, color: AppColors.borderGrey)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              logoPath ?? "",
-              errorBuilder:
-                  (BuildContext context, Object error, StackTrace? stackTrace) {
-                return const SizedBox();
-              },
-            ),
-            SizedBox(
-              width: 10.w,
-            ),
-            Text(
-              title,
-              style: TextStyles.font16White700w.copyWith(
-                  fontWeight: FontWeight.w300, color: AppColors.offWhite),
-            )
-          ],
+    return Stack(
+      children: [
+        Container(
+          height: 60.h,
+          decoration: BoxDecoration(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(15.r),
+              border: Border.all(width: 1.w, color: AppColors.borderGrey)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                logoPath ?? "",
+                errorBuilder: (BuildContext context, Object error,
+                    StackTrace? stackTrace) {
+                  return const SizedBox();
+                },
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              Text(
+                title,
+                style: TextStyles.font16White700w.copyWith(
+                    fontWeight: FontWeight.w300, color: AppColors.offWhite),
+              )
+            ],
+          ),
         ),
-      ),
+        Positioned.fill(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(15.r),
+              onTap: onTap,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

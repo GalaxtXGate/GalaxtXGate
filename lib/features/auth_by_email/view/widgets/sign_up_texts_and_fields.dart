@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:galaxyxgate/core/themes/app_images.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/features/auth_by_email/view/widgets/custom_text_field.dart';
 
 class SignUpTextAndFields extends StatelessWidget {
@@ -19,27 +21,28 @@ class SignUpTextAndFields extends StatelessWidget {
           ),
           child: Image.asset(AppImages.appLogo),
         ),
-        Text('Sign Up', style: TextStyles.textStyle34),
+        Text(AppStrings.signUp.tr(), style: TextStyles.textStyle34),
         SizedBox(
           height: screenHeight * 0.001,
         ),
-        Text('Create your account to continue exploring',
+        Text(AppStrings.createYourAccountToContinueExploring.tr(),
             style: TextStyles.textStyle14300),
         SizedBox(
           height: screenHeight * 0.04,
         ),
-        const CustomTextField(hintText: 'Enter Your Email', labelText: 'Email'),
+        CustomTextField(hintText: AppStrings.enterYourEmail.tr(), labelText:AppStrings.email.tr()),
         SizedBox(
           height: screenHeight * 0.03,
         ),
-        const CustomTextField(
-            hintText: 'Enter Your Password', labelText: 'Password'),
+        CustomTextField(
+            hintText: AppStrings.enterYourPassword.tr(), labelText: AppStrings.password.tr()),
         SizedBox(
           height: screenHeight * 0.03,
         ),
-        const CustomTextField(
-          hintText: 'Enter Your Password',
-          labelText: 'Confirm Password',
+        CustomTextField(
+          hintText: AppStrings.enterYourPassword.tr(),
+          labelText:AppStrings.confirmPassword.tr(),
+
         ),
       ],
     );

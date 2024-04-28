@@ -16,17 +16,16 @@ class GradientGrayBackground extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
+              decoration: const BoxDecoration(
+                gradient: RadialGradient(
                   colors: [
-                    AppColors.black.withOpacity(0.1),
-                    AppColors.deepGrey.withOpacity(0.1),
-                    AppColors.white.withOpacity(0.2),
-                    AppColors.deepGrey.withOpacity(0.1),
-                    AppColors.black.withOpacity(0.1),
+                    Color(0xff18151A),
+                    Color(0xff0F1116),
                   ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  stops: [
+                    0.0,
+                    1.0,
+                  ],
                 ),
               ),
             ),

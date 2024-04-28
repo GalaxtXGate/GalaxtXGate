@@ -1,10 +1,15 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/home/view/widgets/containers/category_container.dart';
 import 'package:galaxyxgate/features/home/view/widgets/rows/home_header_row.dart';
+import 'package:galaxyxgate/features/launches/screens/launches_bloc_provider.dart';
+
+import '../../../core/utils/app_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,6 +17,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: GradientGrayBackground(
           child: Padding(
         padding: EdgeInsets.symmetric(
@@ -29,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Explore Our Topics",
+                  AppStrings. exploreOurTopics.tr(),
                   style: TextStyles.font16White700w,
                 ),
               ],
@@ -46,9 +52,12 @@ class HomeScreen extends StatelessWidget {
                       height: 300.h,
                       width: 150.w,
                       backgroundImg: AppImages.spaceShipsCategory,
-                      title: "Space ships",
+                      title:  AppStrings.spaceShips.tr(),
                       description:
-                          "Know about active rockets, their description, company and more",
+                          AppStrings.knowAboutActiveRocketsTheirDescriptionCompany.tr(),
+                      onTap: () {},
+                      tag: 'Space ships',
+
                     ),
                     SizedBox(
                       height: 15.h,
@@ -58,9 +67,11 @@ class HomeScreen extends StatelessWidget {
                       height: 235.h,
                       width: 150.w,
                       backgroundImg: AppImages.rocketsCategory,
-                      title: "Rockets",
+                      title:  AppStrings.rockets.tr(),
                       description:
-                          "Know about active rockets, their description, company and more",
+                        AppStrings.knowAboutActiveRocketsTheirDescriptionCompany.tr(),
+                      onTap: () {},
+                      tag: 'Rockets',
                     ),
                   ],
                 ),
@@ -72,9 +83,17 @@ class HomeScreen extends StatelessWidget {
                       height: 185.h,
                       width: 150.w,
                       backgroundImg: AppImages.launchesCategory,
-                      title: "launches",
-                      description:
-                          "know about the launches name, state, details and more",
+                      title: AppStrings.launches.tr(),
+                        description:AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(
+                              page: const LauchesBlocProvider()),
+                        );
+                      },
+                      tag: AppStrings.launches.tr(),
+
                     ),
                     SizedBox(
                       height: 15.h,
@@ -84,9 +103,12 @@ class HomeScreen extends StatelessWidget {
                       height: 164.h,
                       width: 150.w,
                       backgroundImg: AppImages.capsulesCategory,
-                      title: "Capsules",
-                      description:
-                          "know about active capsules, their country and more",
+
+                      title: AppStrings.capsules.tr(),
+                      description: AppStrings.knowAboutActiveCapsulesTheirCountryAndMore.tr(),
+                      onTap: () {},
+                      tag: AppStrings.capsules.tr(),
+
                     ),
                     SizedBox(
                       height: 15.h,
@@ -96,13 +118,27 @@ class HomeScreen extends StatelessWidget {
                       height: 175.h,
                       width: 150.w,
                       backgroundImg: AppImages.crewCategory,
-                      title: "Crew",
+                      title:  AppStrings.crew.tr(),
                       description:
-                          "know about the launches name, state, details and more",
+
+                      AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                       onTap: () {},
+                      tag: AppStrings.crew.tr(),
                     ),
                   ],
                 ),
               ],
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            CategoryContainer(
+              height: 110.h,
+              width: double.infinity,
+              backgroundImg: AppImages.aboutSpaceX,
+              title: "About Space X",
+              description:
+                  "Know all about Space X details",
             ),
             SizedBox(
               height: 100.h,

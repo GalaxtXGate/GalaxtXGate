@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 
 class WelcomAndName extends StatelessWidget {
   const WelcomAndName({
@@ -9,9 +11,10 @@ class WelcomAndName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Welcome Back,",
+          AppStrings.welcomeBack.tr(),
           style: TextStyles.font14White700w.copyWith(
             color: Colors.grey,
           ),

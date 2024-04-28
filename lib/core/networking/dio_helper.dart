@@ -17,7 +17,7 @@ class DioHelper {
   late Dio _dio;
 
   /// http get request
-  Future<Map<String, dynamic>> getRequest({
+  dynamic getRequest({
     required String endPoint,
     Map<String, dynamic>? queryParameters,
     String? token,

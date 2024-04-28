@@ -46,6 +46,15 @@ dependencies:
   image_picker: ^1.1.0
   iconify_flutter: ^0.0.4
   flutter_svg: 1.1.6
+  dartz: ^0.10.1
+  skeletonizer: ^1.1.1
+  shimmer: ^3.0.0
+  animated_text_kit: ^4.2.2
+
+# Localization
+  easy_localization: ^3.0.6
+# Animation  
+  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +70,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/translations/
+    - assets/animation/
 
 # Fonts
   fonts:

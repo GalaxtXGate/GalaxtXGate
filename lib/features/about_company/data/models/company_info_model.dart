@@ -1,4 +1,4 @@
-class CompanyInfoModel {
+class CompanyInfo {
   Headquarters? headquarters;
   Links? links;
   String? name;
@@ -16,7 +16,7 @@ class CompanyInfoModel {
   String? summary;
   String? id;
 
-  CompanyInfoModel(
+  CompanyInfo(
       {this.headquarters,
       this.links,
       this.name,
@@ -34,7 +34,7 @@ class CompanyInfoModel {
       this.summary,
       this.id});
 
-  CompanyInfoModel.fromJson(Map<String, dynamic> json) {
+  CompanyInfo.fromJson(Map<String, dynamic> json) {
     headquarters = json['headquarters'] != null
         ? Headquarters.fromJson(json['headquarters'])
         : null;
