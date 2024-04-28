@@ -1,11 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/home/view/widgets/containers/category_container.dart';
 import 'package:galaxyxgate/features/home/view/widgets/rows/home_header_row.dart';
+import 'package:galaxyxgate/features/launches/screens/launches_bloc_provider.dart';
 
 import '../../../core/utils/app_strings.dart';
 
@@ -53,6 +55,9 @@ class HomeScreen extends StatelessWidget {
                       title:  AppStrings.spaceShips.tr(),
                       description:
                           AppStrings.knowAboutActiveRocketsTheirDescriptionCompany.tr(),
+                      onTap: () {},
+                      tag: 'Space ships',
+
                     ),
                     SizedBox(
                       height: 15.h,
@@ -64,7 +69,9 @@ class HomeScreen extends StatelessWidget {
                       backgroundImg: AppImages.rocketsCategory,
                       title:  AppStrings.rockets.tr(),
                       description:
-                      AppStrings.knowAboutActiveRocketsTheirDescriptionCompany.tr(),
+                        AppStrings.knowAboutActiveRocketsTheirDescriptionCompany.tr(),
+                      onTap: () {},
+                      tag: 'Rockets',
                     ),
                   ],
                 ),
@@ -77,7 +84,15 @@ class HomeScreen extends StatelessWidget {
                       width: 150.w,
                       backgroundImg: AppImages.launchesCategory,
                       title: AppStrings.launches.tr(),
-                      description:AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                        description:AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(
+                              page: const LauchesBlocProvider()),
+                        );
+                      },
+                      tag: AppStrings.launches.tr(),
 
                     ),
                     SizedBox(
@@ -88,8 +103,11 @@ class HomeScreen extends StatelessWidget {
                       height: 164.h,
                       width: 150.w,
                       backgroundImg: AppImages.capsulesCategory,
+
                       title: AppStrings.capsules.tr(),
                       description: AppStrings.knowAboutActiveCapsulesTheirCountryAndMore.tr(),
+                      onTap: () {},
+                      tag: AppStrings.capsules.tr(),
 
                     ),
                     SizedBox(
@@ -102,7 +120,10 @@ class HomeScreen extends StatelessWidget {
                       backgroundImg: AppImages.crewCategory,
                       title:  AppStrings.crew.tr(),
                       description:
+
                       AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                       onTap: () {},
+                      tag: AppStrings.crew.tr(),
                     ),
                   ],
                 ),

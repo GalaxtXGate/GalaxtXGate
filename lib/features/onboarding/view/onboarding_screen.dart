@@ -26,7 +26,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
   @override
   void initState() {
-       super.initState();
+    super.initState();
     initializePageController();
     initializeAnimationController();
     initializeAnimatedStars();
@@ -112,7 +112,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
         currentIndex: _currentIndex,
         contentLength: content.length,
         route: Routes.getStartNowScreen,
-        svgAssetPath: AppImages.arrows,
+        svgAssetPath: AppImages.forwardArrows,
       ),
     );
   }

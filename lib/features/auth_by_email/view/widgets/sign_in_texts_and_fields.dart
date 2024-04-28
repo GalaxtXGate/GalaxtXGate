@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:galaxyxgate/core/themes/app_images.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/features/auth_by_email/view/widgets/custom_text_field.dart';
 

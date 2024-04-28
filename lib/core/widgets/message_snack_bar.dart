@@ -8,16 +8,16 @@ SnackBar messageSnackBar({
   required String message,
   Color? color,
   String? imagePath,
-  bool? isWalkieTalkie,
 }) {
   return SnackBar(
     elevation: 20,
     // backgroundColor: color ?? backgroudnColor,
-    backgroundColor: AppColors.white,
+    backgroundColor: AppColors.deepGrey,
     margin: EdgeInsets.only(
-        right: 24.w,
-        left: 24.w,
-        bottom: isWalkieTalkie != null ? 530.h : 600.h),
+      right: 24.w,
+      left: 24.w,
+      bottom: 650.h,
+    ),
     padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
     behavior: SnackBarBehavior.floating,
     dismissDirection: DismissDirection.up,
@@ -43,8 +43,6 @@ SnackBar messageSnackBar({
             imagePath,
             height: 24.h,
             width: 29.w,
-           // colorFilter:
-            //    const ColorFilter.mode(AppColors.purple, BlendMode.srcATop),
           ),
         SizedBox(
           width: 10.w,
@@ -63,7 +61,7 @@ SnackBar messageSnackBar({
           height: 10.w,
           width: 10.w,
           decoration: BoxDecoration(
-            color: color ?? Colors.white,
+            color: color ?? AppColors.deepGrey,
             shape: BoxShape.circle,
           ),
         ),
