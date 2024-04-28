@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: GradientGrayBackground(
           child: Padding(
         padding: EdgeInsets.symmetric(
@@ -103,6 +104,17 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            CategoryContainer(
+              height: 110.h,
+              width: double.infinity,
+              backgroundImg: AppImages.aboutSpaceX,
+              title: "About Space X",
+              description:
+                  "Know all about Space X details",
             ),
             SizedBox(
               height: 100.h,

@@ -4,6 +4,7 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/features/onboarding/data/models/content.dart';
 import 'package:galaxyxgate/features/onboarding/view/widget/gradient_Text.dart';
+import 'package:lottie/lottie.dart';
 
 class OnBoardingItem extends StatelessWidget {
   final Content content;
@@ -18,24 +19,22 @@ class OnBoardingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.zero,
       children: [
-        ShaderMask(
-          shaderCallback: (Rect rect) => const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                AppColors.white,
-                AppColors.white,
-                AppColors.deepGrey,
-                AppColors.black,
-              ]).createShader(rect),
-          child: Image.asset(
-            content.image,
-            height: 400.h,
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.cover,
-          ),
+        Transform.scale(
+          scale: 0.9,
+          child: ShaderMask(
+              shaderCallback: (Rect rect) => const LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        AppColors.white,
+                        AppColors.white,
+                        AppColors.black,
+                      ]).createShader(rect),
+              child: Lottie.asset(
+                fit: BoxFit.cover,
+                content.image,
+              )),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
