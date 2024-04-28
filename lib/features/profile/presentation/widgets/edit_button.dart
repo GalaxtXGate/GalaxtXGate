@@ -1,17 +1,18 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
-import 'package:galaxyxgate/core/utils/app_strings.dart';
+import 'package:galaxyxgate/core/utils/app_icons.dart';
 
-class CustomGradientButton extends StatelessWidget {
-  const CustomGradientButton({super.key, required this.onPressed});
+class EditGradientButton extends StatelessWidget {
+  const EditGradientButton({super.key, required this.onPressed,this.suffixIcon,required this.title});
   final VoidCallback onPressed;
+  final Widget? suffixIcon;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
@@ -26,8 +27,7 @@ class CustomGradientButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(1.0),
         child: Container(
-          width: screenWidth * 0.86,
-          height: screenHeight * 0.089,
+          height: 60.h,
           decoration: BoxDecoration(
             color: AppColors.lightBlack,
             borderRadius: BorderRadius.circular(15),
@@ -43,25 +43,20 @@ class CustomGradientButton extends StatelessWidget {
                 ),
               ),
               child: SizedBox(
-                width: screenWidth * 0.86,
-                height: screenHeight * 0.089,
+                height: 60.h,
                 child: Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        AppStrings.continueSign.tr(),
-                        style: TextStyles.font16White700w.copyWith(
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
+                      suffixIcon??SizedBox(),
                       const SizedBox(
                         width: 10,
                       ),
-                      const Icon(
-                       Icons.arrow_forward_ios_outlined,
-                        color: AppColors.white,
-                        size: 20,
+                      Text(
+                        title,
+                        style: TextStyles.font16White700w.copyWith(
+                          fontWeight: FontWeight.w300,
+                        ),
                       ),
                     ],
                   ),

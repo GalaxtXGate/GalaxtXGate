@@ -45,4 +45,10 @@ class AppImages {
 
   static const String darkEarthInSpaceImage =
       'assets/images/dark_earth_in_space.png';
+  static const String spaceManImage =
+      'assets/images/space_man.png';
+  static const String semicircleImage =
+      'assets/images/semi_circle.png';
+  static const String rotatedSemicircleImage =
+      'assets/images/rotated_semi_circle.png';
 }
