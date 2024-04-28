@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/features/crew/business_logic/cubit/crews_cubit.dart';
 import 'package:galaxyxgate/features/crew/data/models/crew_model.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/crew_grid.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/loader.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:galaxyxgate/features/crew/presentation/widget/sliver_appbar.dart';
 
 class CrewsScreen extends StatefulWidget {
   const CrewsScreen({super.key});
@@ -16,6 +14,7 @@ class CrewsScreen extends StatefulWidget {
 }
 
 class _CrewsScreenState extends State<CrewsScreen> {
+  @override
   initState() {
     super.initState();
     BlocProvider.of<CrewsCubit>(context).getCrews();
@@ -32,19 +31,10 @@ class _CrewsScreenState extends State<CrewsScreen> {
               parent: AlwaysScrollableScrollPhysics(),
             ),
             slivers: [
-              SliverAppBar(
-                backgroundColor: AppColors.lightBlack,
-                pinned: true,
-                expandedHeight: 50.h,
-                leading: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.arrow_back_ios_new,
-                      color: AppColors.white,
-                    )),
-                title: const Text('Crews'),
-                titleTextStyle: TextStyles.font18White700w
-                    .copyWith(fontWeight: FontWeight.normal),
+              // AppBar
+              CustomSliverAppBar(
+                onPressed: () {},
+                titleText: 'Crews',
               ),
               BlocBuilder<CrewsCubit, CrewsState>(
                 builder: (context, state) {

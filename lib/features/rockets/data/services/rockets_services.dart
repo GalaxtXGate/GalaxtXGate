@@ -4,7 +4,7 @@ import 'package:galaxyxgate/core/networking/dio_helper.dart';
 import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
 
 abstract interface class RocketsService {
-  Future<List<RocketsModel>> getAllCrews();
+  Future<List<RocketsModel>> getAllRockets();
 }
 
 class RocketsServiceImp implements RocketsService {
@@ -13,7 +13,7 @@ class RocketsServiceImp implements RocketsService {
   RocketsServiceImp(this.dioHelper);
 
   @override
-  Future<List<RocketsModel>> getAllCrews() async {
+  Future<List<RocketsModel>> getAllRockets() async {
     try {
       List<dynamic> response = await dioHelper.getRequest(endPoint: 'crew');
       return response.map((crew) => RocketsModel.fromJson(crew)).toList();

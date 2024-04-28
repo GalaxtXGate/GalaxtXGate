@@ -9,9 +9,9 @@ class RocketsCubit extends Cubit<RocketsState> {
 
   RocketsCubit(this.crewRepository) : super(const RocketsInitial());
 
-  Future<void> getCrews() async {
+  Future<void> getRockets() async {
     emit(const RocketsLoading());
-    await crewRepository.getAllCrew().then((result) {
+    await crewRepository.getAllRockets().then((result) {
       result.fold(
         (failure) => emit(RocketsError(failure.errMessage)),
         (crews) => emit(RocketsLoaded(crews)),

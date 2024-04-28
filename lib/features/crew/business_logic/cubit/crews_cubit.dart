@@ -8,7 +8,7 @@ part 'crews_state.dart';
 class CrewsCubit extends Cubit<CrewsState> {
   final CrewRepository crewRepository;
 
-  CrewsCubit(this.crewRepository) : super(const CrewsInitial());
+  CrewsCubit({required this.crewRepository}) : super(const CrewsInitial());
 
   Future<void> getCrews() async {
     emit(const CrewsLoading());
