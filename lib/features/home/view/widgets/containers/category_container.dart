@@ -77,6 +77,7 @@ class CategoryContainer extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ],
+
               ),
             ],
           ),

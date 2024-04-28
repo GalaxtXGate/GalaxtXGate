@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
@@ -83,21 +84,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
           PositionedStarWithAnimation(
             animation: _animatedStar1,
             bottom: 310.h,
-            right: 60.w,
+            right:  context.locale==Locale("en")?60.w:0,
+            left:   context.locale==Locale("en")?0:60.w,
             scale: 1.5,
           ),
           // Star #2
           PositionedStarWithAnimation(
             animation: _animatedStar2,
             bottom: 180.h,
-            right: 10.w,
+            right:  context.locale==Locale("en")?10.w:0,
+            left:   context.locale==Locale("en")?0:10.w,
             scale: 0.5,
           ),
           // Star #3
           PositionedStarWithAnimation(
             animation: _animatedStar3,
             bottom: 100.h,
-            right: 320.w,
+            right:  context.locale==Locale("en")?320.w:0,
+            left:   context.locale==Locale("en")?0:320.w,
             scale: 1.1,
           ),
         ],

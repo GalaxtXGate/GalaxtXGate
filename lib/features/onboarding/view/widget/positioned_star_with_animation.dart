@@ -9,9 +9,11 @@ class PositionedStarWithAnimation extends StatelessWidget {
     required this.right,
     required this.bottom,
     required this.scale,
+    required this.left,
   });
   final Animation<double> animation;
   final double right;
+  final double left;
   final double bottom;
   final double scale;
 
@@ -20,6 +22,7 @@ class PositionedStarWithAnimation extends StatelessWidget {
     return Positioned(
       right: right,
       bottom: bottom,
+      left: left,
       child: Transform.scale(
         scale: scale,
         child: FadeTransition(

@@ -21,7 +21,6 @@ class SignUp extends StatelessWidget {
               Center(
                 child: CustomGradientButton(
                   onPressed: () {
-                    
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SignIn()));                  },
                 ),
               ),

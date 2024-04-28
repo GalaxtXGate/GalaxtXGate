@@ -11,6 +11,8 @@ class AppImages {
 
   static const String crewCategory = 'assets/images/crew.png';
 
+    static const String aboutSpaceX = 'assets/images/about_sapec_x.png';
+
   static const String appIcon = 'assets/images/appIcon.png';
 
   static const String googleLogo = 'assets/images/google_logo.png';

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
@@ -20,6 +21,9 @@ class GalaxyXGateApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         title: 'GalaxyXGate',
+        locale: context.locale,
+        supportedLocales: context.supportedLocales,
+        localizationsDelegates: context.localizationDelegates,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: AppColors.purple,

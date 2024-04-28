@@ -51,6 +51,11 @@ dependencies:
   shimmer: ^3.0.0
   animated_text_kit: ^4.2.2
 
+# Localization
+  easy_localization: ^3.0.6
+# Animation  
+  lottie: ^3.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -65,6 +70,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/translations/
+    - assets/animation/
 
 # Fonts
   fonts:
