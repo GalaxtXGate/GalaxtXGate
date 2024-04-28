@@ -64,7 +64,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<ProfileCubit>(),
+      create: (context) => getHelper<ProfileCubit>(),
       child: BlocConsumer<ProfileCubit, ProfileStates>(
         listener: (context,state){},
         builder: (context,state)
