@@ -1,11 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/helpers/cache_helper.dart';
 import 'package:galaxyxgate/core/routes/router.dart';
 import 'package:galaxyxgate/galaxy_x_gate_app.dart';
 
 void main() async {
+ 
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   CacheHelper.init();
+   
   runApp(const MyApp());
 }
 

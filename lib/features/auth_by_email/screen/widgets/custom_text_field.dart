@@ -10,24 +10,30 @@ class CustomTextField extends StatelessWidget {
     this.icon,
     this.controller,
     this.isPassword,
-    this.validator,
   });
   final String hintText;
   final String labelText;
-  final Icon? icon;
+  final IconButton? icon;
   final TextEditingController? controller;
   final bool? isPassword;
-  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     return SizedBox(
       width: screenHeight * 0.43,
       child: TextFormField(
-        validator: validator,
+        validator: (value) => value!.isEmpty ? 'Please Enter Your ${isPassword ?? false? 'Password' : 'Email'}' : null,
         style: TextStyles.textStyle14400.copyWith(height: 2),
         cursorColor: AppColors.white,
         decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: const BorderSide(
+              color: AppColors.deepGrey,
+              width: 1,
+            ),
+          ),
+          
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
             borderSide: const BorderSide(
@@ -35,15 +41,6 @@ class CustomTextField extends StatelessWidget {
               width: 1,
             ),
           ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: const BorderSide(
-              color: AppColors.deepGrey,
-              width: 1,
-            ),
-          ),
-          
-          
           filled: true,
           fillColor: AppColors.textFieldsGrey,
           hintText: hintText,
@@ -52,13 +49,9 @@ class CustomTextField extends StatelessWidget {
           suffixIcon: icon,
           labelStyle:
               TextStyles.textStyle14400.copyWith(color: AppColors.white),
-          
-           
         ),
-        obscureText: isPassword ?? false,    
+        obscureText: isPassword ?? false,
         controller: controller,
-        
-        
       ),
     );
   }
