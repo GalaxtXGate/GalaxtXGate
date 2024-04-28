@@ -5,7 +5,6 @@ import 'package:galaxyxgate/core/helpers/cache_helper.dart';
 import 'package:galaxyxgate/core/routes/router.dart';
 import 'package:galaxyxgate/features/auth/data/services/auth_services.dart';
 import 'package:galaxyxgate/galaxy_x_gate_app.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 import 'core/utils/app_assets.dart';
 
