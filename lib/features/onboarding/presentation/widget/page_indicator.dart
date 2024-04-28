@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/animated_page_indicator.dart';
+import 'package:galaxyxgate/features/onboarding/presentation/widget/animated_page_indicator.dart';
 
 class PageIndicator extends StatelessWidget {
   final int currentIndex;

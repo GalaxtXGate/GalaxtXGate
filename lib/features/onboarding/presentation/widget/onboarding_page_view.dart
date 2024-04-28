@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/features/onboarding/data/models/content.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/onboarding_item.dart';
+import 'package:galaxyxgate/features/onboarding/presentation/widget/onboarding_item.dart';
 
 class OnBoardingPageView extends StatelessWidget {
   final PageController? controller;

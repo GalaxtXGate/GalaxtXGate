@@ -14,8 +14,14 @@ dependencies:
 
   cupertino_icons: ^1.0.6
 
+
 # UI
   flutter_screenutil: ^5.9.0
+  device_preview: ^1.1.0
+
+
+# Animation  
+  flutter_staggered_animations: ^1.1.1
 
 # NativeSplash  
   flutter_native_splash: ^2.4.0
@@ -27,7 +33,7 @@ dependencies:
 # Loading  
   flutter_spinkit: ^5.2.1
 
-# FireBase & cloud  
+# FireBase & Cloud  
   firebase_core: ^2.30.0
   firebase_auth: ^4.19.2
   cloud_firestore: ^4.17.0
@@ -42,7 +48,16 @@ dependencies:
   shared_preferences: ^2.2.3
 
 # Network Connection
-  connectivity_plus: ^6.0.2
+ # connectivity_plus: ^6.0.2
+
+# State Management  
+  flutter_bloc: ^8.1.5
+
+# Managing State 
+  equatable: ^2.0.5
+
+# Error Handling
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:

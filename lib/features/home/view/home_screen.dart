@@ -43,6 +43,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     // spaceShips Category
                     CategoryContainer(
+                      onTap: () {},
                       height: 300.h,
                       width: 150.w,
                       backgroundImg: AppImages.spaceShipsCategory,
@@ -55,6 +56,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     // Rockets Category
                     CategoryContainer(
+                      onTap: () {},
                       height: 235.h,
                       width: 150.w,
                       backgroundImg: AppImages.rocketsCategory,
@@ -69,6 +71,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     // Launches Category
                     CategoryContainer(
+                      onTap: () {},
                       height: 185.h,
                       width: 150.w,
                       backgroundImg: AppImages.launchesCategory,
@@ -81,6 +84,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     // Capsules Category
                     CategoryContainer(
+                      onTap: () {},
                       height: 164.h,
                       width: 150.w,
                       backgroundImg: AppImages.capsulesCategory,
@@ -93,6 +97,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     // Crew Category
                     CategoryContainer(
+                      onTap: () {},
                       height: 175.h,
                       width: 150.w,
                       backgroundImg: AppImages.crewCategory,

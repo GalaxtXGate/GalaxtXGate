@@ -4,10 +4,10 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/features/onboarding/data/models/content.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/custom_floatin_action_button.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/page_indicator.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/onboarding_page_view.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/positioned_star_with_animation.dart';
+import 'package:galaxyxgate/features/onboarding/presentation/widget/custom_floatin_action_button.dart';
+import 'package:galaxyxgate/features/onboarding/presentation/widget/page_indicator.dart';
+import 'package:galaxyxgate/features/onboarding/presentation/widget/onboarding_page_view.dart';
+import 'package:galaxyxgate/features/onboarding/presentation/widget/positioned_star_with_animation.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -25,7 +25,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
   @override
   void initState() {
-       super.initState();
+    super.initState();
     initializePageController();
     initializeAnimationController();
     initializeAnimatedStars();

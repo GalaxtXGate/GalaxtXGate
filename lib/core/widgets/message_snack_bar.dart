@@ -12,7 +12,6 @@ SnackBar messageSnackBar({
 }) {
   return SnackBar(
     elevation: 20,
-    // backgroundColor: color ?? backgroudnColor,
     backgroundColor: AppColors.white,
     margin: EdgeInsets.only(
         right: 24.w,

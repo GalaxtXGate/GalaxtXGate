@@ -1,4 +1,4 @@
-class Rockets {
+class RocketsModel {
   final Height? height;
   final Diameter? diameter;
   final Mass? mass;
@@ -22,7 +22,7 @@ class Rockets {
   final String? description;
   final String? id;
 
-  Rockets({
+  RocketsModel({
     this.height,
     this.diameter,
     this.mass,
@@ -47,16 +47,35 @@ class Rockets {
     this.id,
   });
 
-  Rockets.fromJson(Map<String, dynamic> json)
-      : height = (json['height'] as Map<String,dynamic>?) != null ? Height.fromJson(json['height'] as Map<String,dynamic>) : null,
-        diameter = (json['diameter'] as Map<String,dynamic>?) != null ? Diameter.fromJson(json['diameter'] as Map<String,dynamic>) : null,
-        mass = (json['mass'] as Map<String,dynamic>?) != null ? Mass.fromJson(json['mass'] as Map<String,dynamic>) : null,
-        firstStage = (json['first_stage'] as Map<String,dynamic>?) != null ? FirstStage.fromJson(json['first_stage'] as Map<String,dynamic>) : null,
-        secondStage = (json['second_stage'] as Map<String,dynamic>?) != null ? SecondStage.fromJson(json['second_stage'] as Map<String,dynamic>) : null,
-        engines = (json['engines'] as Map<String,dynamic>?) != null ? Engines.fromJson(json['engines'] as Map<String,dynamic>) : null,
-        landingLegs = (json['landing_legs'] as Map<String,dynamic>?) != null ? LandingLegs.fromJson(json['landing_legs'] as Map<String,dynamic>) : null,
-        payloadWeights = (json['payload_weights'] as List?)?.map((dynamic e) => PayloadWeights.fromJson(e as Map<String,dynamic>)).toList(),
-        flickrImages = (json['flickr_images'] as List?)?.map((dynamic e) => e as String).toList(),
+  RocketsModel.fromJson(Map<String, dynamic> json)
+      : height = (json['height'] as Map<String, dynamic>?) != null
+            ? Height.fromJson(json['height'] as Map<String, dynamic>)
+            : null,
+        diameter = (json['diameter'] as Map<String, dynamic>?) != null
+            ? Diameter.fromJson(json['diameter'] as Map<String, dynamic>)
+            : null,
+        mass = (json['mass'] as Map<String, dynamic>?) != null
+            ? Mass.fromJson(json['mass'] as Map<String, dynamic>)
+            : null,
+        firstStage = (json['first_stage'] as Map<String, dynamic>?) != null
+            ? FirstStage.fromJson(json['first_stage'] as Map<String, dynamic>)
+            : null,
+        secondStage = (json['second_stage'] as Map<String, dynamic>?) != null
+            ? SecondStage.fromJson(json['second_stage'] as Map<String, dynamic>)
+            : null,
+        engines = (json['engines'] as Map<String, dynamic>?) != null
+            ? Engines.fromJson(json['engines'] as Map<String, dynamic>)
+            : null,
+        landingLegs = (json['landing_legs'] as Map<String, dynamic>?) != null
+            ? LandingLegs.fromJson(json['landing_legs'] as Map<String, dynamic>)
+            : null,
+        payloadWeights = (json['payload_weights'] as List?)
+            ?.map((dynamic e) =>
+                PayloadWeights.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        flickrImages = (json['flickr_images'] as List?)
+            ?.map((dynamic e) => e as String)
+            .toList(),
         name = json['name'] as String?,
         type = json['type'] as String?,
         active = json['active'] as bool?,
@@ -72,31 +91,30 @@ class Rockets {
         id = json['id'] as String?;
 
   Map<String, dynamic> toJson() => {
-    'height' : height?.toJson(),
-    'diameter' : diameter?.toJson(),
-    'mass' : mass?.toJson(),
-    'first_stage' : firstStage?.toJson(),
-    'second_stage' : secondStage?.toJson(),
-    'engines' : engines?.toJson(),
-    'landing_legs' : landingLegs?.toJson(),
-    'payload_weights' : payloadWeights?.map((e) => e.toJson()).toList(),
-    'flickr_images' : flickrImages,
-    'name' : name,
-    'type' : type,
-    'active' : active,
-    'stages' : stages,
-    'boosters' : boosters,
-    'cost_per_launch' : costPerLaunch,
-    'success_rate_pct' : successRatePct,
-    'first_flight' : firstFlight,
-    'country' : country,
-    'company' : company,
-    'wikipedia' : wikipedia,
-    'description' : description,
-    'id' : id
-  };
+        'height': height?.toJson(),
+        'diameter': diameter?.toJson(),
+        'mass': mass?.toJson(),
+        'first_stage': firstStage?.toJson(),
+        'second_stage': secondStage?.toJson(),
+        'engines': engines?.toJson(),
+        'landing_legs': landingLegs?.toJson(),
+        'payload_weights': payloadWeights?.map((e) => e.toJson()).toList(),
+        'flickr_images': flickrImages,
+        'name': name,
+        'type': type,
+        'active': active,
+        'stages': stages,
+        'boosters': boosters,
+        'cost_per_launch': costPerLaunch,
+        'success_rate_pct': successRatePct,
+        'first_flight': firstFlight,
+        'country': country,
+        'company': company,
+        'wikipedia': wikipedia,
+        'description': description,
+        'id': id
+      };
 }
-
 
 class Mass {
   final int? kg;
@@ -111,10 +129,7 @@ class Mass {
       : kg = json['kg'] as int?,
         lb = json['lb'] as int?;
 
-  Map<String, dynamic> toJson() => {
-    'kg' : kg,
-    'lb' : lb
-  };
+  Map<String, dynamic> toJson() => {'kg': kg, 'lb': lb};
 }
 
 class FirstStage {
@@ -135,21 +150,28 @@ class FirstStage {
   });
 
   FirstStage.fromJson(Map<String, dynamic> json)
-      : thrustSeaLevel = (json['thrust_sea_level'] as Map<String,dynamic>?) != null ? ThrustSeaLevel.fromJson(json['thrust_sea_level'] as Map<String,dynamic>) : null,
-        thrustVacuum = (json['thrust_vacuum'] as Map<String,dynamic>?) != null ? ThrustVacuum.fromJson(json['thrust_vacuum'] as Map<String,dynamic>) : null,
+      : thrustSeaLevel =
+            (json['thrust_sea_level'] as Map<String, dynamic>?) != null
+                ? ThrustSeaLevel.fromJson(
+                    json['thrust_sea_level'] as Map<String, dynamic>)
+                : null,
+        thrustVacuum = (json['thrust_vacuum'] as Map<String, dynamic>?) != null
+            ? ThrustVacuum.fromJson(
+                json['thrust_vacuum'] as Map<String, dynamic>)
+            : null,
         reusable = json['reusable'] as bool?,
         engines = json['engines'] as int?,
         fuelAmountTons = json['fuel_amount_tons'] as double?,
         burnTimeSec = json['burn_time_sec'] as int?;
 
   Map<String, dynamic> toJson() => {
-    'thrust_sea_level' : thrustSeaLevel?.toJson(),
-    'thrust_vacuum' : thrustVacuum?.toJson(),
-    'reusable' : reusable,
-    'engines' : engines,
-    'fuel_amount_tons' : fuelAmountTons,
-    'burn_time_sec' : burnTimeSec
-  };
+        'thrust_sea_level': thrustSeaLevel?.toJson(),
+        'thrust_vacuum': thrustVacuum?.toJson(),
+        'reusable': reusable,
+        'engines': engines,
+        'fuel_amount_tons': fuelAmountTons,
+        'burn_time_sec': burnTimeSec
+      };
 }
 
 class ThrustSeaLevel {
@@ -165,10 +187,7 @@ class ThrustSeaLevel {
       : kN = json['kN'] as int?,
         lbf = json['lbf'] as int?;
 
-  Map<String, dynamic> toJson() => {
-    'kN' : kN,
-    'lbf' : lbf
-  };
+  Map<String, dynamic> toJson() => {'kN': kN, 'lbf': lbf};
 }
 
 class ThrustVacuum {
@@ -184,10 +203,7 @@ class ThrustVacuum {
       : kN = json['kN'] as int?,
         lbf = json['lbf'] as int?;
 
-  Map<String, dynamic> toJson() => {
-    'kN' : kN,
-    'lbf' : lbf
-  };
+  Map<String, dynamic> toJson() => {'kN': kN, 'lbf': lbf};
 }
 
 class SecondStage {
@@ -208,21 +224,25 @@ class SecondStage {
   });
 
   SecondStage.fromJson(Map<String, dynamic> json)
-      : thrust = (json['thrust'] as Map<String,dynamic>?) != null ? Thrust.fromJson(json['thrust'] as Map<String,dynamic>) : null,
-        payloads = (json['payloads'] as Map<String,dynamic>?) != null ? Payloads.fromJson(json['payloads'] as Map<String,dynamic>) : null,
+      : thrust = (json['thrust'] as Map<String, dynamic>?) != null
+            ? Thrust.fromJson(json['thrust'] as Map<String, dynamic>)
+            : null,
+        payloads = (json['payloads'] as Map<String, dynamic>?) != null
+            ? Payloads.fromJson(json['payloads'] as Map<String, dynamic>)
+            : null,
         reusable = json['reusable'] as bool?,
         engines = json['engines'] as int?,
         fuelAmountTons = json['fuel_amount_tons'] as double?,
         burnTimeSec = json['burn_time_sec'] as int?;
 
   Map<String, dynamic> toJson() => {
-    'thrust' : thrust?.toJson(),
-    'payloads' : payloads?.toJson(),
-    'reusable' : reusable,
-    'engines' : engines,
-    'fuel_amount_tons' : fuelAmountTons,
-    'burn_time_sec' : burnTimeSec
-  };
+        'thrust': thrust?.toJson(),
+        'payloads': payloads?.toJson(),
+        'reusable': reusable,
+        'engines': engines,
+        'fuel_amount_tons': fuelAmountTons,
+        'burn_time_sec': burnTimeSec
+      };
 }
 
 class Thrust {
@@ -238,10 +258,7 @@ class Thrust {
       : kN = json['kN'] as int?,
         lbf = json['lbf'] as int?;
 
-  Map<String, dynamic> toJson() => {
-    'kN' : kN,
-    'lbf' : lbf
-  };
+  Map<String, dynamic> toJson() => {'kN': kN, 'lbf': lbf};
 }
 
 class Payloads {
@@ -254,13 +271,15 @@ class Payloads {
   });
 
   Payloads.fromJson(Map<String, dynamic> json)
-      : compositeFairing = (json['composite_fairing'] as Map<String,dynamic>?) != null ? CompositeFairing.fromJson(json['composite_fairing'] as Map<String,dynamic>) : null,
+      : compositeFairing =
+            (json['composite_fairing'] as Map<String, dynamic>?) != null
+                ? CompositeFairing.fromJson(
+                    json['composite_fairing'] as Map<String, dynamic>)
+                : null,
         option1 = json['option_1'] as String?;
 
-  Map<String, dynamic> toJson() => {
-    'composite_fairing' : compositeFairing?.toJson(),
-    'option_1' : option1
-  };
+  Map<String, dynamic> toJson() =>
+      {'composite_fairing': compositeFairing?.toJson(), 'option_1': option1};
 }
 
 class CompositeFairing {
@@ -273,13 +292,15 @@ class CompositeFairing {
   });
 
   CompositeFairing.fromJson(Map<String, dynamic> json)
-      : height = (json['height'] as Map<String,dynamic>?) != null ? Height.fromJson(json['height'] as Map<String,dynamic>) : null,
-        diameter = (json['diameter'] as Map<String,dynamic>?) != null ? Diameter.fromJson(json['diameter'] as Map<String,dynamic>) : null;
+      : height = (json['height'] as Map<String, dynamic>?) != null
+            ? Height.fromJson(json['height'] as Map<String, dynamic>)
+            : null,
+        diameter = (json['diameter'] as Map<String, dynamic>?) != null
+            ? Diameter.fromJson(json['diameter'] as Map<String, dynamic>)
+            : null;
 
-  Map<String, dynamic> toJson() => {
-    'height' : height?.toJson(),
-    'diameter' : diameter?.toJson()
-  };
+  Map<String, dynamic> toJson() =>
+      {'height': height?.toJson(), 'diameter': diameter?.toJson()};
 }
 
 class Height {
@@ -295,10 +316,7 @@ class Height {
       : meters = json['meters'] as double?,
         feet = json['feet'] as double?;
 
-  Map<String, dynamic> toJson() => {
-    'meters' : meters,
-    'feet' : feet
-  };
+  Map<String, dynamic> toJson() => {'meters': meters, 'feet': feet};
 }
 
 class Diameter {
@@ -314,10 +332,7 @@ class Diameter {
       : meters = json['meters'] as double?,
         feet = json['feet'] as double?;
 
-  Map<String, dynamic> toJson() => {
-    'meters' : meters,
-    'feet' : feet
-  };
+  Map<String, dynamic> toJson() => {'meters': meters, 'feet': feet};
 }
 
 class Engines {
@@ -348,9 +363,18 @@ class Engines {
   });
 
   Engines.fromJson(Map<String, dynamic> json)
-      : isp = (json['isp'] as Map<String,dynamic>?) != null ? Isp.fromJson(json['isp'] as Map<String,dynamic>) : null,
-        thrustSeaLevel = (json['thrust_sea_level'] as Map<String,dynamic>?) != null ? ThrustSeaLevel.fromJson(json['thrust_sea_level'] as Map<String,dynamic>) : null,
-        thrustVacuum = (json['thrust_vacuum'] as Map<String,dynamic>?) != null ? ThrustVacuum.fromJson(json['thrust_vacuum'] as Map<String,dynamic>) : null,
+      : isp = (json['isp'] as Map<String, dynamic>?) != null
+            ? Isp.fromJson(json['isp'] as Map<String, dynamic>)
+            : null,
+        thrustSeaLevel =
+            (json['thrust_sea_level'] as Map<String, dynamic>?) != null
+                ? ThrustSeaLevel.fromJson(
+                    json['thrust_sea_level'] as Map<String, dynamic>)
+                : null,
+        thrustVacuum = (json['thrust_vacuum'] as Map<String, dynamic>?) != null
+            ? ThrustVacuum.fromJson(
+                json['thrust_vacuum'] as Map<String, dynamic>)
+            : null,
         number = json['number'] as int?,
         type = json['type'] as String?,
         version = json['version'] as String?,
@@ -361,18 +385,18 @@ class Engines {
         thrustToWeight = json['thrust_to_weight'] as int?;
 
   Map<String, dynamic> toJson() => {
-    'isp' : isp?.toJson(),
-    'thrust_sea_level' : thrustSeaLevel?.toJson(),
-    'thrust_vacuum' : thrustVacuum?.toJson(),
-    'number' : number,
-    'type' : type,
-    'version' : version,
-    'layout' : layout,
-    'engine_loss_max' : engineLossMax,
-    'propellant_1' : propellant1,
-    'propellant_2' : propellant2,
-    'thrust_to_weight' : thrustToWeight
-  };
+        'isp': isp?.toJson(),
+        'thrust_sea_level': thrustSeaLevel?.toJson(),
+        'thrust_vacuum': thrustVacuum?.toJson(),
+        'number': number,
+        'type': type,
+        'version': version,
+        'layout': layout,
+        'engine_loss_max': engineLossMax,
+        'propellant_1': propellant1,
+        'propellant_2': propellant2,
+        'thrust_to_weight': thrustToWeight
+      };
 }
 
 class Isp {
@@ -388,12 +412,8 @@ class Isp {
       : seaLevel = json['sea_level'] as int?,
         vacuum = json['vacuum'] as int?;
 
-  Map<String, dynamic> toJson() => {
-    'sea_level' : seaLevel,
-    'vacuum' : vacuum
-  };
+  Map<String, dynamic> toJson() => {'sea_level': seaLevel, 'vacuum': vacuum};
 }
-
 
 class LandingLegs {
   final int? number;
@@ -408,10 +428,7 @@ class LandingLegs {
       : number = json['number'] as int?,
         material = json['material'];
 
-  Map<String, dynamic> toJson() => {
-    'number' : number,
-    'material' : material
-  };
+  Map<String, dynamic> toJson() => {'number': number, 'material': material};
 }
 
 class PayloadWeights {
@@ -433,10 +450,5 @@ class PayloadWeights {
         kg = json['kg'] as int?,
         lb = json['lb'] as int?;
 
-  Map<String, dynamic> toJson() => {
-    'id' : id,
-    'name' : name,
-    'kg' : kg,
-    'lb' : lb
-  };
+  Map<String, dynamic> toJson() => {'id': id, 'name': name, 'kg': kg, 'lb': lb};
 }
