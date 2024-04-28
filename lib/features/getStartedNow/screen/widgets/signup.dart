@@ -82,7 +82,7 @@ class SignUp extends StatelessWidget {
           title: AppStrings.signUpWithMail.tr(),
         ),
         SizedBox(
-          height: 40.h,
+          height: 10.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

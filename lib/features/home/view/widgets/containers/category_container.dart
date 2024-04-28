@@ -50,23 +50,29 @@ class CategoryContainer extends StatelessWidget {
                   ),
                 ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyles.font16White700w,
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  Text(
-                    description,
-                    style: TextStyles.font12White700w,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+              SizedBox(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyles.font16White700w,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    Text(
+                      description,
+                      style: TextStyles.font12White700w.copyWith(
+                        color: AppColors.white.withOpacity(0.7),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

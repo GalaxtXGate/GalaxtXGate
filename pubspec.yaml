@@ -49,6 +49,8 @@ dependencies:
 
 # Localization
   easy_localization: ^3.0.6
+# Animation  
+  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +67,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/translations/
+    - assets/animation/
 
 # Fonts
   fonts:

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
+import 'package:galaxyxgate/core/utils/app_animations.dart';
 
 class Content {
   String image;
@@ -25,5 +26,6 @@ List<Content> content = [
       text: AppStrings.weProvide.tr(),
       title:  AppStrings.reliableInformation.tr(),
       subTitle: AppStrings.beUpdatedWithAllTheRocketsCapsulesCrew.tr(),),
+
 ];
 
