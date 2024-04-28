@@ -1,7 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:galaxyxgate/core/utils/app_general.dart';
+import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
+import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
 
 class ProfilePic extends StatelessWidget {
   const ProfilePic({
@@ -10,22 +13,21 @@ class ProfilePic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipOval(
-      child: CachedNetworkImage(
-        height: 40.w,
-        width: 40.w,
-        fit: BoxFit.cover,
-        imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQSZghHllUVwlprhMv8S2MhZNy8pfFpvrY54sjau9Rb4mrP0Q0J8-czibBNmhi5q1gPk&usqp=CAU",
-        placeholder: (context, url) => SpinKitRipple(
-          color: Colors.white,
-          size: 50.w,
-        ),
-        errorWidget: (context, url, error) => Icon(
-          Icons.error,
-          size: 40.w,
-        ),
-      ),
+    return FutureBuilder(
+      future: context.read<SignUpCubit>().getUserImage(AppGeneral.userUID!),
+      builder: (BuildContext context, AsyncSnapshot<String> snapshot) =>
+          snapshot.hasData
+              ? ClipOval(
+                  child: DefultAppCachedNetworkImage(
+                    height: 40.w,
+                    width: 40.w,
+                    url: snapshot.data!,
+                  ),
+                )
+              : SpinKitRipple(
+                  color: Colors.white,
+                  size: 50.w,
+                ),
     );
   }
 }

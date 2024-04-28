@@ -17,16 +17,17 @@ class AppColors {
   static const Color deepPurple = Color(0xff5b1c67);
   static const Color deepBlue = Color(0xff37145a);
   static const Color deepBlack = Color(0xff000000);
-  static const Color loginTextGradientPurple= Color(0xFFA64EDD);
-  static const Color loginTextGradientBlue= Color(0xFF6090DE);
-  static const Color loginTextGradientGreen =Color(0xFF17D4E0);
+  static const Color loginTextGradientPurple = Color(0xFFA64EDD);
+  static const Color loginTextGradientBlue = Color(0xFF6090DE);
+  static const Color loginTextGradientGreen = Color(0xFF17D4E0);
   static const Color lightGrey = Color(0xFFB5B5B5);
   static const Color offWhite = Color(0xFFFFFDF6);
   static const Color borderGrey = Color(0xFF717171);
   static const Color offWhite2 = Color(0xFFD5D5D5);
-  static const Color textFieldsGrey = Color(0xFF3D3D3D33);
+
   static const Color borderGreyWhite = Color(0xFF3A3A4A);
   static const Color darkGrey = Color(0xFF8B8B8B);
   static const Color borderGreyDark = Color(0xFF3F3F3F);
-  static const Color darkLight = Color(0xFF1C1C2180);
+  static const Color darkLight = Color(0xFF1C1C21);
+  static const Color textFieldsGrey = Color(0xFF3D3D3D);
 }

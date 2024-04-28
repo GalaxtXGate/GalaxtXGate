@@ -1,4 +1,6 @@
-import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:galaxyxgate/core/utils/app_animations.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 
 class Content {
   String image;
@@ -14,13 +16,14 @@ class Content {
 
 List<Content> content = [
   Content(
-      image: AppImages.moon,
-      text: "Welcome To",
-      title: "Galaxy X Gate",
-      subTitle: "Your guide to knowing all about \nspace X launches"),
+      image: AppAnimations.moon,
+      text: AppStrings.welcomeTo.tr(),
+      title: AppStrings.galaxyXGate.tr(),
+      subTitle: AppStrings.yourGuideToKnowingAllAboutSpaceXLaunches.tr()),
   Content(
-      image: AppImages.rocket,
-      text: "We Provide",
-      title: "Reliable Information",
-      subTitle: "Be updated with all the Rockets, \ncapsules, crew and more"),
+    image: AppAnimations.galaxy,
+    text: AppStrings.weProvide.tr(),
+    title: AppStrings.reliableInformation.tr(),
+    subTitle: AppStrings.beUpdatedWithAllTheRocketsCapsulesCrew.tr(),
+  ),
 ];
