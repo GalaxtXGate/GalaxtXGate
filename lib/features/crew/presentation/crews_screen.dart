@@ -46,18 +46,21 @@ class _CrewsScreenState extends State<CrewsScreen> {
                 titleTextStyle: TextStyles.font18White700w
                     .copyWith(fontWeight: FontWeight.normal),
               ),
-              BlocConsumer<CrewsCubit, CrewsState>(
-                listener: (_, state) {
-                  if (state is CrewsError) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text(state.error!),
-                    ));
-                  }
-                },
+              BlocBuilder<CrewsCubit, CrewsState>(
                 builder: (context, state) {
+                  // Handle state changes
+                  if (state is CrewsError) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(state.error!),
+                      ),
+                    );
+                  }
+                  // Render different UI based on state
                   if (state is CrewsLoading) {
                     return const SliverFillRemaining(child: Loader());
                   }
+
                   if (state is CrewsLoaded) {
                     List<CrewModel>? crews = state.crews;
                     return AnimationLimiter(
@@ -65,10 +68,10 @@ class _CrewsScreenState extends State<CrewsScreen> {
                         crewList: crews,
                       ),
                     );
-                  } else {
-                    return const SliverFillRemaining(
-                        child: Text('No data available'));
                   }
+                  // Default fallback if no known state is matched
+                  return const SliverFillRemaining(
+                      child: Text('No data available'));
                 },
               ),
             ],

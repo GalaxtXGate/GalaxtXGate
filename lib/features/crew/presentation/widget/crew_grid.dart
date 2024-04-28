@@ -103,19 +103,19 @@ class CrewsGrid extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 8.h),
-                        // Display crew status using IconTextRow
+                        // Display crew status
                         IconTextRow(
                           imagePath: getImagePathForStatus(crew.status),
                           text: crew.status,
                         ),
-                        // Display launches count using IconTextRow
+                        // Display launches count
                         IconTextRow(
                           imagePath: 'assets/images/launch.svg',
                           text: crew.launches.length == 1
                               ? '${crew.launches.length} Launch'
                               : '${crew.launches.length} Launches',
                         ),
-                        // Display agency using IconTextRow
+                        // Display agency
                         IconTextRow(
                           imagePath: 'assets/images/agency.svg',
                           text: crew.agency,
