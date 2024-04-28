@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/core/errors/server_failure.dart';
-import 'package:galaxyxgate/features/launches/data/models/launches_model.dart';
+import 'package:galaxyxgate/features/launches/data/models/launches/launches.dart';
 import 'package:galaxyxgate/features/launches/data/services/launches_services.dart';
 
 part 'launches_state.dart';

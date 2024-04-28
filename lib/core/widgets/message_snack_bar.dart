@@ -16,7 +16,7 @@ SnackBar messageSnackBar({
     margin: EdgeInsets.only(
       right: 24.w,
       left: 24.w,
-      bottom: 650.h,
+      bottom: 700.h,
     ),
     padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
     behavior: SnackBarBehavior.floating,

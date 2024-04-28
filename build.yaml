@@ -1,0 +1,7 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Use `snake` to make all JSON keys in snake_case
+          field_rename: snake

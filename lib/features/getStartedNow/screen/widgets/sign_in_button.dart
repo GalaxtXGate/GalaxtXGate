@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:galaxyxgate/features/auth_by_email/view/sign_up.dart';
+import 'package:galaxyxgate/features/auth/screens/sign_up.dart';
 
 import '../../../../core/themes/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';

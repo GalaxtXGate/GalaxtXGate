@@ -25,29 +25,32 @@ class _BluredBottomNavBarState extends State<BluredBottomNavBar> {
   );
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: PageView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: pageController,
-              children: widget.screens,
-              onPageChanged: (value) {},
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Positioned.fill(
+              child: PageView(
+                physics: const NeverScrollableScrollPhysics(),
+                controller: pageController,
+                children: widget.screens,
+                onPageChanged: (value) {},
+              ),
             ),
-          ),
-          Positioned(
-            right: 55.w,
-            left: 55.w,
-            bottom: 35.h,
-            child: BottomNavBarContainer(
-              icons: widget.icons,
-              gradientColors: widget.gradientColors,
-              notSelectedColor: widget.notSelectedColor,
-              pageController: pageController,
+            Positioned(
+              right: 55.w,
+              left: 55.w,
+              bottom: 35.h,
+              child: BottomNavBarContainer(
+                icons: widget.icons,
+                gradientColors: widget.gradientColors,
+                notSelectedColor: widget.notSelectedColor,
+                pageController: pageController,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -10,7 +10,7 @@ import 'package:galaxyxgate/core/widgets/launches_numbers_row.dart';
 
 class LaunchesPage extends StatelessWidget {
   const LaunchesPage({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return GradientGrayBackground(

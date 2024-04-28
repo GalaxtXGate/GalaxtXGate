@@ -12,7 +12,7 @@ import 'package:galaxyxgate/features/about_company/logic/cubit/about_company_cub
 import 'package:galaxyxgate/features/about_company/screens/widgets/columns/waht_is_spacex_column.dart';
 import 'package:galaxyxgate/features/about_company/screens/widgets/header_and_sapce_with_animated_text.dart';
 import 'package:galaxyxgate/features/about_company/screens/widgets/rows/elon_mask_info_row.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/gradient_Text.dart';
+import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
 
 class AboutCompanyPage extends StatelessWidget {
   const AboutCompanyPage({super.key});

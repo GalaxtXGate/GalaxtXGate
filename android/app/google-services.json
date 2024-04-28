@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "986993407042",
+    "project_id": "spacex-57942",
+    "storage_bucket": "spacex-57942.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986993407042:android:ac02adacce3988e703e9db",
+        "android_client_info": {
+          "package_name": "com.example.galaxyxgate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwqROpL4wVf79CsT85xk-XR7tqnWL2TmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

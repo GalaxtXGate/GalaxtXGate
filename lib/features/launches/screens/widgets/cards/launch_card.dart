@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
-import 'package:galaxyxgate/features/launches/data/models/launches_model.dart';
+import 'package:galaxyxgate/features/launches/data/models/launches/launches.dart';
 import 'package:galaxyxgate/features/launches/screens/widgets/rows/launch_status.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/gradient_Text.dart';
+import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
 
 class LaunchCard extends StatelessWidget {
   const LaunchCard({super.key, required this.launche});
