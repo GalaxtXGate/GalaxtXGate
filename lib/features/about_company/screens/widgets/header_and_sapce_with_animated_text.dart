@@ -32,8 +32,8 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
                   ).createShader(rect),
               child: Positioned.fill(child: Image.asset(AppImages.space))),
           const DefultAppHeader(
-            title: "About SpaceX",
-            tag: "About SpaceX",
+            title: "About Space X",
+            tag: "About Space X",
           ),
           Positioned.fill(
             child: Padding(

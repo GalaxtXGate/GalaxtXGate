@@ -27,7 +27,7 @@ class AddProfilePicture extends StatelessWidget {
                 Center(
               child: value != null
                   ? ClipOval(
-                      child: Image.file(value!,
+                      child: Image.file(value,
                           width: 140, height: 140, fit: BoxFit.cover),
                     )
                   : ShaderMask(

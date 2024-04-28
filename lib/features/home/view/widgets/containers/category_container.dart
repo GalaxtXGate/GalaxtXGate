@@ -30,8 +30,8 @@ class CategoryContainer extends StatelessWidget {
           height: height,
           width: width,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.r),
-          ),
+              borderRadius: BorderRadius.circular(15.r),
+              border: Border.all(color: AppColors.deepGrey, width: 1.w)),
           child: Stack(
             children: [
               ShaderMask(
@@ -54,30 +54,33 @@ class CategoryContainer extends StatelessWidget {
                   ),
                 ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Hero(
-                    tag: tag,
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        title,
-                        style: TextStyles.font16White700w,
-                        textAlign: TextAlign.center,
+              SizedBox(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Hero(
+                      tag: tag,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Text(
+                          title,
+                          style: TextStyles.font16White700w,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  Text(
-                    description,
-                    style: TextStyles.font12White700w,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    Text(
+                      description,
+                      style: TextStyles.font12White700w,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

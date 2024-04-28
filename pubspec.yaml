@@ -45,7 +45,7 @@ dependencies:
   flutter_bloc: ^8.1.5
   image_picker: ^1.1.0
   iconify_flutter: ^0.0.4
-  flutter_svg: 1.1.6
+  flutter_svg: ^1.1.6
   dartz: ^0.10.1
   skeletonizer: ^1.1.1
   shimmer: ^3.0.0

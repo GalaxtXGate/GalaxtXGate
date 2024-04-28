@@ -5,6 +5,7 @@ import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
+import 'package:galaxyxgate/features/about_company/screens/about_company_bloc_provider.dart';
 import 'package:galaxyxgate/features/home/view/widgets/containers/category_container.dart';
 import 'package:galaxyxgate/features/home/view/widgets/rows/home_header_row.dart';
 import 'package:galaxyxgate/features/launches/screens/launches_bloc_provider.dart';
@@ -138,7 +139,12 @@ class HomeScreen extends StatelessWidget {
               backgroundImg: AppImages.aboutSpaceX,
               title: "About Space X",
               description: "Know all about Space X details",
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  LeftSlideTransition(page: const AboutCompanyBlocProvider()),
+                );
+              },
               tag: 'About Space X',
             ),
             SizedBox(

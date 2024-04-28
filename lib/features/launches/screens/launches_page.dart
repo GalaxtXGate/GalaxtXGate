@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
@@ -10,15 +12,15 @@ import 'package:galaxyxgate/core/widgets/launches_numbers_row.dart';
 
 class LaunchesPage extends StatelessWidget {
   const LaunchesPage({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return GradientGrayBackground(
       child: Column(
         children: [
-          const DefultAppHeader(
-            title: "Launches",
-            tag: 'Launches',
+          DefultAppHeader(
+            title: AppStrings.launches.tr(),
+            tag: AppStrings.launches.tr(),
           ),
           Expanded(
             child: BlocConsumer<LaunchesCubit, LaunchesState>(

@@ -8,27 +8,27 @@ import 'package:galaxyxgate/galaxy_x_gate_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'core/utils/app_assets.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await CacheHelper.init();
+  await EasyLocalization.ensureInitialized();
+
   setUpServiceLocator();
   getIt<AuthServices>().getCredintials();
   runApp(const MyApp());
   CacheHelper.init();
-  await EasyLocalization.ensureInitialized();
-  runApp(
-      EasyLocalization(
-        path: AppAssets.appTranslations,
-        supportedLocales: const [
-          Locale('en'),
-          Locale('ar'),
-        ],
-        fallbackLocale: const Locale('ar'),
-        startLocale: const Locale('en'),
-        child: const MyApp(),
-      )
-  );
+  runApp(EasyLocalization(
+    path: AppAssets.appTranslations,
+    supportedLocales: const [
+      Locale('en'),
+      Locale('ar'),
+    ],
+    fallbackLocale: const Locale('ar'),
+    startLocale: const Locale('en'),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
