@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
-import 'package:galaxyxgate/core/utils/app_icons.dart';
 
 class EditGradientButton extends StatelessWidget {
   const EditGradientButton({super.key, required this.onPressed,this.suffixIcon,required this.title});

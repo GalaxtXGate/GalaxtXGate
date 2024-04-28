@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:galaxyxgate/core/utils/app_images.dart';
 
 class PositionedSemiCircleWithAnimation extends StatelessWidget {
   const PositionedSemiCircleWithAnimation({
