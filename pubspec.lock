@@ -45,11 +45,7 @@ packages:
     dependency: transitive
     description:
       name: archive
-<<<<<<< HEAD
       sha256: "0763b45fa9294197a2885c8567927e2830ade852e5c896fd4ab7e0e348d0f373"
-=======
-      sha256: "22600aa1e926be775fa5fe7e6894e7fb3df9efda8891c73f70fb3262399a432d"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
       url: "https://pub.dev"
     source: hosted
     version: "3.5.0"
@@ -57,11 +53,7 @@ packages:
     dependency: transitive
     description:
       name: args
-<<<<<<< HEAD
       sha256: "7cf60b9f0cc88203c5a190b4cd62a99feea42759a7fa695010eb5de1c0b2252a"
-=======
-      sha256: eef6c46b622e0494a36c5a12d10d77fb4e855501a91c1b9ef9339326e58f0596
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
       url: "https://pub.dev"
     source: hosted
     version: "2.5.0"
@@ -225,8 +217,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.12.2"
-<<<<<<< HEAD
-=======
   code_builder:
     dependency: transitive
     description:
@@ -235,7 +225,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.10.0"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
   collection:
     dependency: transitive
     description:
@@ -256,11 +245,7 @@ packages:
     dependency: "direct main"
     description:
       name: connectivity_plus
-<<<<<<< HEAD
-      sha256: db7a4e143dc72cc3cb2044ef9b052a7ebfe729513e6a82943bc3526f784365b8
-=======
       sha256: ebe15d94de9dd7c31dc2ac54e42780acdf3384b1497c69290c9f3c5b0279fc57
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
@@ -272,8 +257,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-<<<<<<< HEAD
-=======
   convert:
     dependency: transitive
     description:
@@ -282,7 +265,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
   cross_file:
     dependency: transitive
     description:
@@ -311,12 +293,6 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
-<<<<<<< HEAD
-      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.8"
-=======
       sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
       url: "https://pub.dev"
     source: hosted
@@ -337,7 +313,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.10.1"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
   dbus:
     dependency: transitive
     description:
@@ -474,8 +449,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.16.0"
-<<<<<<< HEAD
-=======
   firebase_storage:
     dependency: "direct main"
     description:
@@ -500,7 +473,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.9.4"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
   fixnum:
     dependency: transitive
     description:
@@ -526,11 +498,7 @@ packages:
     dependency: transitive
     description:
       name: flutter_cache_manager
-<<<<<<< HEAD
       sha256: "395d6b7831f21f3b989ebedbb785545932adb9afe2622c1ffacf7f4b53a7e544"
-=======
-      sha256: "8207f27539deb83732fdda03e259349046a39a4c767269285f449ade355d54ba"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
       url: "https://pub.dev"
     source: hosted
     version: "3.3.2"
@@ -621,8 +589,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.7.0"
-<<<<<<< HEAD
-=======
   glob:
     dependency: transitive
     description:
@@ -639,7 +605,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
   html:
     dependency: transitive
     description:
@@ -752,8 +717,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1+1"
-<<<<<<< HEAD
-=======
   intl:
     dependency: transitive
     description:
@@ -794,7 +757,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.8.0"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
   leak_tracker:
     dependency: transitive
     description:
@@ -1003,16 +965,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
-<<<<<<< HEAD
-=======
-  pointycastle:
-    dependency: transitive
-    description:
-      name: pointycastle
-      sha256: "70fe966348fe08c34bf929582f1d8247d9d9408130723206472b4687227e4333"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.8.0"
   pool:
     dependency: transitive
     description:
@@ -1021,7 +973,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
   provider:
     dependency: transitive
     description:
@@ -1327,11 +1278,7 @@ packages:
     dependency: transitive
     description:
       name: win32
-<<<<<<< HEAD
       sha256: "0eaf06e3446824099858367950a813472af675116bf63f008a4c2a75ae13e9cb"
-=======
-      sha256: "0a989dc7ca2bb51eac91e8fd00851297cfffd641aa7538b165c62637ca0eaa4a"
->>>>>>> 35279a5d262ba2e44bdfcb32a45375cc7f2a376f
       url: "https://pub.dev"
     source: hosted
     version: "5.5.0"
