@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
-import 'package:galaxyxgate/features/onboarding/view/widget/gradient_Text.dart';
+import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
 
 class ElonMuskInfoRow extends StatelessWidget {
   const ElonMuskInfoRow({

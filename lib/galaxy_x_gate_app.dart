@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
+import 'package:galaxyxgate/core/utils/app_general.dart';
 
 import 'core/routes/router.dart';
 
@@ -25,7 +26,9 @@ class GalaxyXGateApp extends StatelessWidget {
           primaryColor: AppColors.purple,
           scaffoldBackgroundColor: AppColors.lightBlack,
         ),
-        initialRoute: Routes.onboarding,
+        initialRoute: AppGeneral.userUID != null
+            ? Routes.bottomNavBar
+            : Routes.onboarding,
         onGenerateRoute: router.generateRoute,
       ),
     );
