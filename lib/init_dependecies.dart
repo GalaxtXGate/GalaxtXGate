@@ -20,7 +20,6 @@ _initCrew() {
     ..registerFactory<CrewService>(
       () => CrewServiceImp(dioHelper: serviceLocator()),
     )
-
     // repository
     ..registerFactory<CrewRepository>(
       () => CrewRepository(crewService: serviceLocator()),
