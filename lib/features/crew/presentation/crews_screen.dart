@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/features/crew/business_logic/cubit/crews_cubit.dart';
 import 'package:galaxyxgate/features/crew/data/models/crew_model.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/crew_grid.dart';
-import 'package:galaxyxgate/features/crew/presentation/widget/loader.dart';
+import 'package:galaxyxgate/core/widgets/loader.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/sliver_appbar.dart';
 
@@ -36,8 +36,9 @@ class _CrewsScreenState extends State<CrewsScreen> {
                 onPressed: () {},
                 titleText: 'Crews',
               ),
-              BlocBuilder<CrewsCubit, CrewsState>(
-                builder: (context, state) {
+
+              BlocConsumer<CrewsCubit, CrewsState>(
+                listener: (context, state) {
                   // Handle state changes
                   if (state is CrewsError) {
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -46,6 +47,8 @@ class _CrewsScreenState extends State<CrewsScreen> {
                       ),
                     );
                   }
+                },
+                builder: (context, state) {
                   // Render different UI based on state
                   if (state is CrewsLoading) {
                     return const SliverFillRemaining(child: Loader());
@@ -61,7 +64,8 @@ class _CrewsScreenState extends State<CrewsScreen> {
                   }
                   // Default fallback if no known state is matched
                   return const SliverFillRemaining(
-                      child: Text('No data available'));
+                    child: Text('No data available'),
+                  );
                 },
               ),
             ],
