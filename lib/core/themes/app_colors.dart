@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:galaxyxgate/features/favourits/screen/favorites.dart';
 
 class AppColors {
   static const Color purple = Color(0xffA64EDD);
@@ -25,4 +26,5 @@ class AppColors {
   static const Color borderGrey = Color(0xFF717171);
   static const Color offWhite2 = Color(0xFFD5D5D5);
   static const Color textFieldsGrey = Color(0xFF3D3D3D33);
+  static const Color red = Color(0xffDB4747);
 }

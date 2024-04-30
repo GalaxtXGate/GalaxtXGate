@@ -6,4 +6,5 @@ class AppImages {
   static const String googleLogo = 'assets/images/google_logo.png';
   static const String faceBookLogo = 'assets/images/facebook_logo.png';
   static const String appLogo = 'assets/images/app_logo.png';
+  static const String astronaut = 'assets/images/astronaut.png';
 }

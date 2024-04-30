@@ -3,6 +3,7 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_icons.dart';
 import 'package:galaxyxgate/features/bottom_nav_bar/view/widgets/blured_bottom_nav_bar/blured_bottom_nav_bar.dart';
+import 'package:galaxyxgate/features/favourits/screen/favorites.dart';
 import 'package:galaxyxgate/features/home/view/home_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -18,14 +19,7 @@ class BottomNavBar extends StatelessWidget {
       ],
       screens: [
         const HomeScreen(),
-        Scaffold(
-          body: Center(
-            child: Text(
-              'Fav Screen',
-              style: TextStyles.font18White700w,
-            ),
-          ),
-        ),
+         const Favourites(),
         Scaffold(
           body: Center(
             child: Text(
