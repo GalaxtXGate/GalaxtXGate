@@ -51,7 +51,7 @@ class FavoritesBody extends StatelessWidget {
             
             itemCount: 15,
             itemBuilder: (context, index) {
-              return  Padding(
+              return  const Padding(
                 padding: EdgeInsets.only(bottom: 30.0),
                 child: ContentOfFavorites(),
               );
