@@ -11,7 +11,7 @@ class ShipsRepository {
 
   Future<Either<ServerFailure, List<ShipsModel>>> getAllShips() async {
     try {
-      final ships = await _shipsService.getAllShips();
+      final ships = await _shipsService.getFilteredShips();
       return Right(ships);
     } catch (e) {
       return Left(

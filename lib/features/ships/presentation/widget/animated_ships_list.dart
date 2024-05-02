@@ -9,15 +9,11 @@ class AnimatedShipsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Filter out ships with null images
-    final List<ShipsModel> filteredShips =
-        ships.where((ship) => ship.image != null).toList();
-    // Display the ship details
     return AnimationLimiter(
       child: SliverList(
         delegate: SliverChildBuilderDelegate(
           (_, index) {
-            final ship = filteredShips[index];
+            final ship = ships[index];
             return AnimationConfiguration.staggeredList(
               position: index,
               duration: const Duration(milliseconds: 375),
@@ -31,7 +27,7 @@ class AnimatedShipsList extends StatelessWidget {
               ),
             );
           },
-          childCount: filteredShips.length,
+          childCount: ships.length,
         ),
       ),
     );

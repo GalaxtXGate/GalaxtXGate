@@ -5,6 +5,7 @@ import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
 
 abstract interface class ShipsService {
   Future<List<ShipsModel>> getAllShips();
+  Future<List<ShipsModel>> getFilteredShips();
 }
 
 class ShipsServiceImp implements ShipsService {
@@ -22,5 +23,18 @@ class ShipsServiceImp implements ShipsService {
       }
       throw ServerFailure(errMessage: "Something went wrong!");
     }
+  }
+
+  @override
+  Future<List<ShipsModel>> getFilteredShips() async {
+    // First, fetch all ships using the existing method
+    final List<ShipsModel> ships = await getAllShips();
+
+    // Filter ships to include only those with non-null images
+    final List<ShipsModel> filteredShips =
+        ships.where((ship) => ship.image != null).toList();
+
+    // Return the filtered list
+    return filteredShips;
   }
 }

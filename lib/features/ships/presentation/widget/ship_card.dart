@@ -108,7 +108,7 @@ class ShipCard extends StatelessWidget {
               ],
             ),
             SizedBox(height: 15.h),
-            // Ship other Feature
+            // Ship launch, port home, link article, and role
             ShipFeatures(ship: ship),
           ],
         ),
