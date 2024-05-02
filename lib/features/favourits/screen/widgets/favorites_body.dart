@@ -4,12 +4,11 @@ import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/features/favourits/screen/widgets/content_of_favorites.dart';
 
 class FavoritesBody extends StatelessWidget {
-  const FavoritesBody({Key? key}) : super(key: key);
+  FavoritesBody({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
-       padding: const EdgeInsets.symmetric(horizontal: 24),
-       
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Scaffold(
         appBar: AppBar(
           scrolledUnderElevation: 0.0,
@@ -38,30 +37,23 @@ class FavoritesBody extends StatelessWidget {
               Navigator.pop(context);
             },
             child: const Icon(
-              
               Icons.arrow_back_ios,
               color: AppColors.white,
             ),
           ),
         ),
-        
         body: Padding(
-          padding:  const EdgeInsets.only(top: 20,bottom: 90),
+          padding: const EdgeInsets.only(top: 20, bottom: 90),
           child: ListView.builder(
-            
             itemCount: 15,
             itemBuilder: (context, index) {
-              return  const Padding(
+              return const Padding(
                 padding: EdgeInsets.only(bottom: 30.0),
                 child: ContentOfFavorites(),
               );
             },
-            
           ),
-          
         ),
-       
-
       ),
     );
   }

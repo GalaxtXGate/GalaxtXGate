@@ -14,15 +14,13 @@ class GradientTextColor extends StatelessWidget {
             AppColors.loginTextGradientPurple,
             AppColors.loginTextGradientBlue,
             AppColors.loginTextGradientGreen
-          ], // Gradient colors
-          begin: Alignment.topLeft, // Gradient start position
-          end: Alignment.topCenter, // Gradient end position
+          ], 
+          begin: Alignment.topLeft, 
+          end: Alignment.topCenter, 
         ).createShader(bounds);
       },
-      child: Text(
-        text,
-        style: TextStyles.textStyle14400.copyWith(fontSize: 12)
-      ),
+      child:
+          Text(text, style: TextStyles.textStyle14400.copyWith(fontSize: 12)),
     );
   }
 }
