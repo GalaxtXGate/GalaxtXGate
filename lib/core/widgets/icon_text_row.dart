@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 
@@ -28,7 +29,11 @@ class IconTextRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SvgPicture.asset(imagePath),
+          SvgPicture.asset(
+            imagePath,
+            height: 20.h,
+            width: 20.w,
+          ),
           const SizedBox(width: 5.0),
           Text(
             capitalizeFirstCharacter(text),

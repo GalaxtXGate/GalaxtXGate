@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/features/crew/business_logic/cubit/crews_cubit.dart';
 import 'package:galaxyxgate/features/crew/data/models/crew_model.dart';
-import 'package:galaxyxgate/features/crew/presentation/widget/crew_grid.dart';
+import 'package:galaxyxgate/features/crew/presentation/widget/animated_grid.dart';
 import 'package:galaxyxgate/core/widgets/loader.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/sliver_appbar.dart';
 
 class CrewsScreen extends StatefulWidget {
@@ -53,13 +52,10 @@ class _CrewsScreenState extends State<CrewsScreen> {
                   if (state is CrewsLoading) {
                     return const SliverFillRemaining(child: Loader());
                   }
-
                   if (state is CrewsLoaded) {
                     List<CrewModel>? crews = state.crews;
-                    return AnimationLimiter(
-                      child: CrewsGrid(
-                        crewList: crews,
-                      ),
+                    return AnimatedCrewGrid(
+                      crewList: crews,
                     );
                   }
                   // Default fallback if no known state is matched

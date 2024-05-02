@@ -21,8 +21,8 @@ class AnimatedPageIndicator extends StatelessWidget {
       width: isSelected ? 45.w : 10.w,
       decoration: BoxDecoration(
         gradient: isSelected
-            ? const LinearGradient(
-                colors: [AppColors.purple, AppColors.blue, AppColors.cyan],
+            ? LinearGradient(
+                colors: AppColors.maingGradientColor,
               )
             : const LinearGradient(
                 colors: [Colors.grey, Colors.grey],

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/themes/app_colors.dart';
+import 'package:galaxyxgate/core/themes/text_styles.dart';
 
 class Loader extends StatelessWidget {
   const Loader({super.key});
@@ -7,14 +9,18 @@ class Loader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25.0),
-          color: Colors.grey.shade200,
-        ),
-        child: const CupertinoActivityIndicator(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CupertinoActivityIndicator(
+            radius: 20.r,
+            color: AppColors.white,
+          ),
+          SizedBox(height: 16.h),
+          Text('Loading...', style: TextStyles.font14White700w),
+        ],
       ),
+      //  ),
     );
   }
 }
