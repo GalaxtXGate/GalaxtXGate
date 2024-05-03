@@ -10,7 +10,6 @@ import 'package:galaxyxgate/features/auth/screens/profile_picture.dart';
 import 'package:galaxyxgate/features/auth/screens/widgets/rows/toggle_row.dart';
 import 'package:galaxyxgate/features/auth/screens/widgets/sign_up_texts_and_fields.dart';
 
-
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 

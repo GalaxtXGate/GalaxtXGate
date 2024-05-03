@@ -9,16 +9,18 @@ class DefultAppHeader extends StatelessWidget {
     this.onTap,
     required this.title,
     required this.tag,
+    this.isProfile,
   });
   final String title;
   final void Function()? onTap;
   final String tag;
+  final bool? isProfile;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: 60.h,
+        top: (isProfile != null && isProfile!) ? 25.h : 60.h,
         right: 30.w,
         left: 30.w,
       ),

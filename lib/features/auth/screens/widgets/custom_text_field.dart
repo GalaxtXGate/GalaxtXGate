@@ -11,12 +11,14 @@ class CustomTextField extends StatefulWidget {
     this.icon,
     this.isPassword,
     required this.controller,
+    this.height,
   });
   final String hintText;
   final String labelText;
   final Icon? icon;
   final bool? isPassword;
   final TextEditingController controller;
+  final double? height;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -39,7 +41,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       valueListenable: isSecuerd,
       builder: (BuildContext context, bool value, Widget? child) => SizedBox(
         width: double.infinity,
-        height: 85.h,
+        height: widget.height ?? 85.h,
         child: TextField(
           controller: widget.controller,
           obscureText: value,
@@ -50,7 +52,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 ? IconButton(
                     icon: Icon(
                       value ? Icons.visibility : Icons.visibility_off,
-                      color: AppColors.white,
+                      color: AppColors.lightGrey,
                     ),
                     onPressed: () {
                       isSecuerd.value = !isSecuerd.value;
@@ -60,20 +62,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
             contentPadding: EdgeInsets.all(25.w),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: const BorderSide(
-                color: AppColors.white,
+              borderSide: BorderSide(
+                color: AppColors.white.withOpacity(0.5),
                 width: 1,
               ),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: BorderSide(
-                color: Colors.grey.withOpacity(0.3),
+                color: Colors.grey.withOpacity(0.2),
                 width: 1,
               ),
             ),
             filled: true,
-            fillColor: AppColors.deepGrey.withOpacity(0.7),
+            fillColor: Colors.grey.withOpacity(0.05),
             hintText: widget.hintText,
             labelText: widget.labelText,
             hintStyle: TextStyles.textStyle12400,

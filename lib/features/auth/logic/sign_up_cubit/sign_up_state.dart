@@ -12,3 +12,12 @@ final class SignUpFailure extends SignUpState {
   final String message;
   SignUpFailure(this.message);
 }
+
+final class DeleteAccountLoading extends SignUpState {}
+
+final class DeleteAccountSuccess extends SignUpState {}
+
+final class DeleteAccountFailure extends SignUpState {
+  final String message;
+  DeleteAccountFailure(this.message);
+}

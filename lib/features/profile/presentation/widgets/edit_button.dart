@@ -4,7 +4,11 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 
 class EditGradientButton extends StatelessWidget {
-  const EditGradientButton({super.key, required this.onPressed,this.suffixIcon,required this.title});
+  const EditGradientButton(
+      {super.key,
+      required this.onPressed,
+      this.suffixIcon,
+      required this.title});
   final VoidCallback onPressed;
   final Widget? suffixIcon;
   final String title;
@@ -46,7 +50,7 @@ class EditGradientButton extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      suffixIcon??SizedBox(),
+                      suffixIcon ?? const SizedBox(),
                       const SizedBox(
                         width: 10,
                       ),
