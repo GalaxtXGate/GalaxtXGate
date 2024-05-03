@@ -19,17 +19,10 @@ class BottomNavBar extends StatelessWidget {
         AppIcons.favIcon,
         AppIcons.personIcon,
       ],
-      screens: [
-        const HomeScreen(),
-         const Favourites(),
-        Scaffold(
-          body: Center(
-            child: Text(
-              'Profile Screen',
-              style: TextStyles.font18White700w,
-            ),
-          ),
-        ),
+      screens: const [
+        HomeScreen(),
+        Favourites(),
+        ProfileScreen(),
       ],
       gradientColors: AppColors.maingGradientColor,
       notSelectedColor: AppColors.white,
