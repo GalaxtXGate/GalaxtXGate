@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/core/utils/app_icons.dart';
 
 class UserEmail extends StatelessWidget {
@@ -12,12 +13,9 @@ class UserEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.r),
-        color: AppColors.textFieldsGrey,
-        border: Border.all(
-          color:AppColors.borderGreyDark
-        )
-      ),
+          borderRadius: BorderRadius.circular(15.r),
+          color: AppColors.textFieldsGrey,
+          border: Border.all(color: AppColors.borderGreyDark)),
       height: 60.h,
       child: Center(
         child: Row(
@@ -28,7 +26,7 @@ class UserEmail extends StatelessWidget {
               width: 10,
             ),
             Text(
-              "asmaasedeek636@gmail.com",
+              AppGeneral.user!.email!,
               style: TextStyles.font14White700w.copyWith(
                 fontWeight: FontWeight.w400,
               ),

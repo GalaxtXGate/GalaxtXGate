@@ -5,7 +5,6 @@ import 'package:galaxyxgate/features/auth/screens/sign_up.dart';
 import 'package:galaxyxgate/features/bottom_nav_bar/view/bottom_nav_bar.dart';
 import 'package:galaxyxgate/features/home/view/home_screen.dart';
 import 'package:galaxyxgate/features/onboarding/screens/onboarding_screen.dart';
-import '../../features/getStartedNow/screen/getStartedNow_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -22,9 +21,6 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
 
-      case Routes.getStartNowScreen:
-        return MaterialPageRoute(
-            builder: (context) => const GetStartNowScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(

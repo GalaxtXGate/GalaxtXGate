@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/positioned_star_with_animation.dart';
+import 'package:galaxyxgate/features/profile/presentation/widgets/edit_profile_data.dart';
 import 'package:galaxyxgate/features/profile/presentation/widgets/semi_circle_with_animation.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/view_profile_data.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class EditProfile extends StatefulWidget {
+  const EditProfile({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<EditProfile> createState() => _EditProfileState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen>
+class _EditProfileState extends State<EditProfile>
     with SingleTickerProviderStateMixin {
   PageController? _controller;
   late AnimationController _animationController;
@@ -25,7 +26,6 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   void initState() {
     super.initState();
-
     initializePageController();
     initializeAnimationController();
     initializeAnimatedStars();
@@ -70,35 +70,40 @@ class _ProfileScreenState extends State<ProfileScreen>
           child: SafeArea(
             child: Column(
               children: [
+                const DefultAppHeader(
+                  title: 'Profile',
+                  tag: 'Profile',
+                  isProfile: true,
+                ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 30.h),
+                  padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 30.h),
                   child: Stack(
                     children: [
                       PositionedSemiCircleWithAnimation(
                         animation: _animatedSemiCircle1,
                         top: 50.h,
-                        right: -5.w,
-                        scale: 1.5,
+                        right: -10.w,
+                        scale: 2,
                         imagePath: AppImages.semicircleImage,
                       ),
                       PositionedSemiCircleWithAnimation(
                         animation: _animatedSemiCircle2,
-                        top: 160.h,
+                        top: 250.h,
                         right: 200,
-                        scale: 1,
+                        scale: 0.5,
                         imagePath: AppImages.rotatedSemicircleImage,
                       ),
-                      const ViewProfileData(),
+                      const EditProfileData(),
                       PositionedStarWithAnimation(
                         animation: _animatedStar1,
-                        bottom: 550.h,
+                        bottom: 600.h,
                         right: -80.w,
                         scale: 1.5.sp,
                         left: 100.w,
                       ),
                       PositionedStarWithAnimation(
                         animation: _animatedStar2,
-                        bottom: 450.h,
+                        bottom: 500.h,
                         right: 220.w,
                         scale: 0.7,
                         left: 40.w,
