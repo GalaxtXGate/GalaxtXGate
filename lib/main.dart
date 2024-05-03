@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/helpers/cache_helper.dart';
 import 'package:galaxyxgate/core/routes/router.dart';
+import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/features/auth/data/services/auth_services.dart';
 import 'package:galaxyxgate/galaxy_x_gate_app.dart';
-
 import 'core/utils/app_assets.dart';
 
 void main() async {
@@ -16,7 +16,10 @@ void main() async {
   await EasyLocalization.ensureInitialized();
 
   setUpServiceLocator();
-  getIt<AuthServices>().getCredintials();
+  await getIt<AuthServices>().getDataLocal();
+
+  AppGeneral.notFirstTime = CacheHelper.getData(key: 'firstTime') ?? false;
+
   runApp(const MyApp());
   CacheHelper.init();
   runApp(EasyLocalization(

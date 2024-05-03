@@ -7,6 +7,7 @@ import 'package:galaxyxgate/features/auth/logic/sign_in_cubit/sign_in_cubit.dart
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:galaxyxgate/features/launches/data/services/launches_services.dart';
 import 'package:galaxyxgate/features/launches/logic/cubit/launches_cubit.dart';
+import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -57,6 +58,12 @@ void setUpServiceLocator() {
     getIt.registerSingleton<AboutCompanyCubit>(
       AboutCompanyCubit(
         aboutCompanyServices: getIt<AboutCompanyServices>(),
+      ),
+    );
+
+    getIt.registerSingleton<ProfileCubit>(
+      ProfileCubit(
+        authServices: getIt<AuthServices>(),
       ),
     );
 

@@ -26,9 +26,24 @@ class SignInCubit extends Cubit<SignInState> {
           failure.errMessage,
         ),
       ),
-      (userCredential) => emit(
-        SignInSuccess(),
-      ),
+      (userCredential) async {
+        var result = await _authServices.getDataFromFireBase(
+          userId: userCredential.user!.uid,
+        );
+        result.fold(
+          (failure) => emit(
+            SignInFailure(
+              failure.errMessage,
+            ),
+          ),
+          (galaxyUser) async {
+            await _authServices.updateDataLocal(user: galaxyUser);
+            emit(
+              SignInSuccess(),
+            );
+          },
+        );
+      },
     );
   }
 }

@@ -6,14 +6,21 @@ import '../../../../core/utils/app_icons.dart';
 
 class EditTextField extends StatelessWidget {
   const EditTextField(
-      {super.key, required this.hintText, required this.labelText, this.icon,required this.isSecure});
+      {super.key,
+      required this.hintText,
+      required this.labelText,
+      this.icon,
+      required this.isSecure,
+      required this.controller});
   final String hintText;
   final String labelText;
   final Widget? icon;
   final bool isSecure;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       style: TextStyles.textStyle14400.copyWith(height: 2),
       cursorColor: AppColors.white,
       decoration: InputDecoration(
@@ -35,11 +42,10 @@ class EditTextField extends StatelessWidget {
         fillColor: AppColors.textFieldsGrey,
         hintText: hintText,
         labelText: labelText,
-        hintStyle:  TextStyles.textStyle12400,
-        labelStyle:  TextStyles.textStyle14400.copyWith(color:AppColors.white),
-        suffixIcon:   Image.asset(AppIcons.edit),
+        hintStyle: TextStyles.textStyle12400,
+        labelStyle: TextStyles.textStyle14400.copyWith(color: AppColors.white),
+        suffixIcon: Image.asset(AppIcons.edit),
         prefixIcon: icon,
-
       ),
       obscureText: isSecure,
     );

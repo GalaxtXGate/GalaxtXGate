@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
 
 class WelcomAndName extends StatelessWidget {
@@ -20,7 +21,7 @@ class WelcomAndName extends StatelessWidget {
           ),
         ),
         Text(
-          "Shehab Tarek !",
+          AppGeneral.user!.name!,
           style: TextStyles.font20White700w,
         ),
       ],

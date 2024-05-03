@@ -21,6 +21,16 @@ class SignUpTextAndFields extends StatelessWidget {
           height: 40.h,
         ),
         CustomTextField(
+          height: 60.h,
+          hintText: 'Enter Your Name',
+          labelText: 'Name',
+          controller: SignUpCubit.nameController,
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        CustomTextField(
+          height: 60.h,
           hintText: 'Enter Your Email',
           labelText: 'Email',
           controller: SignUpCubit.emailController,
@@ -29,6 +39,7 @@ class SignUpTextAndFields extends StatelessWidget {
           height: 20.h,
         ),
         CustomTextField(
+          height: 60.h,
           hintText: 'Enter Your Password',
           labelText: 'Password',
           isPassword: true,
@@ -38,6 +49,7 @@ class SignUpTextAndFields extends StatelessWidget {
           height: 20.h,
         ),
         CustomTextField(
+          height: 60.h,
           hintText: 'Enter Your Password',
           labelText: 'Confirm Password',
           isPassword: true,

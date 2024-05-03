@@ -21,6 +21,7 @@ class BottomNavBar extends StatelessWidget {
       screens: [
         const HomeScreen(),
         Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Center(
             child: Text(
               'Fav Screen',
@@ -28,7 +29,7 @@ class BottomNavBar extends StatelessWidget {
             ),
           ),
         ),
-       ProfileScreen()
+        const ProfileScreen()
       ],
       gradientColors: AppColors.maingGradientColor,
       notSelectedColor: AppColors.white,
