@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:galaxyxgate/core/networking/apis_constant.dart';
 
 class DioHelper {
+  late Dio _dio;
   DioHelper({Dio? dio}) {
     if (dio == null) {
       _dio = Dio(
@@ -13,8 +14,6 @@ class DioHelper {
       _dio = dio;
     }
   }
-
-  late Dio _dio;
 
   /// http get request
   dynamic getRequest({

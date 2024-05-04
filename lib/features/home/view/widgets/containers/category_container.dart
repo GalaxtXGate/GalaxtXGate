@@ -4,7 +4,13 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 
 class CategoryContainer extends StatelessWidget {
-  const CategoryContainer({
+  final double height;
+  final double width;
+  final String backgroundImg;
+  final String title;
+  final String description;
+  Function()? onTap;
+  CategoryContainer({
     super.key,
     required this.height,
     required this.width,
@@ -95,8 +101,21 @@ class CategoryContainer extends StatelessWidget {
               width: width,
             ),
           ),
-        )
-      ],
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(15.r),
+              onTap: () {
+                // Navigate to the category screen
+              },
+              child: SizedBox(
+                height: height,
+                width: width,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

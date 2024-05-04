@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   cloud_firestore
+  url_launcher_windows
   connectivity_plus
   file_selector_windows
   firebase_auth
