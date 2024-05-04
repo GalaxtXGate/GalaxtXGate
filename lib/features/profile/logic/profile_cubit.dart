@@ -20,13 +20,12 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   static TextEditingController nameController = TextEditingController();
   static TextEditingController emailController = TextEditingController();
-
   static ValueNotifier<File?> profilePic = ValueNotifier<File?>(null);
 
   Future<void> getUserData() async {
     emit(GetDataLoading());
     var result = await _authServices.getDataFromFireBase(
-      userId: AppGeneral.user!.uid!,
+      userId: AppGeneral.user.value!.uid!,
     );
     result.fold(
       (failure) => emit(
@@ -46,7 +45,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     Either<ServerFailure, void> result =
         await _authServices.updateDataToFireBase(
       user: GalaxyUser(
-        uid: AppGeneral.user!.uid!,
+        uid: AppGeneral.user.value!.uid!,
         name: nameController.text.trim(),
         email: emailController.text.trim(),
       ),
@@ -68,7 +67,7 @@ class ProfileCubit extends Cubit<ProfileState> {
 
     Either<ServerFailure, void> result =
         await _authServices.sendPasswordResetEmail(
-      email: AppGeneral.user!.email!,
+      email: AppGeneral.user.value!.email!,
     );
     result.fold(
       (failure) => emit(
@@ -83,10 +82,11 @@ class ProfileCubit extends Cubit<ProfileState> {
   }
 
   Future<void> pickImageFromGallery() async {
-    emit(UpdateProfilePicLoading());
     final pickedImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
+      emit(UpdateProfilePicLoading());
+
       Either<ServerFailure, GalaxyUser> result =
           await _authServices.updateDataToFireBase(
         user: GalaxyUser(),

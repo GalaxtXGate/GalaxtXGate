@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/data/models/user.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
@@ -25,10 +27,15 @@ class UserEmail extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            Text(
-              AppGeneral.user!.email!,
-              style: TextStyles.font14White700w.copyWith(
-                fontWeight: FontWeight.w400,
+            ValueListenableBuilder(
+              valueListenable: AppGeneral.user,
+              builder: (BuildContext context, GalaxyUser? currentUser,
+                      Widget? child) =>
+                  Text(
+                currentUser!.email!,
+                style: TextStyles.font14White700w.copyWith(
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           ],

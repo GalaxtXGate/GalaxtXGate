@@ -28,26 +28,24 @@ class GalaxyXGateApp extends StatelessWidget {
         812,
       ),
       minTextAdapt: true,
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (_) => serviceLocator<CrewsCubit>()),
-          BlocProvider(create: (_) => serviceLocator<ShipsCubit>()),
-        ],
-        child: MaterialApp(
-          builder: DevicePreview.appBuilder,
-          title: 'GalaxyXGate',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primaryColor: AppColors.purple,
-            scaffoldBackgroundColor: AppColors.lightBlack,
-          ),
-           initialRoute: AppGeneral.user != null && AppGeneral.user!.uid != null
-            ? Routes.bottomNavBar
-            : (AppGeneral.notFirstTime != null && AppGeneral.notFirstTime!)
-                ? Routes.signIn
-                : Routes.onboarding,
-          onGenerateRoute: router.generateRoute,
+      child: MaterialApp(
+        navigatorKey: NavigationService.navigatorKey,
+        title: 'GalaxyXGate',
+        locale: context.locale,
+        supportedLocales: context.supportedLocales,
+        localizationsDelegates: context.localizationDelegates,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: AppColors.purple,
+          scaffoldBackgroundColor: AppColors.lightBlack,
         ),
+        initialRoute:
+            AppGeneral.user.value != null && AppGeneral.user.value!.uid != null
+                ? Routes.bottomNavBar
+                : (AppGeneral.notFirstTime != null && AppGeneral.notFirstTime!)
+                    ? Routes.signIn
+                    : Routes.onboarding,
+        onGenerateRoute: router.generateRoute,
       ),
     );
   }
