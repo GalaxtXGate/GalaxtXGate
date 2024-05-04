@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:galaxyxgate/core/helpers/cache_helper.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
@@ -46,7 +48,7 @@ class DeleteAccountButton extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            "Are Sure You Want To Delete Your Account?",
+                            AppStrings.areSureYouWantToDeleteYourAccount.tr(),
                             style: TextStyles.font16White700w.copyWith(
                               fontWeight: FontWeight.w300,
                               color: AppColors.offWhite,
@@ -57,7 +59,7 @@ class DeleteAccountButton extends StatelessWidget {
                             height: 10.h,
                           ),
                           Text(
-                            "Your Data will be Removed !!",
+                            AppStrings.yourDataWillBeRemoved.tr(),
                             style: TextStyles.font10White700w.copyWith(
                               fontWeight: FontWeight.w300,
                               color: Colors.grey,
@@ -75,7 +77,7 @@ class DeleteAccountButton extends StatelessWidget {
                                 height: 40.h,
                                 width: 100.w,
                                 child: EditGradientButton(
-                                  title: "No",
+                                  title:AppStrings.no.tr(),
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
@@ -100,7 +102,7 @@ class DeleteAccountButton extends StatelessWidget {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           messageSnackBar(
-                                            message: 'Delete Account Success',
+                                            message: AppStrings.deleteAccountSuccess.tr(),
                                           ),
                                         );
                                         logOut();
@@ -108,7 +110,7 @@ class DeleteAccountButton extends StatelessWidget {
                                     },
                                     builder: (context, state) {
                                       return EditGradientButton(
-                                        title: "Yes",
+                                        title: AppStrings.yes.tr(),
                                         onPressed: () async {
                                           await context
                                               .read<SignUpCubit>()
@@ -128,7 +130,7 @@ class DeleteAccountButton extends StatelessWidget {
                 ));
       },
       child: Text(
-        "Delete Account",
+       AppStrings.deleteAccount.tr(),
         style: TextStyles.font16White700w,
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/data/services/context_services.dart';
@@ -5,6 +6,7 @@ import 'package:galaxyxgate/core/helpers/cache_helper.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
 
 logOut() {
@@ -42,7 +44,7 @@ class LogOutButton extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            "Are Sure You Want To LogOut?",
+                           AppStrings.areSureYouWantToLogOut.tr(),
                             style: TextStyles.font16White700w.copyWith(
                               fontWeight: FontWeight.w300,
                               color: AppColors.offWhite,
@@ -53,7 +55,7 @@ class LogOutButton extends StatelessWidget {
                             height: 10.h,
                           ),
                           Text(
-                            "Your Local Data will be Removed",
+                           AppStrings.yourLocalDataWillBeRemoved.tr(),
                             style: TextStyles.font10White700w.copyWith(
                               fontWeight: FontWeight.w300,
                               color: Colors.grey,
@@ -71,7 +73,7 @@ class LogOutButton extends StatelessWidget {
                                 height: 40.h,
                                 width: 100.w,
                                 child: EditGradientButton(
-                                  title: "No",
+                                  title: AppStrings.no.tr(),
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
@@ -81,7 +83,7 @@ class LogOutButton extends StatelessWidget {
                                 height: 40.h,
                                 width: 100.w,
                                 child: EditGradientButton(
-                                  title: "Yes",
+                                  title: AppStrings.yes.tr(),
                                   onPressed: () async {
                                     logOut();
                                   },
@@ -96,7 +98,7 @@ class LogOutButton extends StatelessWidget {
                 ));
       },
       child: Text(
-        "LogOut",
+        AppStrings.logout.tr(),
         style: TextStyles.font16White700w,
       ),
     );
