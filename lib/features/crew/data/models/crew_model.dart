@@ -1,20 +1,20 @@
 class CrewModel {
-  String? name;
-  String? agency;
-  String? image;
-  String? wikipedia;
-  List<String>? launches;
-  String? status;
-  String? id;
+  late String name;
+  late String agency;
+  late String image;
+  late String wikipedia;
+  late List<String> launches;
+  late String status;
+  late String id;
 
   CrewModel(
-      {this.name,
-      this.agency,
-      this.image,
-      this.wikipedia,
-      this.launches,
-      this.status,
-      this.id});
+      {required this.name,
+      required this.agency,
+      required this.image,
+      required this.wikipedia,
+      required this.launches,
+      required this.status,
+      required this.id});
 
   CrewModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
