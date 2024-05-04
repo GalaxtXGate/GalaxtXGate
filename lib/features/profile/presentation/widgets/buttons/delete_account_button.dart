@@ -1,6 +1,9 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/data/services/context_services.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/helpers/cache_helper.dart';
@@ -9,6 +12,8 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
+import 'package:galaxyxgate/features/auth/screens/widgets/custom_text_field.dart';
+import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
 import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
 
 logOut() {
@@ -37,91 +42,138 @@ class DeleteAccountButton extends StatelessWidget {
       onPressed: () async {
         await showDialog(
             context: context,
-            builder: (context) => Dialog(
-                  backgroundColor: AppColors.deepGrey,
-                  child: SizedBox(
-                    height: 200.h,
-                    child: Padding(
-                      padding: EdgeInsets.all(20.w),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Are Sure You Want To Delete Your Account?",
-                            style: TextStyles.font16White700w.copyWith(
-                              fontWeight: FontWeight.w300,
-                              color: AppColors.offWhite,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Text(
-                            "Your Data will be Removed !!",
-                            style: TextStyles.font10White700w.copyWith(
-                              fontWeight: FontWeight.w300,
-                              color: Colors.grey,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(
-                            height: 30.h,
-                          ),
-                          const Spacer(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              SizedBox(
-                                height: 40.h,
-                                width: 100.w,
-                                child: EditGradientButton(
-                                  title: "No",
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                ),
+            builder: (context) => StatefulBuilder(
+                  builder: (BuildContext context,
+                          void Function(void Function()) setState) =>
+                      Dialog(
+                    backgroundColor: AppColors.deepGrey,
+                    child: SizedBox(
+                      height: 300.h,
+                      child: Padding(
+                        padding: EdgeInsets.all(20.w),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Are Sure You Want To Delete Your Account?",
+                              style: TextStyles.font16White700w.copyWith(
+                                fontWeight: FontWeight.w300,
+                                color: AppColors.offWhite,
                               ),
-                              SizedBox(
-                                height: 40.h,
-                                width: 100.w,
-                                child: BlocProvider<SignUpCubit>.value(
-                                  value: getIt<SignUpCubit>(),
-                                  child: BlocConsumer<SignUpCubit, SignUpState>(
-                                    listener: (context, state) {
-                                      if (state is DeleteAccountFailure) {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          messageSnackBar(
-                                            message: state.message,
-                                          ),
-                                        );
-                                      }
-                                      if (state is DeleteAccountSuccess) {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          messageSnackBar(
-                                            message: 'Delete Account Success',
-                                          ),
-                                        );
-                                        logOut();
-                                      }
-                                    },
-                                    builder: (context, state) {
-                                      return EditGradientButton(
-                                        title: "Yes",
-                                        onPressed: () async {
-                                          await context
-                                              .read<SignUpCubit>()
-                                              .deleteAccount();
-                                        },
-                                      );
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Text(
+                              "Your Data will be Removed !!",
+                              style: TextStyles.font10White700w.copyWith(
+                                fontWeight: FontWeight.w300,
+                                color: Colors.grey,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Text(
+                              "You Must Enter your Password to Confirm",
+                              style: TextStyles.font10White700w.copyWith(
+                                fontWeight: FontWeight.w300,
+                                color: Colors.grey,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(
+                              height: 20.h,
+                            ),
+                            CustomTextField(
+                              height: 60.h,
+                              hintText: '* * * * * *',
+                              labelText: 'Password',
+                              controller: SignUpCubit.passwordController,
+                            ),
+                            SizedBox(
+                              height: 20.h,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                SizedBox(
+                                  height: 40.h,
+                                  width: 100.w,
+                                  child: EditGradientButton(
+                                    title: "No",
+                                    onPressed: () {
+                                      Navigator.pop(context);
                                     },
                                   ),
                                 ),
-                              ),
-                            ],
-                          )
-                        ],
+                                SizedBox(
+                                  height: 40.h,
+                                  width: 100.w,
+                                  child: BlocProvider<SignUpCubit>.value(
+                                    value: getIt<SignUpCubit>(),
+                                    child:
+                                        BlocConsumer<SignUpCubit, SignUpState>(
+                                      listener: (context, state) {
+                                        if (state is DeleteAccountFailure) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            messageSnackBar(
+                                              message: state.message,
+                                            ),
+                                          );
+                                        }
+                                        if (state is DeleteAccountSuccess) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            messageSnackBar(
+                                              message: 'Delete Account Success',
+                                            ),
+                                          );
+                                          logOut();
+                                        }
+                                      },
+                                      builder: (context, state) {
+                                        if (state is DeleteAccountLoading) {
+                                          return GradientText(
+                                            colors: const [
+                                              AppColors.purple,
+                                              AppColors.blue,
+                                              AppColors.cyan,
+                                            ],
+                                            child: SpinKitWave(
+                                              color: Colors.grey,
+                                              size: 30.w,
+                                            ),
+                                          );
+                                        }
+                                        return EditGradientButton(
+                                          title: "Yes",
+                                          onPressed: () async {
+                                            if (SignUpCubit.passwordController
+                                                .text.isNotEmpty) {
+                                              await context
+                                                  .read<SignUpCubit>()
+                                                  .deleteAccount();
+                                            } else {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                messageSnackBar(
+                                                    message:
+                                                        "Please Enter Your Password "),
+                                              );
+                                            }
+                                          },
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
