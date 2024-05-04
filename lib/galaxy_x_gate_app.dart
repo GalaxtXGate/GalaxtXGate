@@ -1,12 +1,15 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/data/services/context_services.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:galaxyxgate/features/crew/business_logic/cubit/crews_cubit.dart';
 import 'package:galaxyxgate/features/ships/business_logic/cubit/ships_cubit.dart';
 import 'package:galaxyxgate/init_dependecies.dart';
+import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'core/routes/router.dart';
 
 class GalaxyXGateApp extends StatelessWidget {
@@ -20,7 +23,10 @@ class GalaxyXGateApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(
+        375,
+        812,
+      ),
       minTextAdapt: true,
       child: MultiBlocProvider(
         providers: [
@@ -35,7 +41,11 @@ class GalaxyXGateApp extends StatelessWidget {
             primaryColor: AppColors.purple,
             scaffoldBackgroundColor: AppColors.lightBlack,
           ),
-          initialRoute: Routes.shipsScreen,
+           initialRoute: AppGeneral.user != null && AppGeneral.user!.uid != null
+            ? Routes.bottomNavBar
+            : (AppGeneral.notFirstTime != null && AppGeneral.notFirstTime!)
+                ? Routes.signIn
+                : Routes.onboarding,
           onGenerateRoute: router.generateRoute,
         ),
       ),
