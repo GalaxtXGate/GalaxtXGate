@@ -12,6 +12,7 @@ class LaunchesCubit extends Cubit<LaunchesState> {
     _launchesServices = launchesServices;
   }
   late LaunchesServices _launchesServices;
+  List<Launche> launches = [];
 
   Future<void> getLaunches() async {
     emit(GetLaunchesLoading());
@@ -27,5 +28,6 @@ class LaunchesCubit extends Cubit<LaunchesState> {
         GetLaunchesSuccess(launchesModel: launches),
       ),
     );
+    launches = result.getOrElse(() => []);
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
+import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
 import 'package:galaxyxgate/features/launches/data/models/launches/launches.dart';
 import 'package:galaxyxgate/features/launches/screens/widgets/rows/launch_status.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
@@ -48,16 +49,25 @@ class LaunchCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //fire date
-                GradientText(
-                  colors: const [
-                    AppColors.purple,
-                    AppColors.blue,
-                    AppColors.cyan
+                Row(
+                  children: [
+                    GradientText(
+                      colors: const [
+                        AppColors.purple,
+                        AppColors.blue,
+                        AppColors.cyan
+                      ],
+                      child: Text(
+                        launche.dateUtc!.substring(0, 10),
+                        style: TextStyles.font10White700w,
+                      ),
+                    ),
+                    const Spacer(),
+                    FavoriteIcon(
+                      onPressed: () {},
+                      icon: Icons.favorite_border,
+                    )
                   ],
-                  child: Text(
-                    launche.dateUtc!.substring(0, 10),
-                    style: TextStyles.font10White700w,
-                  ),
                 ),
                 // launch name
                 Text(

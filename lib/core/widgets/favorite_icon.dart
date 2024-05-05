@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 
 class FavoriteIcon extends StatefulWidget {
-  const FavoriteIcon(
-      {super.key, required this.isFavourite, required this.onPressed});
-  final bool? isFavourite;
+  FavoriteIcon(
+      {super.key, this.isFavourite, required this.onPressed, this.icon});
+  bool? isFavourite;
   final VoidCallback? onPressed;
+  final IconData? icon;
 
   @override
   State<FavoriteIcon> createState() => _FavoriteIconState();
@@ -22,23 +23,18 @@ class _FavoriteIconState extends State<FavoriteIcon> {
             AppColors.loginTextGradientPurple,
             AppColors.loginTextGradientBlue,
             AppColors.loginTextGradientGreen
-          ], 
-          begin: Alignment.centerLeft, 
+          ],
+          begin: Alignment.centerLeft,
           end: Alignment.topCenter,
         ).createShader(bounds);
       },
       child: IconButton(
         iconSize: 29,
         onPressed: widget.onPressed,
-        icon: widget.isFavourite!
-            ? const Icon(
-                Icons.favorite,
-                color: AppColors.white,
-              )
-            : const Icon(
-                Icons.favorite_border,
-                color: AppColors.white,
-              ),
+        icon: Icon(
+          widget.icon,
+          color: AppColors.white,
+        ),
       ),
     );
   }

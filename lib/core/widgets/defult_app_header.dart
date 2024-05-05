@@ -10,11 +10,15 @@ class DefultAppHeader extends StatelessWidget {
     required this.title,
     required this.tag,
     this.isProfile,
+    this.isFavourite = false,
+    this.numberOfFavorites,
   });
   final String title;
   final void Function()? onTap;
   final String tag;
   final bool? isProfile;
+  final bool? isFavourite;
+  final String? numberOfFavorites;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +52,20 @@ class DefultAppHeader extends StatelessWidget {
                 style: TextStyles.font20White700w,
               ),
             ),
-          )
+          ),
+          isFavourite!
+              ? Padding(
+                  padding:  EdgeInsets.only(left: 9.0),
+                  child: CircleAvatar(
+                    radius: 13,
+                    backgroundColor: AppColors.red,
+                    child: Text(
+                      numberOfFavorites!,
+                      style: TextStyles.textStyle16400,
+                    ),
+                  ),
+                )
+              : const SizedBox(),
         ],
       ),
     );
