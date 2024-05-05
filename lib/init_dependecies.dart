@@ -2,6 +2,9 @@ import 'package:galaxyxgate/core/networking/dio_helper.dart';
 import 'package:galaxyxgate/features/crew/business_logic/cubit/crews_cubit.dart';
 import 'package:galaxyxgate/features/crew/data/repository/crews_repository.dart';
 import 'package:galaxyxgate/features/crew/data/services/crews_services.dart';
+import 'package:galaxyxgate/features/rockets/cubit/rockets_cubit.dart';
+import 'package:galaxyxgate/features/rockets/data/repository/rockets_repository.dart';
+import 'package:galaxyxgate/features/rockets/data/services/rockets_services.dart';
 import 'package:galaxyxgate/features/ships/business_logic/cubit/ships_cubit.dart';
 import 'package:galaxyxgate/features/ships/data/repository/ships_repository.dart';
 import 'package:galaxyxgate/features/ships/data/services/ships_services.dart';
@@ -12,6 +15,7 @@ Future<void> initDependencies() async {
   serviceLocator.registerLazySingleton<DioHelper>(() => DioHelper());
   _initCrew();
   _initShips();
+  _initRocket();
 }
 
 _initCrew() {
@@ -46,5 +50,23 @@ _initShips() {
     //cubit
     ..registerLazySingleton<ShipsCubit>(
       () => ShipsCubit(shipsRepository: serviceLocator()),
+    );
+}
+
+_initRocket() {
+  serviceLocator
+    //service
+    ..registerFactory<RocketsService>(
+      () => RocketsServiceImp(dioHelper: serviceLocator()),
+    )
+
+    // repository
+    ..registerFactory<RocketsRepository>(
+      () => RocketsRepository(rocketService: serviceLocator()),
+    )
+
+    //cubit
+    ..registerLazySingleton<RocketsCubit>(
+      () => RocketsCubit(rocketsRepository: serviceLocator()),
     );
 }

@@ -1,3 +1,6 @@
+import 'package:json_annotation/json_annotation.dart';
+
+@JsonSerializable(explicitToJson: true)
 class ShipsModel {
   String? legacyId;
   String? type;
@@ -25,6 +28,10 @@ class ShipsModel {
       this.active,
       this.launches,
       this.id});
+
+  // factory ShipsModel.fromJson(Map<String, dynamic> json) =>
+  //     _$ShipsModelFromJson(json);
+  // Map<String, dynamic> toJson() => _$ShipsModelToJson(this);
 
   ShipsModel.fromJson(Map<String, dynamic> json) {
     legacyId = json['legacy_id'];

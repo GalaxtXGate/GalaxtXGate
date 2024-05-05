@@ -42,8 +42,8 @@ SnackBar messageSnackBar({
             imagePath,
             height: 24.h,
             width: 29.w,
-            colorFilter:
-                const ColorFilter.mode(AppColors.purple, BlendMode.srcATop),
+            // colorFilter:
+            //     const ColorFilter.mode(AppColors.purple, BlendMode.srcATop),
           ),
         SizedBox(
           width: 10.w,

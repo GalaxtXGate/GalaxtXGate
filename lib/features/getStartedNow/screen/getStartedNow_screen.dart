@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/features/getStartedNow/screen/widgets/dark%20earth%20in%20space.dart';
 import 'package:galaxyxgate/features/getStartedNow/screen/widgets/get_start_now_screen_background.dart';
