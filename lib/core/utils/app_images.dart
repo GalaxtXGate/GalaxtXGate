@@ -43,6 +43,9 @@ class AppImages {
 
   static const String appLogo = 'assets/images/app_logo.png';
 
+  static const String astronaut = 'assets/images/astronaut.png';
+
+
   static const String darkEarthInSpaceImage =
       'assets/images/dark_earth_in_space.png';
   static const String spaceManImage =

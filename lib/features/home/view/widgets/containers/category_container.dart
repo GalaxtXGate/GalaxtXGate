@@ -9,8 +9,9 @@ class CategoryContainer extends StatelessWidget {
   final String backgroundImg;
   final String title;
   final String description;
-  Function()? onTap;
-  CategoryContainer({
+  final void Function() onTap;
+  final String tag;
+  const CategoryContainer({
     super.key,
     required this.height,
     required this.width,
@@ -20,13 +21,7 @@ class CategoryContainer extends StatelessWidget {
     required this.onTap,
     required this.tag,
   });
-  final double height;
-  final double width;
-  final String backgroundImg;
-  final String title;
-  final String description;
-  final void Function() onTap;
-  final String tag;
+
 
   @override
   Widget build(BuildContext context) {
@@ -101,21 +96,8 @@ class CategoryContainer extends StatelessWidget {
               width: width,
             ),
           ),
-          Material(
-            color: Colors.transparent,
-            child: InkWell(
-              borderRadius: BorderRadius.circular(15.r),
-              onTap: () {
-                // Navigate to the category screen
-              },
-              child: SizedBox(
-                height: height,
-                width: width,
-              ),
-            ),
-          )
+        ),
         ],
-      ),
     );
   }
 }

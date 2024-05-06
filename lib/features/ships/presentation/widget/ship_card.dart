@@ -5,8 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
 import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
 import 'package:galaxyxgate/features/ships/presentation/widget/ship_features.dart';
+
+import '../../../../core/di/dependency_injection.dart';
+import '../../../../core/widgets/favorite_icon.dart';
+import '../../../favourits/data/service.dart/favorite_services.dart';
+import '../../../favourits/logic/cubit/favourite_cubit.dart';
 
 class ShipCard extends StatelessWidget {
   final ShipsModel ship;
@@ -100,10 +106,26 @@ class ShipCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                Image.asset(
-                  'assets/icons/fav.png',
-                  width: 25.w,
-                  height: 30.h,
+                FavoriteIcon(
+                  noFavFunction: () async {
+                    await getIt<FavoriteServices>().addFav(
+                      addFav: AddFav(
+                        id: ship.id!,
+                        category: "Ships",
+                        name: ship.name!,
+                        description: ship.homePort,
+                        image: ship.image ??
+                            'No Image',
+                      ),
+                    );
+                  },
+                  favFunction: () async {
+                    await getIt<FavoriteServices>()
+                        .removeFav(id: ship.id!);
+                  },
+                  icon: Icons.favorite,
+                  isFavourite: FavoriteCubit.favs.any(
+                          (element) => element.id == ship.id),
                 ),
               ],
             ),

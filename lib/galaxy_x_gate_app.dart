@@ -1,14 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/data/services/context_services.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:galaxyxgate/features/crew/business_logic/cubit/crews_cubit.dart';
-import 'package:galaxyxgate/features/ships/business_logic/cubit/ships_cubit.dart';
-import 'package:galaxyxgate/init_dependecies.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'core/routes/router.dart';
 
