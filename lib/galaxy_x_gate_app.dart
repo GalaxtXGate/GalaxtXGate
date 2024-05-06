@@ -21,7 +21,10 @@ class GalaxyXGateApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(
+        375,
+        812,
+      ),
       minTextAdapt: true,
       child: MultiBlocProvider(
         providers: [
@@ -37,7 +40,7 @@ class GalaxyXGateApp extends StatelessWidget {
             primaryColor: AppColors.purple,
             scaffoldBackgroundColor: AppColors.lightBlack,
           ),
-          initialRoute: Routes.rocketsScreen,
+          initialRoute: Routes.shipsScreen,
           onGenerateRoute: router.generateRoute,
         ),
       ),
