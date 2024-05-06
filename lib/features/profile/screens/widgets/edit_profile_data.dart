@@ -10,7 +10,7 @@ import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/buttons/change_password_button.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/buttons/change_password_button.dart';
 import '../../../../core/themes/app_colors.dart';
 import '../../../../core/themes/text_styles.dart';
 import '../../../../core/utils/app_icons.dart';

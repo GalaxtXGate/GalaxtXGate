@@ -7,8 +7,8 @@ import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/positioned_star_with_animation.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/edit_profile_data.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/semi_circle_with_animation.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/edit_profile_data.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/semi_circle_with_animation.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});

@@ -9,7 +9,7 @@ import 'package:galaxyxgate/features/bottom_nav_bar/view/widgets/blured_bottom_n
 import 'package:galaxyxgate/features/favourits/screen/favorites.dart';
 import 'package:galaxyxgate/features/home/view/home_screen.dart';
 
-import '../../profile/presentation/profile_screen.dart';
+import '../../profile/screens/profile_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

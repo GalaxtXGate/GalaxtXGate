@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:galaxyxgate/features/rockets/Presentation/screen/rocket_details_screen.dart';
-import 'package:galaxyxgate/features/rockets/Presentation/widget/rocket_list_item.dart';
+import 'package:galaxyxgate/features/rockets/screens/widget/rocket_details_screen.dart';
+import 'package:galaxyxgate/features/rockets/screens/widget/cards/rocket_card.dart';
 import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
 
 class AnimatedRocketsListView extends StatelessWidget {
@@ -35,7 +35,7 @@ class AnimatedRocketsListView extends StatelessWidget {
                             ),
                           );
                         },
-                        child: RocketListItem(
+                        child: RocketCard(
                           rocket: rocket,
                         )),
                   ),

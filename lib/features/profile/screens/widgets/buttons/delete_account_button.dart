@@ -14,7 +14,7 @@ import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:galaxyxgate/features/auth/screens/widgets/custom_text_field.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/edit_button.dart';
 
 logOut() {
   CacheHelper.clearData();

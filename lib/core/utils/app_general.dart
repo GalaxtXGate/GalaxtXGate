@@ -8,4 +8,5 @@ class AppGeneral {
   static ValueNotifier<GalaxyUser?> user = ValueNotifier<GalaxyUser?>(null);
 
   static bool? notFirstTime;
+  static Locale? lang;
 }

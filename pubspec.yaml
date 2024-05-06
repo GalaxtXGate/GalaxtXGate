@@ -63,15 +63,11 @@ dependencies:
 # Managing State 
   equatable: ^2.0.5
   connectivity_plus: ^5.0.0
-  flutter_bloc: ^8.1.5
   image_picker: ^1.1.0
-  iconify_flutter: ^0.0.4
-  flutter_svg: ^1.1.6
   dartz: ^0.10.1
   skeletonizer: ^1.1.1
   shimmer: ^3.0.0
   animated_text_kit: ^4.2.2
-  json_annotation: ^4.8.0
   flutter_secure_storage: ^4.2.1
   firebase_storage: ^11.7.4
 
@@ -81,6 +77,8 @@ dependencies:
   lottie: ^3.1.0
   animations: ^2.0.11
   fluttertoast: ^8.2.5
+  bloc: ^8.1.4
+  animated_toggle_switch: ^0.8.2
 
 
 dev_dependencies:

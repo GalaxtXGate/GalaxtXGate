@@ -20,7 +20,7 @@ String getImagePathForStatus(String status) {
   }
 }
 
-class FavCard extends StatelessWidget {
+class FavCard extends StatefulWidget {
   const FavCard({
     super.key,
     required this.addFav,
@@ -32,47 +32,54 @@ class FavCard extends StatelessWidget {
   final VoidCallback? favFunction;
   final VoidCallback? noFavFunction;
   final IconData icon;
+
+  @override
+  State<FavCard> createState() => _FavCardState();
+}
+
+class _FavCardState extends State<FavCard> {
+  ValueNotifier<bool> isTapped = ValueNotifier<bool>(false);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: AppColors.deepGrey),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 10.w,
-          vertical: 5.h,
-        ),
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.r),
-              child: addFav.image != null
-                  ? DefultAppCachedNetworkImage(
-                      height: 65.w,
-                      width: 65.w,
-                      url: addFav.image!,
-                      fit: BoxFit.contain,
-                    )
-                  : Icon(
-                      Icons.image_not_supported,
-                      size: 100.w,
-                      color: AppColors.deepGrey,
-                    ),
+    return Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: AppColors.deepGrey),
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+              vertical: 5.h,
             ),
-            const SizedBox(
-              width: 12,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (addFav.category != "Crew")
-                    Row(
-                      children: [
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15.r),
+                  child: widget.addFav.image != null
+                      ? DefultAppCachedNetworkImage(
+                          height: 65.w,
+                          width: 65.w,
+                          url: widget.addFav.image!,
+                          fit: BoxFit.contain,
+                        )
+                      : Icon(
+                          Icons.image_not_supported,
+                          size: 100.w,
+                          color: AppColors.deepGrey,
+                        ),
+                ),
+                const SizedBox(
+                  width: 12,
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (widget.addFav.category != "Crew")
                         GradientText(
                           colors: const [
                             AppColors.purple,
@@ -80,74 +87,84 @@ class FavCard extends StatelessWidget {
                             AppColors.cyan,
                           ],
                           child: Text(
-                            addFav.category ?? "No Category",
+                            widget.addFav.category ?? "No Category",
                           ),
                         ),
-                        const Spacer(),
-                        FavoriteIcon(
-                          isFavourite: true,
-                          favFunction: favFunction,
-                          noFavFunction: noFavFunction,
-                          icon: icon,
-                        ),
-                      ],
-                    ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Row(
-                    children: [
+                      const SizedBox(
+                        height: 5,
+                      ),
                       Text(
-                        addFav.name ?? "No name",
+                        widget.addFav.name ?? "No name",
                         style: TextStyles.textStyle16400,
                       ),
-                      if (addFav.category == "Crew") const Spacer(),
-                      if (addFav.category == "Crew")
-                        FavoriteIcon(
-                          isFavourite: true,
-                          favFunction: favFunction,
-                          noFavFunction: noFavFunction,
-                          icon: icon,
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      if (widget.addFav.category != "Crew")
+                        ValueListenableBuilder(
+                          valueListenable: isTapped,
+                          builder: (BuildContext context, bool value,
+                                  Widget? child) =>
+                              SizedBox(
+                            width: 250,
+                            child: Text(
+                              widget.addFav.description ?? "No Details",
+                              style: TextStyles.textStyle12400,
+                              maxLines: value ? 30 : 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                      if (widget.addFav.category == "Crew")
+                        IconTextRow(
+                          imagePath:
+                              getImagePathForStatus(widget.addFav.status!),
+                          text: widget.addFav.status!,
+                        ),
+                      if (widget.addFav.category == "Crew")
+                        IconTextRow(
+                          imagePath: 'assets/images/launch.svg',
+                          text: widget.addFav.launchNum == "1"
+                              ? '${widget.addFav.launchNum} Launch'
+                              : '${widget.addFav.launchNum} Launches',
+                        ),
+                      // Display agency
+                      if (widget.addFav.category == "Crew")
+                        IconTextRow(
+                          imagePath: 'assets/images/agency.svg',
+                          text: widget.addFav.org ?? "No Org",
                         ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  if (addFav.category != "Crew")
-                    SizedBox(
-                      width: 250,
-                      child: Text(
-                        addFav.description ?? "No Details",
-                        style: TextStyles.textStyle12400,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  if (addFav.category == "Crew")
-                    IconTextRow(
-                      imagePath: getImagePathForStatus(addFav.status!),
-                      text: addFav.status!,
-                    ),
-                  if (addFav.category == "Crew")
-                    IconTextRow(
-                      imagePath: 'assets/images/launch.svg',
-                      text: addFav.launchNum == "1"
-                          ? '${addFav.launchNum} Launch'
-                          : '${addFav.launchNum} Launches',
-                    ),
-                  // Display agency
-                  if (addFav.category == "Crew")
-                    IconTextRow(
-                      imagePath: 'assets/images/agency.svg',
-                      text: addFav.org ?? "No Org",
-                    ),
-                ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        Positioned.fill(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15.w),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () {
+                  isTapped.value = !isTapped.value;
+                },
               ),
             ),
-          ],
+          ),
         ),
-      ),
+        Positioned(
+          top: 5.w,
+          right: 5.w,
+          child: FavoriteIcon(
+            isFavourite: true,
+            favFunction: widget.favFunction,
+            noFavFunction: widget.noFavFunction,
+            icon: widget.icon,
+          ),
+        )
+      ],
     );
   }
 }

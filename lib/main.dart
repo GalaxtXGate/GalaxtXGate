@@ -19,6 +19,9 @@ void main() async {
   await getIt<AuthServices>().getDataLocal();
 
   AppGeneral.notFirstTime = CacheHelper.getData(key: 'firstTime') ?? false;
+  AppGeneral.lang = CacheHelper.getData(key: 'local') != null
+      ? Locale(CacheHelper.getData(key: 'local'))
+      : const Locale('en');
 
   runApp(const MyApp());
   CacheHelper.init();
@@ -29,7 +32,7 @@ void main() async {
       Locale('ar'),
     ],
     fallbackLocale: const Locale('ar'),
-    startLocale: const Locale('ar'),
+    startLocale: const Locale('en'),
     child: const MyApp(),
   ));
 }

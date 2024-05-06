@@ -70,7 +70,7 @@ class RocketsModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
 
     if (engines != null) {
       data['engines'] = engines!.toJson();
@@ -109,7 +109,7 @@ class Height {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['meters'] = meters;
     data['feet'] = feet;
     return data;
@@ -128,7 +128,7 @@ class Diameter {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['meters'] = meters;
     data['feet'] = feet;
     return data;
@@ -147,7 +147,7 @@ class Mass {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['kg'] = kg;
     data['lb'] = lb;
     return data;
@@ -184,7 +184,7 @@ class FirstStage {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (thrustSeaLevel != null) {
       data['thrust_sea_level'] = thrustSeaLevel!.toJson();
     }
@@ -211,7 +211,7 @@ class ThrustSeaLevel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['kN'] = kN;
     data['lbf'] = lbf;
     return data;
@@ -263,7 +263,7 @@ class Engines {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (isp != null) {
       data['isp'] = isp!.toJson();
     }
@@ -297,7 +297,7 @@ class Isp {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['sea_level'] = seaLevel;
     data['vacuum'] = vacuum;
     return data;
@@ -320,7 +320,7 @@ class PayloadWeights {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['name'] = name;
     data['kg'] = kg;

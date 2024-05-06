@@ -7,7 +7,7 @@ import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/edit_button.dart';
 
 logOut() {
   CacheHelper.clearData();

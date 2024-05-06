@@ -12,10 +12,10 @@ import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
-import 'package:galaxyxgate/features/profile/presentation/edit_profile.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/buttons/delete_account_button.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/buttons/log_out_button.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/user_email.dart';
+import 'package:galaxyxgate/features/profile/screens/edit_profile.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/buttons/delete_account_button.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/buttons/log_out_button.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/user_email.dart';
 
 import '../../../../core/themes/app_colors.dart';
 import '../../../../core/themes/text_styles.dart';

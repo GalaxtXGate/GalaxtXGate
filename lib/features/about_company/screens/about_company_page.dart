@@ -30,7 +30,7 @@ class AboutCompanyPage extends StatelessWidget {
           controller: AboutCompanyCubit.scrollController,
           padding: EdgeInsets.zero,
           children: [
-            const Expanded(child: HeaderAndSpaceWithAnimatedText()),
+            const HeaderAndSpaceWithAnimatedText(),
             // spacex logo
             Center(
               child: Image.asset(
@@ -56,9 +56,9 @@ class AboutCompanyPage extends StatelessWidget {
                           state.companyInfo.launchSites!,
                           state.companyInfo.vehicles!,
                         ],
-                        tiltles:[
-                         AppStrings.employee.tr(),
-                         AppStrings.launchSites.tr(),
+                        tiltles: [
+                          AppStrings.employee.tr(),
+                          AppStrings.launchSites.tr(),
                           AppStrings.vehicles.tr(),
                         ],
                       ),
@@ -68,7 +68,7 @@ class AboutCompanyPage extends StatelessWidget {
                           state.companyInfo.valuation!,
                         ],
                         tiltles: [
-                         AppStrings.valuation.tr(),
+                          AppStrings.valuation.tr(),
                         ],
                       ),
                       SizedBox(
@@ -106,7 +106,7 @@ class AboutCompanyPage extends StatelessWidget {
                               AppColors.cyan
                             ],
                             child: Text(
-                             AppStrings.address.tr(),
+                              AppStrings.address.tr(),
                               style: TextStyles.font10White700w,
                             ),
                           ),

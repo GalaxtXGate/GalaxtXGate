@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 
 class FavoriteIcon extends StatefulWidget {
   const FavoriteIcon(
@@ -53,8 +53,7 @@ class _FavoriteIconState extends State<FavoriteIcon> {
                     widget.favFunction!();
                   }
                   isFavourite.value = !isFavourite.value;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      messageSnackBar(message: "Removed From Favs"));
+                  HapticFeedback.heavyImpact();
                 },
                 icon: Icon(
                   widget.icon,
@@ -69,8 +68,7 @@ class _FavoriteIconState extends State<FavoriteIcon> {
                   widget.noFavFunction!();
                 }
                 isFavourite.value = !isFavourite.value;
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(messageSnackBar(message: "Added To Favs"));
+                HapticFeedback.heavyImpact();
               },
               icon: Icon(
                 widget.icon,

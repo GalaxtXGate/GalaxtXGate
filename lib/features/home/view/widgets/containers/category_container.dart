@@ -22,7 +22,6 @@ class CategoryContainer extends StatelessWidget {
     required this.tag,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -55,32 +54,40 @@ class CategoryContainer extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Hero(
-                      tag: tag,
-                      child: Material(
-                        color: Colors.transparent,
-                        child: Text(
-                          title,
-                          style: TextStyles.font16White700w,
-                          textAlign: TextAlign.center,
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 5.w,
+                  vertical: 5.h,
+                ),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Hero(
+                        tag: tag,
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Text(
+                            title,
+                            style: TextStyles.font16White700w,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 15.h,
-                    ),
-                    Text(
-                      description,
-                      style: TextStyles.font12White700w,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                      SizedBox(
+                        height: 15.h,
+                      ),
+                      Text(
+                        description,
+                        style: TextStyles.font12White700w.copyWith(
+                          color: Colors.grey,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -97,7 +104,7 @@ class CategoryContainer extends StatelessWidget {
             ),
           ),
         ),
-        ],
+      ],
     );
   }
 }

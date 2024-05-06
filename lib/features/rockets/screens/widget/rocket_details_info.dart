@@ -2,10 +2,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/function/launch_url_browser.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
 import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
+import 'package:galaxyxgate/features/favourits/data/service.dart/favorite_services.dart';
+import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
 import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
 
 class RocketDetailsInfo extends StatelessWidget {
@@ -76,7 +81,7 @@ class RocketDetailsInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          width: 300.w,
+          width: 280.w,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -110,10 +115,26 @@ class RocketDetailsInfo extends StatelessWidget {
             ],
           ),
         ),
-        Image.asset(
-          'assets/icons/fav.png',
-          width: 25.w,
-          height: 30.h,
+        FavoriteIcon(
+          noFavFunction: () async {
+            await getIt<FavoriteServices>().addFav(
+              addFav: AddFav(
+                id: rocket.id,
+                category: "Rockets",
+                name: rocket.name,
+                image: rocket.flickrImages!.first,
+              ),
+            );
+          },
+          favFunction: () async {
+            await getIt<FavoriteServices>().removeFav(
+              id: rocket.id!,
+            );
+          },
+          icon: Icons.favorite,
+          isFavourite: FavoriteCubit.favs.any(
+            (element) => element.id == rocket.id,
+          ),
         ),
       ],
     );
