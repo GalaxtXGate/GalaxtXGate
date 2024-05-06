@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/data/models/user.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
@@ -57,7 +59,7 @@ class _EditProfileDataState extends State<EditProfileData> {
                     if (state is UpdateProfilePicSuccess) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         messageSnackBar(
-                          message: "Profile Picture Updated Successfully",
+                        message: AppStrings.profilePictureUpdatedSuccessfully.tr(),
                         ),
                       );
                     }
@@ -83,7 +85,7 @@ class _EditProfileDataState extends State<EditProfileData> {
                             .pickImageFromGallery();
                       },
                       child: Text(
-                        "Change Photo",
+                      AppStrings.changePhoto.tr(),
                         style: TextStyles.font14White700w.copyWith(
                             fontWeight: FontWeight.w300,
                             color: AppColors.offWhite),
@@ -94,7 +96,7 @@ class _EditProfileDataState extends State<EditProfileData> {
                 Padding(
                   padding: EdgeInsets.fromLTRB(20.w, 40.h, 20.w, 0.h),
                   child: EditTextField(
-                    hintText: 'Enter New Name',
+                  hintText: AppStrings.enterNewEmail.tr(),
                     labelText: currentUser.name!,
                     icon: Image.asset(AppIcons.email),
                     isSecure: false,
@@ -112,7 +114,7 @@ class _EditProfileDataState extends State<EditProfileData> {
                         if (state is UpdateDataSuccess) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             messageSnackBar(
-                              message: "Data Updated Successfully",
+                            message:AppStrings. dataUpdatedSuccessfully.tr(),
                             ),
                           );
                           Navigator.pop(context);
@@ -140,7 +142,7 @@ class _EditProfileDataState extends State<EditProfileData> {
                           );
                         }
                         return EditGradientButton(
-                          title: "Save Changes",
+                        title:AppStrings.saveChanges.tr(),
                           onPressed: () {
                             if (ProfileCubit.nameController.text.isNotEmpty ||
                                 ProfileCubit.emailController.text.isNotEmpty) {

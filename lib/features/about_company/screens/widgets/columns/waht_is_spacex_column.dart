@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/features/about_company/data/models/company_info_model.dart';
 
 class WhatIsSpaceXColumn extends StatelessWidget {
@@ -16,7 +18,7 @@ class WhatIsSpaceXColumn extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "What is SpaceX ?",
+          AppStrings. whatIsSpaceX.tr(),
           style: TextStyles.font24White700w,
         ),
         SizedBox(

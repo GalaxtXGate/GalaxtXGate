@@ -142,15 +142,15 @@ class HomeScreen extends StatelessWidget {
               height: 110.h,
               width: double.infinity,
               backgroundImg: AppImages.aboutSpaceX,
-              title: "About Space X",
-              description: "Know all about Space X details",
+              title: AppStrings.aboutSpaceX.tr(),
+              description:AppStrings.knowAllAboutSpaceXDetails.tr(),
               onTap: () {
                 Navigator.push(
                   context,
                   LeftSlideTransition(page: const AboutCompanyBlocProvider()),
                 );
               },
-              tag: 'About Space X',
+              tag: AppStrings.aboutSpaceX.tr(),
             ),
             SizedBox(
               height: 100.h,

@@ -51,10 +51,10 @@ class LaunchesPage extends StatelessWidget {
                                     : true)
                                 .length,
                           ],
-                          tiltles: const [
-                            "Total Launches",
-                            "Total Landings",
-                            "Total Failuers",
+                          tiltles:  [
+                            AppStrings.totalLaunches.tr(),
+                            AppStrings.totalLandings.tr(),
+                            AppStrings.totalFailures.tr(),
                           ],
                         ),
                         Expanded(

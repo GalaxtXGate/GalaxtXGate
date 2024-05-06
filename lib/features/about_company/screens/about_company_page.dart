@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/core/widgets/launches_numbers_row.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
@@ -54,10 +56,10 @@ class AboutCompanyPage extends StatelessWidget {
                           state.companyInfo.launchSites!,
                           state.companyInfo.vehicles!,
                         ],
-                        tiltles: const [
-                          "Employees",
-                          "Launch Sites",
-                          "vehicles",
+                        tiltles:[
+                         AppStrings.employee.tr(),
+                         AppStrings.launchSites.tr(),
+                          AppStrings.vehicles.tr(),
                         ],
                       ),
                       // Valuation
@@ -65,8 +67,8 @@ class AboutCompanyPage extends StatelessWidget {
                         numbers: [
                           state.companyInfo.valuation!,
                         ],
-                        tiltles: const [
-                          "Valuation",
+                        tiltles: [
+                         AppStrings.valuation.tr(),
                         ],
                       ),
                       SizedBox(
@@ -104,7 +106,7 @@ class AboutCompanyPage extends StatelessWidget {
                               AppColors.cyan
                             ],
                             child: Text(
-                              "Address",
+                             AppStrings.address.tr(),
                               style: TextStyles.font10White700w,
                             ),
                           ),
@@ -127,7 +129,7 @@ class AboutCompanyPage extends StatelessWidget {
                               AppColors.cyan
                             ],
                             child: Text(
-                              "City",
+                              AppStrings.city.tr(),
                               style: TextStyles.font10White700w,
                             ),
                           ),
@@ -157,7 +159,7 @@ class AboutCompanyPage extends StatelessWidget {
                               AppColors.cyan
                             ],
                             child: Text(
-                              "State",
+                              AppStrings.state.tr(),
                               style: TextStyles.font10White700w,
                             ),
                           ),

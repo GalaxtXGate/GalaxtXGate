@@ -72,7 +72,7 @@ class ViewProfileData extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.fromLTRB(50.w, 50.h, 50.w, 0.h),
                   child: EditGradientButton(
-                    title: "Edit Profile",
+                  title: AppStrings.editProfile.tr(),
                     suffixIcon: Image.asset(AppIcons.edit),
                     onPressed: () {
                       Navigator.push(
