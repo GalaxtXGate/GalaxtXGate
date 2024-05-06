@@ -19,18 +19,16 @@ class ShipsPlaceHolder extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.only(bottom: 20.h),
-            child: Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.w),
-                child: SizedBox(
-                  height: 300.h,
-                  width: double.infinity,
-                  child: Card(
-                    child: ListTile(
-                      title: Text('Item number $index as title'),
-                      subtitle: const Text('Subtitle here'),
-                      trailing: const Icon(Icons.ac_unit),
-                    ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5.w),
+              child: SizedBox(
+                height: 300.h,
+                width: double.infinity,
+                child: Card(
+                  child: ListTile(
+                    title: Text('Item number $index as title'),
+                    subtitle: const Text('Subtitle here'),
+                    trailing: const Icon(Icons.ac_unit),
                   ),
                 ),
               ),

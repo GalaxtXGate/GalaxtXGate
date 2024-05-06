@@ -20,25 +20,24 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
       height: 430.h,
       child: Stack(
         children: [
-          Positioned.fill(
-            child: ShaderMask(
-              shaderCallback: (Rect rect) => const LinearGradient(
-                colors: [
-                  AppColors.white,
-                  AppColors.white,
-                  AppColors.white,
-                  AppColors.white,
-                  Colors.transparent,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ).createShader(rect),
-              child: Positioned.fill(
-                child: Image.asset(AppImages.space),
-              ),
-            ),
+          ShaderMask(
+            shaderCallback: (Rect rect) => const LinearGradient(
+              colors: [
+                AppColors.white,
+                AppColors.white,
+                AppColors.white,
+                AppColors.white,
+                Colors.transparent,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ).createShader(rect),
+            child: Image.asset(AppImages.space),
           ),
           Positioned(
+            top: 0, // adjust as needed
+            left: 0, // adjust as needed
+            right: 0, // adjust as needed
             child: DefultAppHeader(
               title: AppStrings.aboutSpaceX.tr(),
               tag: AppStrings.aboutSpaceX.tr(),
@@ -64,10 +63,12 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
               ),
             ),
           ),
-          Positioned.fill(
-              child: SizedBox(
-            width: double.infinity,
-            child: Expanded(
+          Positioned(
+            bottom: 0, // adjust as needed
+            left: 0, // adjust as needed
+            right: 0, // adjust as needed
+            child: SizedBox(
+              width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -82,8 +83,8 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
                       );
                     },
                     child: Image.asset(
-                      width: 25.w,
                       AppImages.arrows,
+                      width: 25.w,
                     ),
                   ),
                   SizedBox(
@@ -92,7 +93,7 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
                 ],
               ),
             ),
-          )),
+          ),
         ],
       ),
     );
