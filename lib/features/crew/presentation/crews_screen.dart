@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
-import 'package:galaxyxgate/features/crew/business_logic/cubit/crews_cubit.dart';
+import 'package:galaxyxgate/features/crew/logic/cubit/crews_cubit.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/animated_grid.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/place_holders/crew_place_holder.dart';
 

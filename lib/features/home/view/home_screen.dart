@@ -9,6 +9,7 @@ import 'package:galaxyxgate/features/about_company/screens/about_company_bloc_pr
 import 'package:galaxyxgate/features/home/view/widgets/containers/category_container.dart';
 import 'package:galaxyxgate/features/home/view/widgets/rows/home_header_row.dart';
 import 'package:galaxyxgate/features/launches/screens/launches_bloc_provider.dart';
+import 'package:galaxyxgate/features/rockets/screens/rockets_bloc_provider.dart';
 
 import '../../../core/utils/app_strings.dart';
 import '../../crew/presentation/crew_bloc_provider.dart';
@@ -30,18 +31,14 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             // Home Header Row < Profile Pic, Welcome and Name, Notifications Container >
-            const Expanded(child: HomeHeaderRow()),
+            const HomeHeaderRow(),
             SizedBox(
-              height: 45.h,
+              height: 10.h,
             ),
             // Explore Our Topics
-            Row(
-              children: [
-                Text(
-                  AppStrings.exploreOurTopics.tr(),
-                  style: TextStyles.font16White700w,
-                ),
-              ],
+            Text(
+              AppStrings.exploreOurTopics.tr(),
+              style: TextStyles.font16White700w,
             ),
             SizedBox(
               height: 30.h,
@@ -50,13 +47,13 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    // spaceShips Category
+                    // Ships Category
                     CategoryContainer(
                       onTap: () {
                         Navigator.push(
                           context,
                           LeftSlideTransition(
-                              page: const ShipsBlocProvider(),
+                            page: const ShipsBlocProvider(),
                           ),
                         );
                       },
@@ -74,7 +71,14 @@ class HomeScreen extends StatelessWidget {
                     ),
                     // Rockets Category
                     CategoryContainer(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(
+                            page: const RocketsBlocProvider(),
+                          ),
+                        );
+                      },
                       height: 235.h,
                       width: 150.w,
                       backgroundImg: AppImages.rocketsCategory,
@@ -109,21 +113,6 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 15.h,
                     ),
-                    // Capsules Category
-                    CategoryContainer(
-                      onTap: () {},
-                      height: 164.h,
-                      width: 150.w,
-                      backgroundImg: AppImages.capsulesCategory,
-                      title: AppStrings.capsules.tr(),
-                      description: AppStrings
-                          .knowAboutActiveCapsulesTheirCountryAndMore
-                          .tr(),
-                      tag: AppStrings.capsules.tr(),
-                    ),
-                    SizedBox(
-                      height: 15.h,
-                    ),
                     // Crew Category
                     CategoryContainer(
                       onTap: () {
@@ -132,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                           LeftSlideTransition(page: const CrewBlocProvider()),
                         );
                       },
-                      height: 175.h,
+                      height: 200.h,
                       width: 150.w,
                       backgroundImg: AppImages.crewCategory,
                       title: AppStrings.crew.tr(),
@@ -140,29 +129,30 @@ class HomeScreen extends StatelessWidget {
                           AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
                       tag: AppStrings.crew.tr(),
                     ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    CategoryContainer(
+                      height: 130.h,
+                      width: 150.w,
+                      backgroundImg: AppImages.aboutSpaceX,
+                      title: AppStrings.aboutSpaceX.tr(),
+                      description: AppStrings.knowAllAboutSpaceXDetails.tr(),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(
+                              page: const AboutCompanyBlocProvider()),
+                        );
+                      },
+                      tag: AppStrings.aboutSpaceX.tr(),
+                    ),
                   ],
                 ),
               ],
             ),
             SizedBox(
-              height: 15.h,
-            ),
-            CategoryContainer(
-              height: 110.h,
-              width: double.infinity,
-              backgroundImg: AppImages.aboutSpaceX,
-              title: AppStrings.aboutSpaceX.tr(),
-              description:AppStrings.knowAllAboutSpaceXDetails.tr(),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  LeftSlideTransition(page: const AboutCompanyBlocProvider()),
-                );
-              },
-              tag: AppStrings.aboutSpaceX.tr(),
-            ),
-            SizedBox(
-              height: 100.h,
+              height: 80.h,
             ),
           ],
         ),

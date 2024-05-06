@@ -9,7 +9,7 @@ import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
-import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
+import 'package:galaxyxgate/features/profile/screens/widgets/edit_button.dart';
 
 class ChangePasswordButton extends StatelessWidget {
   const ChangePasswordButton({

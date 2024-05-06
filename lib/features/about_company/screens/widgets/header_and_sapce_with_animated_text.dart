@@ -20,22 +20,29 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
       height: 430.h,
       child: Stack(
         children: [
-          ShaderMask(
+          Positioned.fill(
+            child: ShaderMask(
               shaderCallback: (Rect rect) => const LinearGradient(
-                    colors: [
-                      AppColors.white,
-                      AppColors.white,
-                      AppColors.white,
-                      AppColors.white,
-                      Colors.transparent,
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ).createShader(rect),
-              child: Positioned.fill(child: Image.asset(AppImages.space))),
-          DefultAppHeader(
-            title: AppStrings.aboutSpaceX.tr(),
-            tag: AppStrings.aboutSpaceX.tr(),
+                colors: [
+                  AppColors.white,
+                  AppColors.white,
+                  AppColors.white,
+                  AppColors.white,
+                  Colors.transparent,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ).createShader(rect),
+              child: Positioned.fill(
+                child: Image.asset(AppImages.space),
+              ),
+            ),
+          ),
+          Positioned(
+            child: DefultAppHeader(
+              title: AppStrings.aboutSpaceX.tr(),
+              tag: AppStrings.aboutSpaceX.tr(),
+            ),
           ),
           Positioned.fill(
             child: Padding(
@@ -46,7 +53,9 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
                   repeatForever: true,
                   animatedTexts: [
                     TypewriterAnimatedText(
-                      AppStrings. iThinkWeAreAtTheDawnOfANewEraInCommercialSpaceExploration.tr(),
+                      AppStrings
+                          .iThinkWeAreAtTheDawnOfANewEraInCommercialSpaceExploration
+                          .tr(),
                       textStyle: TextStyles.font16White700w,
                       textAlign: TextAlign.center,
                     ),
