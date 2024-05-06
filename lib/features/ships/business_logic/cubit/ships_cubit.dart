@@ -10,7 +10,7 @@ class ShipsCubit extends Cubit<ShipsState> {
 
   ShipsCubit({required this.shipsRepository}) : super(const ShipsInitial());
 
-  Future<void> getCrews() async {
+  Future<void> getShips() async {
     emit(const ShipsLoading());
     await shipsRepository.getAllShips().then((result) {
       result.fold(

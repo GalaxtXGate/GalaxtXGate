@@ -10,6 +10,7 @@ import 'package:galaxyxgate/features/launches/screens/widgets/cards/launch_card.
 import 'package:galaxyxgate/features/launches/screens/widgets/place_holders/launches_place_holder.dart';
 import 'package:galaxyxgate/core/widgets/launches_numbers_row.dart';
 
+
 class LaunchesPage extends StatelessWidget {
   const LaunchesPage({super.key});
 
@@ -34,7 +35,7 @@ class LaunchesPage extends StatelessWidget {
                 if (state is GetLaunchesSuccess) {
                   return RefreshIndicator(
                     onRefresh: () async =>
-                        await context.read<LaunchesCubit>().getLaunches(),
+                    await context.read<LaunchesCubit>().getLaunches(),
                     child: Column(
                       children: [
                         NumbersAndTitlesRow(
@@ -44,11 +45,12 @@ class LaunchesPage extends StatelessWidget {
                                 .where((element) => element.success ?? false)
                                 .length,
                             state.launchesModel
-                                .where((element) => element.success != null
-                                    ? element.success == false
-                                        ? true
-                                        : false
-                                    : true)
+                                .where((element) =>
+                            element.success != null
+                                ? element.success == false
+                                ? true
+                                : false
+                                : true)
                                 .length,
                           ],
                           tiltles:  [
@@ -61,9 +63,10 @@ class LaunchesPage extends StatelessWidget {
                           child: ListView.builder(
                             shrinkWrap: true,
                             itemCount: state.launchesModel.length,
-                            itemBuilder: (context, index) => LaunchCard(
-                              launche: state.launchesModel[index],
-                            ),
+                            itemBuilder: (context, index) =>
+                                LaunchCard(
+                                  launche: state.launchesModel[index],
+                                ),
                           ),
                         ),
                       ],
