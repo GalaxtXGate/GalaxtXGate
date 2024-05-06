@@ -64,7 +64,9 @@ class _FavCardState extends State<FavCard> {
                           height: 65.w,
                           width: 65.w,
                           url: widget.addFav.image!,
-                          fit: BoxFit.contain,
+                          fit: (widget.addFav.category != "Launches")
+                              ? BoxFit.cover
+                              : BoxFit.contain,
                         )
                       : Icon(
                           Icons.image_not_supported,

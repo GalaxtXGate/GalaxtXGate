@@ -123,6 +123,7 @@ class RocketDetailsInfo extends StatelessWidget {
                 category: "Rockets",
                 name: rocket.name,
                 image: rocket.flickrImages!.first,
+                description: rocket.description,
               ),
             );
           },

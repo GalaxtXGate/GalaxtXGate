@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
-import 'package:galaxyxgate/core/widgets/animated_langs_toggle.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/positioned_star_with_animation.dart';
 import 'package:galaxyxgate/features/profile/screens/widgets/semi_circle_with_animation.dart';

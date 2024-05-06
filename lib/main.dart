@@ -23,8 +23,6 @@ void main() async {
       ? Locale(CacheHelper.getData(key: 'local'))
       : const Locale('en');
 
-  runApp(const MyApp());
-  CacheHelper.init();
   runApp(EasyLocalization(
     path: AppAssets.appTranslations,
     supportedLocales: const [

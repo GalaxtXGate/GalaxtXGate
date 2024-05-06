@@ -5,7 +5,7 @@ import 'package:galaxyxgate/features/auth/screens/sign_up.dart';
 import 'package:galaxyxgate/features/bottom_nav_bar/view/bottom_nav_bar.dart';
 import 'package:galaxyxgate/features/crew/presentation/crews_screen.dart';
 import 'package:galaxyxgate/features/home/view/home_screen.dart';
-import 'package:galaxyxgate/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:galaxyxgate/features/onboarding/screens/onboarding_screen.dart';
 import 'package:galaxyxgate/features/rockets/screens/rockets_screen.dart';
 import 'package:galaxyxgate/features/ships/presentation/ships_screen.dart';
 

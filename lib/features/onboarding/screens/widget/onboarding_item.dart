@@ -23,18 +23,19 @@ class OnBoardingItem extends StatelessWidget {
         Transform.scale(
           scale: 0.9,
           child: ShaderMask(
-              shaderCallback: (Rect rect) => const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        AppColors.white,
-                        AppColors.white,
-                        AppColors.black,
-                      ]).createShader(rect),
-              child: Lottie.asset(
-                fit: BoxFit.cover,
-                content.image,
-              )),
+            shaderCallback: (Rect rect) => const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  AppColors.white,
+                  AppColors.white,
+                  AppColors.black,
+                ]).createShader(rect),
+            child: Lottie.asset(
+              fit: BoxFit.cover,
+              content.image,
+            ),
+          ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
