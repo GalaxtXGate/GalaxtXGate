@@ -21,7 +21,7 @@ class WelcomAndName extends StatelessWidget {
           ),
         ),
         Text(
-          AppGeneral.user!.name!,
+          AppGeneral.user.value!.name!,
           style: TextStyles.font20White700w,
         ),
       ],

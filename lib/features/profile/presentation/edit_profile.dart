@@ -98,14 +98,14 @@ class _EditProfileState extends State<EditProfile>
                       const EditProfileData(),
                       PositionedStarWithAnimation(
                         animation: _animatedStar1,
-                        bottom: 600.h,
+                        bottom: 500.h,
                         right: -80.w,
                         scale: 1.5.sp,
                         left: 100.w,
                       ),
                       PositionedStarWithAnimation(
                         animation: _animatedStar2,
-                        bottom: 500.h,
+                        bottom: 400.h,
                         right: 220.w,
                         scale: 0.7,
                         left: 40.w,

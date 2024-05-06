@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "D:/Dev/GalaxyXGate/linux/flutter"
+    "cmake.sourceDirectory": "D:/Dev/GalaxyXGate/linux/flutter",
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

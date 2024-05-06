@@ -141,31 +141,32 @@ class AuthServices {
           FirebaseFirestore.instance.collection('userData');
       await users.doc(user.uid).set(
         {
-          'uid': AppGeneral.user!.uid,
+          'uid': AppGeneral.user.value!.uid,
           'name': (user.name != null && user.name!.isNotEmpty)
               ? user.name
-              : AppGeneral.user!.name!,
+              : AppGeneral.user.value!.name!,
           'email': (user.email != null && user.email!.isNotEmpty)
               ? user.email
-              : AppGeneral.user!.email,
-          'profileImageUrl':
-              profilePic != null ? downloadUrl : AppGeneral.user!.profilePic,
-          'joindate': AppGeneral.user!.joindate,
+              : AppGeneral.user.value!.email,
+          'profileImageUrl': profilePic != null
+              ? downloadUrl
+              : AppGeneral.user.value!.profilePic,
+          'joindate': AppGeneral.user.value!.joindate,
         },
       );
 
       // Create a GalaxyUser object from the updated document
       GalaxyUser updatedUser = GalaxyUser(
-        uid: user.uid,
+        uid: AppGeneral.user.value!.uid,
         name: (user.name != null && user.name!.isNotEmpty)
             ? user.name
-            : AppGeneral.user!.name!,
+            : AppGeneral.user.value!.name!,
         email: (user.email != null && user.email!.isNotEmpty)
             ? user.email
-            : AppGeneral.user!.email,
+            : AppGeneral.user.value!.email,
         profilePic:
-            profilePic != null ? downloadUrl : AppGeneral.user!.profilePic,
-        joindate: AppGeneral.user!.joindate,
+            profilePic != null ? downloadUrl : AppGeneral.user.value!.profilePic,
+        joindate: AppGeneral.user.value!.joindate,
       );
 
       await updateDataLocal(user: updatedUser);
@@ -213,20 +214,20 @@ class AuthServices {
   saveDataLocal({
     required GalaxyUser user,
   }) {
-    AppGeneral.user = user;
+    AppGeneral.user.value = user;
     CacheHelper.saveData(key: "userData", value: json.encode(user.toJson()));
   }
 
   updateDataLocal({
     required GalaxyUser user,
   }) async {
-    AppGeneral.user = user;
+    AppGeneral.user.value = user;
     CacheHelper.saveData(key: "userData", value: json.encode(user.toJson()));
   }
 
   getDataLocal() {
     if (CacheHelper.getData(key: "userData") != null) {
-      AppGeneral.user = GalaxyUser.fromJson(
+      AppGeneral.user.value = GalaxyUser.fromJson(
           json.decode(CacheHelper.getData(key: "userData")));
     }
   }
@@ -244,9 +245,9 @@ class AuthServices {
       // Delete the user's account
       await user.delete();
 
-            CollectionReference users =
+      CollectionReference users =
           FirebaseFirestore.instance.collection('userData');
-     await users.doc(AppGeneral.user!.uid).delete();
+      await users.doc(AppGeneral.user.value!.uid).delete();
 
       return right(null);
     } on FirebaseAuthException catch (error) {

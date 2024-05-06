@@ -16,7 +16,7 @@ class ProfilePic extends StatelessWidget {
         child: DefultAppCachedNetworkImage(
           height: 40.w,
           width: 40.w,
-          url: AppGeneral.user!.profilePic!,
+          url: AppGeneral.user.value!.profilePic!,
         ),
       ),
     );
