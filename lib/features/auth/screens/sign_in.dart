@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/continue_button.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
@@ -51,7 +53,7 @@ class SignIn extends StatelessWidget {
                         }
                         if (state is SignInSuccess) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            messageSnackBar(message: "SignIn Success"),
+                            messageSnackBar(message: AppStrings.signInSuccess.tr()),
                           );
                           Navigator.pushReplacement(
                             context,
@@ -83,7 +85,7 @@ class SignIn extends StatelessWidget {
                               context.read<SignInCubit>().signIn();
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                messageSnackBar(message: "fille all fields"),
+                                messageSnackBar(message:AppStrings.fillAllFields.tr()),
                               );
                             }
                           },
@@ -93,8 +95,8 @@ class SignIn extends StatelessWidget {
                   ),
                   // dont have account hint
                   ToggleRow(
-                    hintText: "Don’t have an account ?",
-                    mainText: "Sign Up",
+                    hintText: AppStrings.haveAnAccount.tr(),
+                    mainText: AppStrings.signUp.tr(),
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,

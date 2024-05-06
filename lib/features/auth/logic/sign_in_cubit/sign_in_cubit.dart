@@ -38,6 +38,8 @@ class SignInCubit extends Cubit<SignInState> {
           ),
           (galaxyUser) async {
             await _authServices.updateDataLocal(user: galaxyUser);
+            emailController.clear();
+            passwordController.clear();
             emit(
               SignInSuccess(),
             );

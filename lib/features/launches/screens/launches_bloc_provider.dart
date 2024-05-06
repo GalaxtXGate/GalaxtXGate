@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:galaxyxgate/core/networking/dio_helper.dart';
-import 'package:galaxyxgate/features/launches/data/services/launches_services.dart';
+import 'package:galaxyxgate/core/di/dependency_injection.dart';
+import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
 import 'package:galaxyxgate/features/launches/logic/cubit/launches_cubit.dart';
 import 'package:galaxyxgate/features/launches/screens/launches_page.dart';
 
@@ -10,10 +10,17 @@ class LauchesBlocProvider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LaunchesCubit(
-          launchesServices: LaunchesServices(dioHelper: DioHelper()))
-        ..getLaunches(),
+    return MultiBlocProvider(
+      providers: [
+    BlocProvider.value(
+    value: getIt<LaunchesCubit>()
+    ..getLaunches(),
+    ),
+        BlocProvider.value(
+          value: getIt<FavoriteCubit>()
+            ..getFavorites(),
+        ),
+      ],
       child: const LaunchesPage(),
     );
   }

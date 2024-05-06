@@ -1,9 +1,11 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/features/about_company/logic/cubit/about_company_cubit.dart';
 
@@ -31,9 +33,9 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
                     end: Alignment.bottomCenter,
                   ).createShader(rect),
               child: Positioned.fill(child: Image.asset(AppImages.space))),
-          const DefultAppHeader(
-            title: "About Space X",
-            tag: "About Space X",
+          DefultAppHeader(
+            title: AppStrings.aboutSpaceX.tr(),
+            tag: AppStrings.aboutSpaceX.tr(),
           ),
           Positioned.fill(
             child: Padding(
@@ -44,7 +46,7 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
                   repeatForever: true,
                   animatedTexts: [
                     TypewriterAnimatedText(
-                      "\"I think we are at the dawn of a new era in commercial space exploration\" - Elon Musk",
+                      AppStrings. iThinkWeAreAtTheDawnOfANewEraInCommercialSpaceExploration.tr(),
                       textStyle: TextStyles.font16White700w,
                       textAlign: TextAlign.center,
                     ),

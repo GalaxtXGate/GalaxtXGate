@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/positioned_star_with_animation.dart';
@@ -70,9 +72,9 @@ class _EditProfileState extends State<EditProfile>
           child: SafeArea(
             child: Column(
               children: [
-                const DefultAppHeader(
-                  title: 'Profile',
-                  tag: 'Profile',
+                DefultAppHeader(
+                  title: AppStrings.profile.tr(),
+                  tag: AppStrings.profile.tr(),
                   isProfile: true,
                 ),
                 Padding(
@@ -96,14 +98,14 @@ class _EditProfileState extends State<EditProfile>
                       const EditProfileData(),
                       PositionedStarWithAnimation(
                         animation: _animatedStar1,
-                        bottom: 600.h,
+                        bottom: 500.h,
                         right: -80.w,
                         scale: 1.5.sp,
                         left: 100.w,
                       ),
                       PositionedStarWithAnimation(
                         animation: _animatedStar2,
-                        bottom: 500.h,
+                        bottom: 400.h,
                         right: 220.w,
                         scale: 0.7,
                         left: 40.w,

@@ -8,11 +8,9 @@ import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/features/auth/data/services/auth_services.dart';
 import 'package:galaxyxgate/galaxy_x_gate_app.dart';
 import 'core/utils/app_assets.dart';
-import 'package:galaxyxgate/init_dependecies.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initDependencies();
   await Firebase.initializeApp();
   await CacheHelper.init();
   await EasyLocalization.ensureInitialized();
@@ -31,7 +29,7 @@ void main() async {
       Locale('ar'),
     ],
     fallbackLocale: const Locale('ar'),
-    startLocale: const Locale('en'),
+    startLocale: const Locale('ar'),
     child: const MyApp(),
   ));
 }

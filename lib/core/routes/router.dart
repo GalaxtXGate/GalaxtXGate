@@ -8,7 +8,7 @@ import 'package:galaxyxgate/features/home/view/home_screen.dart';
 import 'package:galaxyxgate/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:galaxyxgate/features/rockets/Presentation/screen/rockets_screen.dart';
 import 'package:galaxyxgate/features/ships/presentation/ships_screen.dart';
-import '../../features/getStartedNow/screen/getStartedNow_screen.dart';
+import 'package:galaxyxgate/features/onboarding/screens/onboarding_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -30,9 +30,6 @@ class AppRouter {
         return MaterialPageRoute<void>(builder: (_) => const ShipsScreen());
       case Routes.rocketsScreen:
         return MaterialPageRoute<void>(builder: (_) => const RocketsScreen());
-      case Routes.getStartNowScreen:
-        return MaterialPageRoute(
-            builder: (context) => const GetStartNowScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(

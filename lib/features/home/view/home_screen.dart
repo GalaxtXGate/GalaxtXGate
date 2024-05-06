@@ -11,6 +11,8 @@ import 'package:galaxyxgate/features/home/view/widgets/rows/home_header_row.dart
 import 'package:galaxyxgate/features/launches/screens/launches_bloc_provider.dart';
 
 import '../../../core/utils/app_strings.dart';
+import '../../crew/presentation/crew_bloc_provider.dart';
+import '../../ships/presentation/ships_bloc_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,7 +30,7 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             // Home Header Row < Profile Pic, Welcome and Name, Notifications Container >
-            const HomeHeaderRow(),
+            const Expanded(child: HomeHeaderRow()),
             SizedBox(
               height: 45.h,
             ),
@@ -50,7 +52,14 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     // spaceShips Category
                     CategoryContainer(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(
+                              page: const ShipsBlocProvider(),
+                          ),
+                        );
+                      },
                       height: 300.h,
                       width: 150.w,
                       backgroundImg: AppImages.spaceShipsCategory,
@@ -58,8 +67,7 @@ class HomeScreen extends StatelessWidget {
                       description: AppStrings
                           .knowAboutActiveRocketsTheirDescriptionCompany
                           .tr(),
-                      onTap: () {},
-                      tag: 'Space ships',
+                      tag: 'ships',
                     ),
                     SizedBox(
                       height: 15.h,
@@ -74,7 +82,6 @@ class HomeScreen extends StatelessWidget {
                       description: AppStrings
                           .knowAboutActiveRocketsTheirDescriptionCompany
                           .tr(),
-                      onTap: () {},
                       tag: 'Rockets',
                     ),
                   ],
@@ -84,7 +91,6 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     // Launches Category
                     CategoryContainer(
-                      onTap: () {},
                       height: 185.h,
                       width: 150.w,
                       backgroundImg: AppImages.launchesCategory,
@@ -113,7 +119,6 @@ class HomeScreen extends StatelessWidget {
                       description: AppStrings
                           .knowAboutActiveCapsulesTheirCountryAndMore
                           .tr(),
-                      onTap: () {},
                       tag: AppStrings.capsules.tr(),
                     ),
                     SizedBox(
@@ -121,14 +126,18 @@ class HomeScreen extends StatelessWidget {
                     ),
                     // Crew Category
                     CategoryContainer(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(page: const CrewBlocProvider()),
+                        );
+                      },
                       height: 175.h,
                       width: 150.w,
                       backgroundImg: AppImages.crewCategory,
                       title: AppStrings.crew.tr(),
                       description:
                           AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
-                      onTap: () {},
                       tag: AppStrings.crew.tr(),
                     ),
                   ],
@@ -142,15 +151,15 @@ class HomeScreen extends StatelessWidget {
               height: 110.h,
               width: double.infinity,
               backgroundImg: AppImages.aboutSpaceX,
-              title: "About Space X",
-              description: "Know all about Space X details",
+              title: AppStrings.aboutSpaceX.tr(),
+              description:AppStrings.knowAllAboutSpaceXDetails.tr(),
               onTap: () {
                 Navigator.push(
                   context,
                   LeftSlideTransition(page: const AboutCompanyBlocProvider()),
                 );
               },
-              tag: 'About Space X',
+              tag: AppStrings.aboutSpaceX.tr(),
             ),
             SizedBox(
               height: 100.h,

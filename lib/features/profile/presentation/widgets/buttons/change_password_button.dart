@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
 import 'package:galaxyxgate/features/profile/presentation/widgets/edit_button.dart';
@@ -26,7 +28,7 @@ class ChangePasswordButton extends StatelessWidget {
             border: Border.all(color: AppColors.borderGreyWhite, width: 1.w),
           ),
           child: Text(
-            "Change Password",
+            AppStrings.changePassword.tr(),
             style: TextStyles.font14White700w.copyWith(
               fontWeight: FontWeight.w300,
               color: AppColors.offWhite,
@@ -51,7 +53,7 @@ class ChangePasswordButton extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Text(
-                                      "Are Sure You Want To Change Your Password?",
+                                      AppStrings. areSureYouWantToChangeYourPassword.tr(),
                                       style:
                                           TextStyles.font16White700w.copyWith(
                                         fontWeight: FontWeight.w300,
@@ -63,7 +65,7 @@ class ChangePasswordButton extends StatelessWidget {
                                       height: 10.h,
                                     ),
                                     Text(
-                                      "You will receive email to change it",
+                                      AppStrings. youWillReceiveEmailToChangeIt.tr(),
                                       style:
                                           TextStyles.font10White700w.copyWith(
                                         fontWeight: FontWeight.w300,
@@ -83,7 +85,7 @@ class ChangePasswordButton extends StatelessWidget {
                                           height: 40.h,
                                           width: 100.w,
                                           child: EditGradientButton(
-                                            title: "No",
+                                            title:AppStrings.no.tr(),
                                             onPressed: () {
                                               Navigator.pop(context);
                                             },
@@ -100,7 +102,7 @@ class ChangePasswordButton extends StatelessWidget {
                                                     .showSnackBar(
                                                   messageSnackBar(
                                                     message:
-                                                        "Email Sent Successfully",
+                                                        AppStrings.emailSentSuccessfully.tr(),
                                                   ),
                                                 );
                                                 Navigator.pop(context);
@@ -127,7 +129,7 @@ class ChangePasswordButton extends StatelessWidget {
                                                 height: 40.h,
                                                 width: 100.w,
                                                 child: EditGradientButton(
-                                                  title: "Yes",
+                                                  title: AppStrings.yes.tr(),
                                                   onPressed: () async {
                                                     await context
                                                         .read<ProfileCubit>()

@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/animations/bottom_slide_transition.dart';
 import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/continue_button.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/auth/screens/sign_in.dart';
@@ -44,8 +46,8 @@ class SignUp extends StatelessWidget {
                     },
                   ),
                   ToggleRow(
-                    hintText: "Already have an account ?",
-                    mainText: "Sign In",
+                    hintText:AppStrings.alreadyHaveAnAccount.tr(),
+                    mainText: AppStrings.signIn.tr(),
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,

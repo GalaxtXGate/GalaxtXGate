@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
+import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/continue_button.dart';
 import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
@@ -52,7 +54,7 @@ class ProfilePicture extends StatelessWidget {
                     }
                     if (state is SignUpSuccess) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        messageSnackBar(message: "SignUp Success"),
+                        messageSnackBar(message:AppStrings.signInSuccess.tr()),
                       );
                       Navigator.pushReplacement(
                         context,
@@ -87,20 +89,20 @@ class ProfilePicture extends StatelessWidget {
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 messageSnackBar(
-                                    message: "Choose a profile picture"),
+                                    message: AppStrings.chooseAProfilePicture.tr()),
                               );
                             }
                           } else {
                             Navigator.pop(context);
 
                             ScaffoldMessenger.of(context).showSnackBar(
-                              messageSnackBar(message: "fille all fields"),
+                              messageSnackBar(message: AppStrings.fillAllFields.tr()),
                             );
                           }
                         } else {
                           Navigator.pop(context);
                           ScaffoldMessenger.of(context).showSnackBar(
-                            messageSnackBar(message: "Passwords do not match"),
+                            messageSnackBar(message: AppStrings. passwordNotMatch.tr()),
                           );
                         }
                       },

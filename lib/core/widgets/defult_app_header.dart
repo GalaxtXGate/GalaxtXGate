@@ -10,11 +10,15 @@ class DefultAppHeader extends StatelessWidget {
     required this.title,
     required this.tag,
     this.isProfile,
+    this.isFavourite = false,
+    this.numberOfFavorites,
   });
   final String title;
   final void Function()? onTap;
   final String tag;
   final bool? isProfile;
+  final bool? isFavourite;
+  final String? numberOfFavorites;
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +30,20 @@ class DefultAppHeader extends StatelessWidget {
       ),
       child: Row(
         children: [
-          IconButton(
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: AppColors.white,
-              size: 25.w,
+          if (isFavourite != null && !isFavourite!)
+            IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: AppColors.white,
+                size: 25.w,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+                if (onTap != null) {
+                  onTap!();
+                }
+              },
             ),
-            onPressed: () {
-              Navigator.pop(context);
-              if (onTap != null) {
-                onTap!();
-              }
-            },
-          ),
           Hero(
             tag: tag,
             child: Material(
@@ -48,7 +53,22 @@ class DefultAppHeader extends StatelessWidget {
                 style: TextStyles.font20White700w,
               ),
             ),
-          )
+          ),
+          isFavourite!
+              ? Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  child: CircleAvatar(
+                    radius: 13,
+                    backgroundColor: AppColors.darkGrey,
+                    child: Text(
+                      numberOfFavorites!,
+                      style: TextStyles.font16White700w.copyWith(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                )
+              : const SizedBox(),
         ],
       ),
     );

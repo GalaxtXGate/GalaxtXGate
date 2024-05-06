@@ -5,8 +5,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
+import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
 import 'package:galaxyxgate/features/crew/data/models/crew_model.dart';
 import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
+
+import '../../../../core/di/dependency_injection.dart';
+import '../../../favourits/data/models/add_fav.dart';
+import '../../../favourits/data/service.dart/favorite_services.dart';
+import '../../../favourits/logic/cubit/favourite_cubit.dart';
 
 class AnimatedCrewGrid extends StatelessWidget {
   final List<CrewModel>? crewList;
@@ -29,11 +35,11 @@ class AnimatedCrewGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationLimiter(
       child: SliverGrid(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisExtent: 300,
+        gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+          mainAxisExtent: 310.h,
           crossAxisCount: 2,
-          crossAxisSpacing: 16.0,
-          mainAxisSpacing: 16.0,
+          crossAxisSpacing: 16.0.w,
+          mainAxisSpacing: 16.0.w,
         ),
         delegate: SliverChildBuilderDelegate(
           (context, index) {
@@ -96,10 +102,33 @@ class AnimatedCrewGrid extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Image.asset(
-                                'assets/icons/fav.png',
-                                width: 25.w,
-                                height: 30.h,
+                              FavoriteIcon(
+                                noFavFunction: () async{
+                                  await getIt<FavoriteServices>().addFav(
+                                    addFav: AddFav(
+                                      id: crew.id,
+                                      category: "Crew",
+                                      name: crew.name,
+                                      image: crew.image,
+                                      status: crew.status,
+                                      launchNum: crew.launches.length.toString(),
+                                      org: crew.agency,
+                                    ),
+
+                                  );
+                                },
+                                favFunction: () async{
+                                  await getIt<FavoriteServices>().removeFav(
+                                      id:crew.id,
+                                  );
+                                },
+                                icon: Icons.favorite,
+                                isFavourite:
+
+                                FavoriteCubit.favs.any((element) =>
+                                element.id == crew.id,),
+
+
                               ),
                             ],
                           ),
