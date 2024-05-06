@@ -20,6 +20,7 @@ class AppColors {
   static const Color loginTextGradientPurple = Color(0xFFA64EDD);
   static const Color loginTextGradientBlue = Color(0xFF6090DE);
   static const Color loginTextGradientGreen = Color(0xFF17D4E0);
+  static const Color grey = Color(0xFFC4C4C4);
   static const Color lightGrey = Color(0xFFB5B5B5);
   static const Color offWhite = Color(0xFFFFFDF6);
   static const Color borderGrey = Color(0xFF717171);

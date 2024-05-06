@@ -69,11 +69,11 @@ class ShipCard extends StatelessWidget {
                     text: ship.active == true ? 'Active' : 'Not Active',
                   ),
                   IconTextRow(
-                    imagePath: 'assets/images/ship_type.svg',
+                    imagePath: 'assets/icons/ship_type.svg',
                     text: '${ship.type}',
                   ),
                   IconTextRow(
-                    imagePath: 'assets/images/ship_calendar.svg',
+                    imagePath: 'assets/icons/ship_calendar.svg',
                     text: ship.yearBuilt == null ? '1970' : '${ship.yearBuilt}',
                   ),
                 ],
