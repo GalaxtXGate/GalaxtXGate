@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/features/ships/business_logic/cubit/ships_cubit.dart';
-import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
 import 'package:galaxyxgate/features/ships/presentation/widget/animated_ships_list.dart';
 import 'package:galaxyxgate/features/ships/presentation/widget/place_holders/ships_place_holder.dart';
 
@@ -53,9 +52,8 @@ class _ShipsScreenState extends State<ShipsScreen> {
                         );
                       }
                       if (state is ShipsLoaded) {
-                        List<ShipsModel>? ships = state.ships;
                         return AnimatedShipsList(
-                          ships: ships!,
+                          ships: state.ships!,
                         );
                       }
                       return const SliverFillRemaining(
