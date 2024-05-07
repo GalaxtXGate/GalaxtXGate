@@ -63,6 +63,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '986993407042',
     projectId: 'spacex-57942',
     storageBucket: 'spacex-57942.appspot.com',
-    iosBundleId: 'com.example.galaxyxgate',
+    iosBundleId: 'com.spacex.galaxyxgate',
   );
 }
