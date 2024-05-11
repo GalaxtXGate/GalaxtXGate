@@ -4,11 +4,11 @@ import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart'
 import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
-import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
+import 'package:galaxyxgate/core/widgets/snackbars/message_snack_bar.dart';
 import 'package:galaxyxgate/features/launches/logic/cubit/launches_cubit.dart';
 import 'package:galaxyxgate/features/launches/screens/widgets/cards/launch_card.dart';
 import 'package:galaxyxgate/features/launches/screens/widgets/place_holders/launches_place_holder.dart';
-import 'package:galaxyxgate/core/widgets/launches_numbers_row.dart';
+import 'package:galaxyxgate/core/widgets/rows/launches_numbers_row.dart';
 
 class LaunchesPage extends StatelessWidget {
   const LaunchesPage({super.key});

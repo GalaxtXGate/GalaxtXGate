@@ -7,7 +7,7 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
 import 'package:galaxyxgate/features/crew/data/models/crew_model.dart';
-import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
+import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
 
 import '../../../../core/di/dependency_injection.dart';
 import '../../../favourits/data/models/add_fav.dart';

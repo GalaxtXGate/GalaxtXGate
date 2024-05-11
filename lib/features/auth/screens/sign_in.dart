@@ -9,9 +9,9 @@ import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart'
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/core/widgets/continue_button.dart';
+import 'package:galaxyxgate/core/widgets/buttons/continue_button.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
-import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
+import 'package:galaxyxgate/core/widgets/snackbars/message_snack_bar.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_in_cubit/sign_in_cubit.dart';
 import 'package:galaxyxgate/features/auth/screens/sign_up.dart';
 import 'package:galaxyxgate/features/auth/screens/widgets/rows/toggle_row.dart';

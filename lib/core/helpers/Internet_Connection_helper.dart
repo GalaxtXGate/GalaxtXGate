@@ -4,7 +4,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
-import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
+import 'package:galaxyxgate/core/widgets/snackbars/message_snack_bar.dart';
 
 extension InternetConnection on BuildContext {
   Future checkInternet() async {

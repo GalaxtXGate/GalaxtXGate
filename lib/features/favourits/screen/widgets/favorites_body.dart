@@ -3,11 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:galaxyxgate/core/themes/text_styles.dart';
-import 'package:galaxyxgate/core/utils/app_images.dart';
+import 'package:galaxyxgate/core/widgets/columns/lost_page_&&_no_data_column.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
@@ -57,12 +54,12 @@ class FavoritesBody extends StatelessWidget {
                   onRefresh: () async {
                     context.read<FavoriteCubit>().getFavorites();
                   },
-                  child: Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsets.only(right: 20.w, left: 20.w, bottom: 90),
-                      child: FavoriteCubit.favs.isNotEmpty
-                          ? AnimationLimiter(
+                  child: FavoriteCubit.favs.isNotEmpty
+                      ? Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                right: 20.w, left: 20.w, bottom: 90),
+                            child: AnimationLimiter(
                               child: ListView.builder(
                                 shrinkWrap: true,
                                 itemCount: FavoriteCubit.favs.length,
@@ -98,35 +95,13 @@ class FavoritesBody extends StatelessWidget {
                                   );
                                 },
                               ),
-                            )
-                          : SizedBox(
-                              height: 500.h,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    AppImages.pageLost,
-                                    colorBlendMode: BlendMode.darken,
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  Text(
-                                    "You haven’t added any favorites yet"
-                                        .tr(context),
-                                    style: TextStyles.font16White700w,
-                                  ),
-                                  Text(
-                                    "Go out and explore more".tr(context),
-                                    style: TextStyles.font14White700w.copyWith(
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ],
-                              ),
                             ),
-                    ),
-                  ),
+                          ),
+                        )
+                      : const LostPageAndNoDataColumn(
+                          mainText: 'You haven’t added any favorites yet',
+                          subText: 'Go out and explore more',
+                        ),
                 );
               }
             },

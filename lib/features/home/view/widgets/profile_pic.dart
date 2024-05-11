@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
-import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
+import 'package:galaxyxgate/core/widgets/images/defult_app_cached_network_image.dart';
 
 class ProfilePic extends StatelessWidget {
   const ProfilePic({

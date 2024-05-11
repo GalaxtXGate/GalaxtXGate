@@ -8,7 +8,7 @@ import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart'
 import 'package:galaxyxgate/core/helpers/date_time_handler.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/core/widgets/defult_app_cached_network_image.dart';
+import 'package:galaxyxgate/core/widgets/images/defult_app_cached_network_image.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
 import 'package:galaxyxgate/features/profile/screens/edit_profile.dart';
 import 'package:galaxyxgate/features/profile/screens/widgets/buttons/profile_row_button.dart';

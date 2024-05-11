@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/function/launch_url_browser.dart';
-import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
+import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
 import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
 
 class ShipFeatures extends StatelessWidget {

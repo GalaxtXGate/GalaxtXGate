@@ -90,7 +90,9 @@
   "Removed Successfully": "تم الحذف بنجاح",
   "Added Successfully": "تمت الإضافة بنجاح",
   "You haven’t added any favorites yet": "لم تقم بإضافة أي مفضلات بعد",
-  "Go out and explore more": "انطلق واستكشف المزيد"
+  "Go out and explore more": "انطلق واستكشف المزيد",
+  "No Internet Available": "لا يوجد اتصال بالإنترنت",
+  "Please check your internet connection and try again": "يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى"
 
 
 }

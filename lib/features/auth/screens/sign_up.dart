@@ -5,7 +5,7 @@ import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/core/widgets/continue_button.dart';
+import 'package:galaxyxgate/core/widgets/buttons/continue_button.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/auth/screens/sign_in.dart';
 import 'package:galaxyxgate/features/auth/screens/profile_picture.dart';
