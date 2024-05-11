@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
@@ -50,7 +50,7 @@ class CustomGradientButton extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        AppStrings.continueSign.tr(),
+                        AppStrings.continueSign.tr(context),
                         style: TextStyles.font16White700w.copyWith(
                           fontWeight: FontWeight.w300,
                         ),
@@ -59,7 +59,7 @@ class CustomGradientButton extends StatelessWidget {
                         width: 10,
                       ),
                       const Icon(
-                       Icons.arrow_forward_ios_outlined,
+                        Icons.arrow_forward_ios_outlined,
                         color: AppColors.white,
                         size: 20,
                       ),

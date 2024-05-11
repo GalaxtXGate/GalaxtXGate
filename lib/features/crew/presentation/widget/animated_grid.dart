@@ -11,7 +11,6 @@ import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
 
 import '../../../../core/di/dependency_injection.dart';
 import '../../../favourits/data/models/add_fav.dart';
-import '../../../favourits/data/service.dart/favorite_services.dart';
 import '../../../favourits/logic/cubit/favourite_cubit.dart';
 
 class AnimatedCrewGrid extends StatelessWidget {
@@ -35,7 +34,7 @@ class AnimatedCrewGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationLimiter(
       child: SliverGrid(
-        gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           mainAxisExtent: 310.h,
           crossAxisCount: 2,
           crossAxisSpacing: 16.0.w,
@@ -103,32 +102,31 @@ class AnimatedCrewGrid extends StatelessWidget {
                                 ),
                               ),
                               FavoriteIcon(
-                                noFavFunction: () async{
-                                  await getIt<FavoriteServices>().addFav(
+                                noFavFunction: () async {
+                                  await getIt<FavoriteCubit>().addOneFav(
                                     addFav: AddFav(
                                       id: crew.id,
                                       category: "Crew",
                                       name: crew.name,
                                       image: crew.image,
                                       status: crew.status,
-                                      launchNum: crew.launches.length.toString(),
+                                      launchNum:
+                                          crew.launches.length.toString(),
                                       org: crew.agency,
                                     ),
-
+                                    context: context,
                                   );
                                 },
-                                favFunction: () async{
-                                  await getIt<FavoriteServices>().removeFav(
-                                      id:crew.id,
+                                favFunction: () async {
+                                  await getIt<FavoriteCubit>().removeOneFav(
+                                    id: crew.id,
+                                    context: context,
                                   );
                                 },
                                 icon: Icons.favorite,
-                                isFavourite:
-
-                                FavoriteCubit.favs.any((element) =>
-                                element.id == crew.id,),
-
-
+                                isFavourite: FavoriteCubit.favs.any(
+                                  (element) => element.id == crew.id,
+                                ),
                               ),
                             ],
                           ),

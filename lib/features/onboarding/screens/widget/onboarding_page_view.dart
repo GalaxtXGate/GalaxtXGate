@@ -18,10 +18,10 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView.builder(
       controller: controller,
-      itemCount: content.length,
+      itemCount: getContent(context).length,
       onPageChanged: onPageChanged,
       itemBuilder: (context, index) => OnBoardingItem(
-        content: content[index],
+        content: getContent(context)[index],
         currentIndex: currentIndex,
       ),
     );

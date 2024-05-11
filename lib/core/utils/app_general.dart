@@ -7,6 +7,7 @@ class AppGeneral {
 
   static ValueNotifier<GalaxyUser?> user = ValueNotifier<GalaxyUser?>(null);
 
+  static ValueNotifier<bool> isArabic = ValueNotifier<bool>(false);
+
   static bool? notFirstTime;
-  static Locale? lang;
 }

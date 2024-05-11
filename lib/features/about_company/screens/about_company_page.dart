@@ -1,8 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
@@ -21,7 +21,7 @@ class AboutCompanyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientGrayBackground(
+    return GradientGreyBackground(
       child: RefreshIndicator(
         onRefresh: () async {
           await context.read<AboutCompanyCubit>().getCompanyInfo();
@@ -57,9 +57,9 @@ class AboutCompanyPage extends StatelessWidget {
                           state.companyInfo.vehicles!,
                         ],
                         tiltles: [
-                          AppStrings.employee.tr(),
-                          AppStrings.launchSites.tr(),
-                          AppStrings.vehicles.tr(),
+                          AppStrings.employee.tr(context),
+                          AppStrings.launchSites.tr(context),
+                          AppStrings.vehicles.tr(context),
                         ],
                       ),
                       // Valuation
@@ -68,7 +68,7 @@ class AboutCompanyPage extends StatelessWidget {
                           state.companyInfo.valuation!,
                         ],
                         tiltles: [
-                          AppStrings.valuation.tr(),
+                          AppStrings.valuation.tr(context),
                         ],
                       ),
                       SizedBox(
@@ -106,7 +106,7 @@ class AboutCompanyPage extends StatelessWidget {
                               AppColors.cyan
                             ],
                             child: Text(
-                              AppStrings.address.tr(),
+                              AppStrings.address.tr(context),
                               style: TextStyles.font10White700w,
                             ),
                           ),
@@ -129,7 +129,7 @@ class AboutCompanyPage extends StatelessWidget {
                               AppColors.cyan
                             ],
                             child: Text(
-                              AppStrings.city.tr(),
+                              AppStrings.city.tr(context),
                               style: TextStyles.font10White700w,
                             ),
                           ),
@@ -159,7 +159,7 @@ class AboutCompanyPage extends StatelessWidget {
                               AppColors.cyan
                             ],
                             child: Text(
-                              AppStrings.state.tr(),
+                              AppStrings.state.tr(context),
                               style: TextStyles.font10White700w,
                             ),
                           ),

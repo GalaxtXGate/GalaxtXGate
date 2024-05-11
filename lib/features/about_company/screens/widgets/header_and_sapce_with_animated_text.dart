@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
@@ -39,8 +39,8 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
             left: 0, // adjust as needed
             right: 0, // adjust as needed
             child: DefultAppHeader(
-              title: AppStrings.aboutSpaceX.tr(),
-              tag: AppStrings.aboutSpaceX.tr(),
+              title: AppStrings.aboutSpaceX.tr(context),
+              tag: AppStrings.aboutSpaceX.tr(context),
             ),
           ),
           Positioned.fill(
@@ -54,7 +54,7 @@ class HeaderAndSpaceWithAnimatedText extends StatelessWidget {
                     TypewriterAnimatedText(
                       AppStrings
                           .iThinkWeAreAtTheDawnOfANewEraInCommercialSpaceExploration
-                          .tr(),
+                          .tr(context),
                       textStyle: TextStyles.font16White700w,
                       textAlign: TextAlign.center,
                     ),

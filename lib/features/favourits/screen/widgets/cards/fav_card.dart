@@ -161,6 +161,7 @@ class _FavCardState extends State<FavCard> {
           right: 5.w,
           child: FavoriteIcon(
             isFavourite: true,
+            isInFavourite: true,
             favFunction: widget.favFunction,
             noFavFunction: widget.noFavFunction,
             icon: widget.icon,

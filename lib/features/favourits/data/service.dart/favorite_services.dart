@@ -7,7 +7,7 @@ import '../../../../core/errors/server_failure.dart';
 
 class FavoriteServices {
   List<QueryDocumentSnapshot> data = [];
-  Future<Either<ServerFailure, List<AddFav>>> getData() async {
+  Future<Either<ServerFailure, List<AddFav>>> getFavorites() async {
     try {
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
           .collection('UsersFAV')
@@ -27,21 +27,37 @@ class FavoriteServices {
     }
   }
 
-  Future<void> addFav({required AddFav addFav}) async {
-    await FirebaseFirestore.instance
-        .collection('UsersFAV')
-        .doc(AppGeneral.user.value!.uid!)
-        .collection("FAV")
-        .doc(addFav.id)
-        .set(addFav.toJson());
+  Future<Either<ServerFailure, void>> addFav({required AddFav addFav}) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('UsersFAV')
+          .doc(AppGeneral.user.value!.uid!)
+          .collection("FAV")
+          .doc(addFav.id)
+          .set(addFav.toJson());
+
+      return right(null);
+    } on FirebaseException catch (_, error) {
+      return left(ServerFailure(errMessage: error.toString()));
+    } catch (error) {
+      return left(ServerFailure(errMessage: error.toString()));
+    }
   }
 
-  Future<void> removeFav({required String id}) {
-    return FirebaseFirestore.instance
-        .collection('UsersFAV')
-        .doc(AppGeneral.user.value!.uid!)
-        .collection("FAV")
-        .doc(id)
-        .delete();
+  Future<Either<ServerFailure, void>> removeFav({required String id}) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('UsersFAV')
+          .doc(AppGeneral.user.value!.uid!)
+          .collection("FAV")
+          .doc(id)
+          .delete();
+
+      return right(null);
+    } on FirebaseException catch (_, error) {
+      return left(ServerFailure(errMessage: error.toString()));
+    } catch (error) {
+      return left(ServerFailure(errMessage: error.toString()));
+    }
   }
 }

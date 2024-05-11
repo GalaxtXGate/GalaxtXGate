@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
@@ -13,19 +13,19 @@ class SignUpTextAndFields extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(AppStrings.signUp.tr(), style: TextStyles.textStyle34),
+        Text(AppStrings.signUp.tr(context), style: TextStyles.textStyle34),
         SizedBox(
           height: 10.h,
         ),
-        Text(AppStrings.createYourAccountToContinueExploring.tr(),
+        Text(AppStrings.createYourAccountToContinueExploring.tr(context),
             style: TextStyles.textStyle14300),
         SizedBox(
           height: 40.h,
         ),
         CustomTextField(
           height: 60.h,
-          hintText: AppStrings.enterYourName.tr(),
-          labelText: AppStrings.name.tr(),
+          hintText: AppStrings.enterYourName.tr(context),
+          labelText: AppStrings.name.tr(context),
           controller: SignUpCubit.nameController,
         ),
         SizedBox(
@@ -33,8 +33,8 @@ class SignUpTextAndFields extends StatelessWidget {
         ),
         CustomTextField(
           height: 60.h,
-          hintText: AppStrings.enterYourEmail.tr(),
-          labelText: AppStrings.email.tr(),
+          hintText: AppStrings.enterYourEmail.tr(context),
+          labelText: AppStrings.email.tr(context),
           controller: SignUpCubit.emailController,
         ),
         SizedBox(
@@ -42,8 +42,8 @@ class SignUpTextAndFields extends StatelessWidget {
         ),
         CustomTextField(
           height: 60.h,
-          hintText: AppStrings.enterYourPassword.tr(),
-          labelText: AppStrings.password.tr(),
+          hintText: AppStrings.enterYourPassword.tr(context),
+          labelText: AppStrings.password.tr(context),
           isPassword: true,
           controller: SignUpCubit.passwordController,
         ),
@@ -52,8 +52,8 @@ class SignUpTextAndFields extends StatelessWidget {
         ),
         CustomTextField(
           height: 60.h,
-          hintText:  AppStrings.enterYourPassword.tr(),
-          labelText:AppStrings.confirmPassword.tr(),
+          hintText: AppStrings.enterYourPassword.tr(context),
+          labelText: AppStrings.confirmPassword.tr(context),
           isPassword: true,
           controller: SignUpCubit.passwordConfirmController,
         ),

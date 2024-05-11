@@ -9,7 +9,7 @@ class NoConnectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: GradientGrayBackground(
+        body: GradientGreyBackground(
       child: Center(
         child: Text(
           "No Internet Connection",

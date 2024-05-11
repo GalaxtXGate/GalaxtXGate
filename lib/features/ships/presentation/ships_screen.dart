@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
-import 'package:galaxyxgate/features/ships/business_logic/cubit/ships_cubit.dart';
+import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
+import 'package:galaxyxgate/features/ships/logic/cubit/ships_cubit.dart';
 import 'package:galaxyxgate/features/ships/presentation/widget/animated_ships_list.dart';
 import 'package:galaxyxgate/features/ships/presentation/widget/place_holders/ships_place_holder.dart';
 
@@ -22,15 +24,19 @@ class _ShipsScreenState extends State<ShipsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          children: [
-            Padding(
-                padding: EdgeInsets.only(bottom: 20.h),
-                child: const DefultAppHeader(title: "ships", tag: "ships")),
-            Expanded(
+    return GradientGreyBackground(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(bottom: 20.h),
+            child: DefultAppHeader(
+              title: "ships".tr(context),
+              tag: "ships",
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(10.w),
               child: CustomScrollView(
                 slivers: [
                   BlocConsumer<ShipsCubit, ShipsState>(
@@ -63,8 +69,8 @@ class _ShipsScreenState extends State<ShipsScreen> {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

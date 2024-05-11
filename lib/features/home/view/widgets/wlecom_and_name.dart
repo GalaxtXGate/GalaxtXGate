@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
@@ -15,7 +15,7 @@ class WelcomAndName extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          AppStrings.welcomeBack.tr(),
+          AppStrings.welcomeBack.tr(context),
           style: TextStyles.font14White700w.copyWith(
             color: Colors.grey,
           ),

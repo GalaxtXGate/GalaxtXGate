@@ -1,8 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
+import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/crew/logic/cubit/crews_cubit.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/animated_grid.dart';
 import 'package:galaxyxgate/features/crew/presentation/widget/place_holders/crew_place_holder.dart';
@@ -14,8 +15,8 @@ class CrewsScreen extends StatelessWidget {
   @override
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: RefreshIndicator(
+    return GradientGreyBackground(
+      child: RefreshIndicator(
         onRefresh: () async {
           await context.read<CrewsCubit>().getCrews();
         },
@@ -26,7 +27,8 @@ class CrewsScreen extends StatelessWidget {
                   bottom: 20.h,
                 ),
                 child: DefultAppHeader(
-                    title: AppStrings.crew.tr(), tag: AppStrings.crew.tr())),
+                    title: AppStrings.crew.tr(context),
+                    tag: AppStrings.crew.tr(context))),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(

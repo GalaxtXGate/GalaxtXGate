@@ -1,5 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:galaxyxgate/core/logic/cubit/localization_cubit.dart';
+import 'package:galaxyxgate/core/logic/local_cubit/local_cubit.dart';
 import 'package:galaxyxgate/core/networking/dio_helper.dart';
 import 'package:galaxyxgate/features/about_company/data/services/about_company_services.dart';
 import 'package:galaxyxgate/features/about_company/logic/cubit/about_company_cubit.dart';
@@ -13,9 +13,9 @@ import 'package:galaxyxgate/features/launches/logic/cubit/launches_cubit.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
 import 'package:galaxyxgate/features/rockets/cubit/rockets_cubit.dart';
 import 'package:galaxyxgate/features/rockets/data/services/rockets_services.dart';
+import 'package:galaxyxgate/features/ships/logic/cubit/ships_cubit.dart';
 import '../../features/crew/logic/cubit/crews_cubit.dart';
 import '../../features/crew/data/services/crews_services.dart';
-import '../../features/ships/business_logic/cubit/ships_cubit.dart';
 import '../../features/ships/data/repository/ships_repository.dart';
 import '../../features/ships/data/services/ships_services.dart';
 import 'package:get_it/get_it.dart';
@@ -115,8 +115,8 @@ void setUpServiceLocator() {
       RocketsCubit(rocketsService: getIt<RocketsService>()),
     );
     // Localization
-    getIt.registerSingleton<LocalizationCubit>(
-      LocalizationCubit(),
+    getIt.registerSingleton<LocalCubit>(
+      LocalCubit(),
     );
 
     _isServiceLocatorInitialized = true;

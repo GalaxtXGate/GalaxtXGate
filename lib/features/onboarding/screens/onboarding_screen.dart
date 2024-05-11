@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/helpers/cache_helper.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
+import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/onboarding/data/models/content.dart';
@@ -66,7 +66,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
     return PopScope(
       canPop: false,
       child: Scaffold(
-        body: GradientGrayBackground(
+        body: GradientGreyBackground(
           child: Stack(
             children: [
               //page view
@@ -84,30 +84,30 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
               //Page Indicator
               PageIndicator(
                 currentIndex: _currentIndex,
-                contentLength: content.length,
+                contentLength: getContent(context).length,
               ),
               // Star #1
               PositionedStarWithAnimation(
                 animation: _animatedStar1,
                 bottom: 310.h,
-                right: context.locale == const Locale("en") ? -100 : 0,
-                left: context.locale == const Locale("en") ? 0 : -100.w,
+                right: !AppGeneral.isArabic.value ? -100 : 0,
+                left: !AppGeneral.isArabic.value ? 0 : -100.w,
                 scale: 1.5,
               ),
               // Star #2
               PositionedStarWithAnimation(
                 animation: _animatedStar2,
                 bottom: 180.h,
-                right: context.locale == const Locale("en") ? -200.w : 0,
-                left: context.locale == const Locale("en") ? 0 : -200.w,
+                right: !AppGeneral.isArabic.value ? -200.w : 0,
+                left: !AppGeneral.isArabic.value ? 0 : -200.w,
                 scale: 0.5,
               ),
               // Star #3
               PositionedStarWithAnimation(
                 animation: _animatedStar3,
                 bottom: 100.h,
-                right: context.locale == const Locale("en") ? 150.w : 0,
-                left: context.locale == const Locale("en") ? 0 : 150.w,
+                right: !AppGeneral.isArabic.value ? 150.w : 0,
+                left: !AppGeneral.isArabic.value ? 0 : 150.w,
                 scale: 1.1,
               ),
             ],
@@ -117,7 +117,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
         floatingActionButton: CustomFloatingActionButton(
           controller: _controller,
           currentIndex: _currentIndex,
-          contentLength: content.length,
+          contentLength: getContent(context).length,
           route: Routes.signIn,
           svgAssetPath: AppImages.forwardArrows,
         ),

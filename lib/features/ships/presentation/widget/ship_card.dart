@@ -8,10 +8,8 @@ import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
 import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
 import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
 import 'package:galaxyxgate/features/ships/presentation/widget/ship_features.dart';
-
 import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/widgets/favorite_icon.dart';
-import '../../../favourits/data/service.dart/favorite_services.dart';
 import '../../../favourits/logic/cubit/favourite_cubit.dart';
 
 class ShipCard extends StatelessWidget {
@@ -108,24 +106,26 @@ class ShipCard extends StatelessWidget {
                 ),
                 FavoriteIcon(
                   noFavFunction: () async {
-                    await getIt<FavoriteServices>().addFav(
+                    await getIt<FavoriteCubit>().addOneFav(
                       addFav: AddFav(
                         id: ship.id!,
                         category: "Ships",
                         name: ship.name!,
                         description: ship.homePort,
-                        image: ship.image ??
-                            'No Image',
+                        image: ship.image ?? 'No Image',
                       ),
+                      context: context,
                     );
                   },
                   favFunction: () async {
-                    await getIt<FavoriteServices>()
-                        .removeFav(id: ship.id!);
+                    await getIt<FavoriteCubit>().removeOneFav(
+                      id: ship.id!,
+                      context: context,
+                    );
                   },
                   icon: Icons.favorite,
-                  isFavourite: FavoriteCubit.favs.any(
-                          (element) => element.id == ship.id),
+                  isFavourite: FavoriteCubit.favs
+                      .any((element) => element.id == ship.id),
                 ),
               ],
             ),
