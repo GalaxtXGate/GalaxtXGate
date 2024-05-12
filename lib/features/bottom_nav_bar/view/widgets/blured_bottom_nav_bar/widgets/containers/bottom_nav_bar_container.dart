@@ -27,8 +27,8 @@ class _BottomNavBarContainerState extends State<BottomNavBarContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.h,
-      width: 260.w,
+      height: 70.h,
+      width: 290.w,
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.deepGrey,

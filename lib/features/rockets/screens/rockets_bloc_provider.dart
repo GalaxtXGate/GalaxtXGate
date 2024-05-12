@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
- import 'package:galaxyxgate/features/rockets/cubit/rockets_cubit.dart';
+ import 'package:galaxyxgate/features/rockets/logic/rockets_cubit.dart';
 import 'package:galaxyxgate/features/rockets/screens/rockets_screen.dart';
 
 class RocketsBlocProvider extends StatelessWidget {

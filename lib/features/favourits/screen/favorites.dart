@@ -6,13 +6,17 @@ import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart'
 import 'package:galaxyxgate/features/favourits/screen/widgets/favorites_body.dart';
 
 class Favourites extends StatelessWidget {
-  const Favourites({super.key});
+  const Favourites({super.key, required this.scrollController});
+  final ScrollController scrollController;
+
   @override
   Widget build(BuildContext context) {
     return GradientGreyBackground(
       child: BlocProvider.value(
         value: getIt<FavoriteCubit>()..getFavorites(),
-        child: const FavoritesBody(),
+        child: FavoritesBody(
+          scrollController: scrollController,
+        ),
       ),
     );
   }

@@ -8,11 +8,13 @@ class BluredBottomNavBar extends StatefulWidget {
       required this.icons,
       required this.screens,
       required this.gradientColors,
-      required this.notSelectedColor});
+      required this.notSelectedColor,
+      required this.scrollController});
   final List<String> icons;
   final List<Widget> screens;
   final List<Color> gradientColors;
   final Color notSelectedColor;
+  final ScrollController scrollController;
 
   @override
   State<BluredBottomNavBar> createState() => _BluredBottomNavBarState();
@@ -23,10 +25,31 @@ class _BluredBottomNavBarState extends State<BluredBottomNavBar> {
     initialPage: 0,
     keepPage: true,
   );
+  double previousOffset = 0;
+  double baseBottom = 35.h;
+  double animatedBottom = -50.h;
+
+  ValueNotifier<double> bottom = ValueNotifier<double>(35.h);
+
+  @override
+  void initState() {
+    widget.scrollController.addListener(() {
+      double currentOffset = widget.scrollController.position.pixels;
+      if (currentOffset > previousOffset) {
+        bottom.value = animatedBottom;
+      } else if (currentOffset < previousOffset) {
+        bottom.value = baseBottom;
+      }
+      previousOffset = currentOffset;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
+      onPopInvoked: (_) async => false,
       child: Scaffold(
         body: Stack(
           children: [
@@ -38,15 +61,40 @@ class _BluredBottomNavBarState extends State<BluredBottomNavBar> {
                 onPageChanged: (value) {},
               ),
             ),
-            Positioned(
-              right: 55.w,
-              left: 55.w,
-              bottom: 35.h,
-              child: BottomNavBarContainer(
-                icons: widget.icons,
-                gradientColors: widget.gradientColors,
-                notSelectedColor: widget.notSelectedColor,
-                pageController: pageController,
+            ValueListenableBuilder(
+              valueListenable: bottom,
+              builder:
+                  (BuildContext context, double currentBottom, Widget? child) =>
+                      AnimatedPositioned(
+                right: 40.w,
+                left: 40.w,
+                bottom: currentBottom,
+                duration: const Duration(milliseconds: 500),
+                child: Stack(
+                  children: [
+                    BottomNavBarContainer(
+                      icons: widget.icons,
+                      gradientColors: widget.gradientColors,
+                      notSelectedColor: widget.notSelectedColor,
+                      pageController: pageController,
+                    ),
+                    if (bottom.value != baseBottom)
+                      Positioned.fill(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15.r),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () {
+                                bottom.value = baseBottom;
+                              },
+                              child: const SizedBox(),
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ),
           ],

@@ -1,7 +1,7 @@
 name: galaxyxgate
 description: "your ultimate companion for exploring the cosmos! This app is currently under development, aiming to become your go-to platform for space exploration"
 
-publish_to: 'GooglePlay' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -80,13 +80,14 @@ dependencies:
   fluttertoast: ^8.2.5
   bloc: ^8.1.4
   animated_toggle_switch: ^0.8.2
+  share_plus: ^9.0.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  build_runner: ^2.3.3
+  build_runner: ^2.4.9
   json_serializable: ^6.8.0
 
 flutter:

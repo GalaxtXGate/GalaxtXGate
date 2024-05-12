@@ -12,11 +12,12 @@ import 'package:galaxyxgate/features/launches/screens/launches_bloc_provider.dar
 import 'package:galaxyxgate/features/rockets/screens/rockets_bloc_provider.dart';
 
 import '../../../core/utils/app_strings.dart';
-import '../../crew/presentation/crew_bloc_provider.dart';
+import '../../crew/screens/crew_bloc_provider.dart';
 import '../../ships/presentation/ships_bloc_provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.scrollController});
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class HomeScreen extends StatelessWidget {
           vertical: 50.h,
         ),
         child: ListView(
+          controller: scrollController,
           children: [
             // Home Header Row < Profile Pic, Welcome and Name, Notifications Container >
             const HomeHeaderRow(),
@@ -155,7 +157,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 80.h,
+              height: 20.h,
             ),
           ],
         ),

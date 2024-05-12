@@ -23,7 +23,7 @@ class FavoriteCubit extends Cubit<FavoriteState> {
   }
 
   Future<void> getFavorites() async {
-    emit(GetFavoriteLoading());
+    favs.isEmpty ? emit(GetFavoriteLoading()) : null;
     Either<ServerFailure, List<AddFav>> result =
         await _favoriteServices.getFavorites();
     result.fold(
@@ -33,7 +33,9 @@ class FavoriteCubit extends Cubit<FavoriteState> {
         ),
       ),
       (favorites) {
-        favs = favorites;
+        if (favs != favorites) {
+          favs = favorites;
+        }
         emit(
           GetFavoriteSuccess(favoriteList: favorites),
         );

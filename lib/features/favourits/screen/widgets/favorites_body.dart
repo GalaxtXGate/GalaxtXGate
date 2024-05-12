@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/widgets/columns/lost_page_&&_no_data_column.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
 import 'package:galaxyxgate/features/favourits/screen/widgets/cards/fav_card.dart';
-import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
+import 'package:galaxyxgate/features/favourits/screen/widgets/favorite_place_holder.dart';
 
 class FavoritesBody extends StatelessWidget {
-  const FavoritesBody({super.key});
+  const FavoritesBody({super.key, required this.scrollController});
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
     return GradientGreyBackground(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        physics: const NeverScrollableScrollPhysics(),
+      child: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 30.h),
@@ -33,34 +30,19 @@ class FavoritesBody extends StatelessWidget {
           BlocBuilder<FavoriteCubit, FavoriteState>(
             builder: (context, state) {
               if (state is GetFavoriteLoading) {
-                return SizedBox(
-                  height: 400.h,
-                  child: Center(
-                    child: GradientText(
-                      colors: const [
-                        AppColors.purple,
-                        AppColors.blue,
-                        AppColors.cyan,
-                      ],
-                      child: SpinKitWave(
-                        color: Colors.grey,
-                        size: 30.w,
-                      ),
-                    ),
-                  ),
-                );
+                return const FavoritsPlaceHolder();
               } else {
-                return RefreshIndicator(
-                  onRefresh: () async {
-                    context.read<FavoriteCubit>().getFavorites();
-                  },
-                  child: FavoriteCubit.favs.isNotEmpty
-                      ? Expanded(
+                return FavoriteCubit.favs.isNotEmpty
+                    ? Expanded(
+                        child: RefreshIndicator(
+                          onRefresh: () async {
+                            context.read<FavoriteCubit>().getFavorites();
+                          },
                           child: Padding(
-                            padding: EdgeInsets.only(
-                                right: 20.w, left: 20.w, bottom: 90),
+                            padding: EdgeInsets.only(right: 20.w, left: 20.w),
                             child: AnimationLimiter(
                               child: ListView.builder(
+                                controller: scrollController,
                                 shrinkWrap: true,
                                 itemCount: FavoriteCubit.favs.length,
                                 itemBuilder: (context, index) {
@@ -97,12 +79,12 @@ class FavoritesBody extends StatelessWidget {
                               ),
                             ),
                           ),
-                        )
-                      : const LostPageAndNoDataColumn(
-                          mainText: 'You haven’t added any favorites yet',
-                          subText: 'Go out and explore more',
                         ),
-                );
+                      )
+                    : const LostPageAndNoDataColumn(
+                        mainText: 'You haven’t added any favorites yet',
+                        subText: 'Go out and explore more',
+                      );
               }
             },
           ),

@@ -92,7 +92,23 @@
   "You haven’t added any favorites yet": "لم تقم بإضافة أي مفضلات بعد",
   "Go out and explore more": "انطلق واستكشف المزيد",
   "No Internet Available": "لا يوجد اتصال بالإنترنت",
-  "Please check your internet connection and try again": "يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى"
+  "Please check your internet connection and try again": "يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى",
+  "Welcome to GalaxyXGate’s official community": "مرحبًا بك في المجتمع الرسمي لـ GalaxyXGate",
+  "What’s on your mind ?":"ما الذي يجول في خاطرك؟",
+  "post": "نشر",
+  "Post added successfully": "تمت إضافة المنشور بنجاح",
+  "No Posts Yet": "لا توجد منشورات بعد",
+  " Comments": " تعليقات ",
+  "you": "أنت",
+  "copy": "نسخ",
+  "delete": "حذف",
+  "Copied to clipboard": "تم النسخ إلى الحافظة",
+  "share": "مشاركة",
+  "Post Deleted Successfully": "تم حذف المنشور بنجاح",
+  "No Comments Yet": "لا توجد تعليقات بعد",
+  "Write a comment": "اكتب تعليقا",
+  "Read less....": "اقرأ أقل..",
+  "Read more....": "اقرأ المزيد.."
 
 
 }
