@@ -1,7 +1,7 @@
 name: galaxyxgate
-description: "A new Flutter project."
+description: "your ultimate companion for exploring the cosmos! This app is currently under development, aiming to become your go-to platform for space exploration"
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'GooglePlay' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -72,7 +72,8 @@ dependencies:
   firebase_storage: ^11.7.4
 
 # Localization
-  easy_localization: ^3.0.6
+  flutter_localizations:
+    sdk: flutter
 # Animation  
   lottie: ^3.1.0
   animations: ^2.0.11
@@ -96,7 +97,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/translations/
+    - assets/languages/
     - assets/animation/
 
 # Fonts

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 
-class GradientGrayBackground extends StatelessWidget {
-  const GradientGrayBackground({
+class GradientGreyBackground extends StatelessWidget {
+  const GradientGreyBackground({
     super.key,
     required this.child,
   });

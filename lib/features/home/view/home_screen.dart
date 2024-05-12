@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: GradientGrayBackground(
+      body: GradientGreyBackground(
           child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 25.w,
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             ),
             // Explore Our Topics
             Text(
-              AppStrings.exploreOurTopics.tr(),
+              AppStrings.exploreOurTopics.tr(context),
               style: TextStyles.font16White700w,
             ),
             SizedBox(
@@ -60,10 +60,10 @@ class HomeScreen extends StatelessWidget {
                       height: 300.h,
                       width: 150.w,
                       backgroundImg: AppImages.spaceShipsCategory,
-                      title: AppStrings.spaceShips.tr(),
+                      title: AppStrings.spaceShips.tr(context),
                       description: AppStrings
-                          .knowAboutActiveRocketsTheirDescriptionCompany
-                          .tr(),
+                          .knowAboutActiveShipsTheirDescriptionCompany
+                          .tr(context),
                       tag: 'ships',
                     ),
                     SizedBox(
@@ -82,10 +82,10 @@ class HomeScreen extends StatelessWidget {
                       height: 235.h,
                       width: 150.w,
                       backgroundImg: AppImages.rocketsCategory,
-                      title: AppStrings.rockets.tr(),
+                      title: AppStrings.rockets.tr(context),
                       description: AppStrings
                           .knowAboutActiveRocketsTheirDescriptionCompany
-                          .tr(),
+                          .tr(context),
                       tag: 'Rockets',
                     ),
                   ],
@@ -98,9 +98,10 @@ class HomeScreen extends StatelessWidget {
                       height: 185.h,
                       width: 150.w,
                       backgroundImg: AppImages.launchesCategory,
-                      title: AppStrings.launches.tr(),
-                      description:
-                          AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
+                      title: AppStrings.launches.tr(context),
+                      description: AppStrings
+                          .knowAboutTheLaunchesNameStateDetails
+                          .tr(context),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -108,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                               page: const LauchesBlocProvider()),
                         );
                       },
-                      tag: AppStrings.launches.tr(),
+                      tag: AppStrings.launches.tr(context),
                     ),
                     SizedBox(
                       height: 15.h,
@@ -124,10 +125,11 @@ class HomeScreen extends StatelessWidget {
                       height: 200.h,
                       width: 150.w,
                       backgroundImg: AppImages.crewCategory,
-                      title: AppStrings.crew.tr(),
-                      description:
-                          AppStrings.knowAboutTheLaunchesNameStateDetails.tr(),
-                      tag: AppStrings.crew.tr(),
+                      title: AppStrings.crew.tr(context),
+                      description: AppStrings
+                          .knowAboutTheLaunchesNameStateDetails
+                          .tr(context),
+                      tag: AppStrings.crew.tr(context),
                     ),
                     SizedBox(
                       height: 15.h,
@@ -136,8 +138,9 @@ class HomeScreen extends StatelessWidget {
                       height: 130.h,
                       width: 150.w,
                       backgroundImg: AppImages.aboutSpaceX,
-                      title: AppStrings.aboutSpaceX.tr(),
-                      description: AppStrings.knowAllAboutSpaceXDetails.tr(),
+                      title: AppStrings.aboutSpaceX.tr(context),
+                      description:
+                          AppStrings.knowAllAboutSpaceXDetails.tr(context),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -145,7 +148,7 @@ class HomeScreen extends StatelessWidget {
                               page: const AboutCompanyBlocProvider()),
                         );
                       },
-                      tag: AppStrings.aboutSpaceX.tr(),
+                      tag: AppStrings.aboutSpaceX.tr(context),
                     ),
                   ],
                 ),

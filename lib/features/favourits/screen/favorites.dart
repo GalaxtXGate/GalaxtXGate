@@ -9,10 +9,9 @@ class Favourites extends StatelessWidget {
   const Favourites({super.key});
   @override
   Widget build(BuildContext context) {
-    return GradientGrayBackground(
+    return GradientGreyBackground(
       child: BlocProvider.value(
         value: getIt<FavoriteCubit>()..getFavorites(),
-
         child: const FavoritesBody(),
       ),
     );

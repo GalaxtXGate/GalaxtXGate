@@ -1,14 +1,14 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/core/widgets/continue_button.dart';
-import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
+import 'package:galaxyxgate/core/widgets/buttons/continue_button.dart';
+import 'package:galaxyxgate/core/widgets/snackbars/message_snack_bar.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:galaxyxgate/features/bottom_nav_bar/view/bottom_nav_bar.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
@@ -54,7 +54,8 @@ class ProfilePicture extends StatelessWidget {
                     }
                     if (state is SignUpSuccess) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        messageSnackBar(message:AppStrings.signInSuccess.tr()),
+                        messageSnackBar(
+                            message: AppStrings.signInSuccess.tr(context)),
                       );
                       Navigator.pushReplacement(
                         context,
@@ -89,20 +90,25 @@ class ProfilePicture extends StatelessWidget {
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 messageSnackBar(
-                                    message: AppStrings.chooseAProfilePicture.tr()),
+                                    message: AppStrings.chooseAProfilePicture
+                                        .tr(context)),
                               );
                             }
                           } else {
                             Navigator.pop(context);
 
                             ScaffoldMessenger.of(context).showSnackBar(
-                              messageSnackBar(message: AppStrings.fillAllFields.tr()),
+                              messageSnackBar(
+                                  message:
+                                      AppStrings.fillAllFields.tr(context)),
                             );
                           }
                         } else {
                           Navigator.pop(context);
                           ScaffoldMessenger.of(context).showSnackBar(
-                            messageSnackBar(message: AppStrings. passwordNotMatch.tr()),
+                            messageSnackBar(
+                                message:
+                                    AppStrings.passwordNotMatch.tr(context)),
                           );
                         }
                       },

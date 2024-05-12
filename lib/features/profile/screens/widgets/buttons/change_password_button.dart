@@ -1,13 +1,13 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
+import 'package:galaxyxgate/core/widgets/snackbars/message_snack_bar.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
 import 'package:galaxyxgate/features/profile/screens/widgets/edit_button.dart';
 
@@ -21,14 +21,14 @@ class ChangePasswordButton extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.all(10.w),
+          padding: EdgeInsets.all(20.w),
           decoration: BoxDecoration(
-            color: AppColors.deepGrey,
+            color: AppColors.deepGrey.withOpacity(0.3),
             borderRadius: BorderRadius.circular(15.r),
             border: Border.all(color: AppColors.borderGreyWhite, width: 1.w),
           ),
           child: Text(
-            AppStrings.changePassword.tr(),
+            AppStrings.changePassword.tr(context),
             style: TextStyles.font14White700w.copyWith(
               fontWeight: FontWeight.w300,
               color: AppColors.offWhite,
@@ -53,7 +53,9 @@ class ChangePasswordButton extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Text(
-                                      AppStrings. areSureYouWantToChangeYourPassword.tr(),
+                                      AppStrings
+                                          .areSureYouWantToChangeYourPassword
+                                          .tr(context),
                                       style:
                                           TextStyles.font16White700w.copyWith(
                                         fontWeight: FontWeight.w300,
@@ -65,7 +67,8 @@ class ChangePasswordButton extends StatelessWidget {
                                       height: 10.h,
                                     ),
                                     Text(
-                                      AppStrings. youWillReceiveEmailToChangeIt.tr(),
+                                      AppStrings.youWillReceiveEmailToChangeIt
+                                          .tr(context),
                                       style:
                                           TextStyles.font10White700w.copyWith(
                                         fontWeight: FontWeight.w300,
@@ -85,7 +88,7 @@ class ChangePasswordButton extends StatelessWidget {
                                           height: 40.h,
                                           width: 100.w,
                                           child: EditGradientButton(
-                                            title:AppStrings.no.tr(),
+                                            title: AppStrings.no.tr(context),
                                             onPressed: () {
                                               Navigator.pop(context);
                                             },
@@ -101,8 +104,9 @@ class ChangePasswordButton extends StatelessWidget {
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
                                                   messageSnackBar(
-                                                    message:
-                                                        AppStrings.emailSentSuccessfully.tr(),
+                                                    message: AppStrings
+                                                        .emailSentSuccessfully
+                                                        .tr(context),
                                                   ),
                                                 );
                                                 Navigator.pop(context);
@@ -129,7 +133,8 @@ class ChangePasswordButton extends StatelessWidget {
                                                 height: 40.h,
                                                 width: 100.w,
                                                 child: EditGradientButton(
-                                                  title: AppStrings.yes.tr(),
+                                                  title: AppStrings.yes
+                                                      .tr(context),
                                                   onPressed: () async {
                                                     await context
                                                         .read<ProfileCubit>()

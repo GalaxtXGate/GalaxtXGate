@@ -24,8 +24,10 @@ class AppStrings {
   static const String signIn = "Sign In";
   static const String welcomeBack = "Welcome Back,";
   static const String exploreOurTopics = "Explore Our Topics";
-  static const String spaceShips = "Ships";
+  static const String spaceShips = "ships";
   static const String knowAboutActiveRocketsTheirDescriptionCompany =
+      "Know about active Rockets, their description, company and more";
+  static const String knowAboutActiveShipsTheirDescriptionCompany =
       "Know about active Ships, their description, company and more";
   static const String rockets = "Rockets";
   static const String launches = "launches";
@@ -102,4 +104,6 @@ class AppStrings {
   static const String yourDataWillBeRemoved = "Your Data will be Removed !!";
   static const String deleteAccountSuccess = "Delete Account Success";
   static const String deleteAccount = "Delete Account";
+  static const String youMustEnteryourPasswordtoConfirm =
+      "youMustEnteryourPasswordtoConfirm";
 }

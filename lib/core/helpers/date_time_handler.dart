@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
 
 class DateTimeHandler {
@@ -25,7 +25,7 @@ class DateTimeHandler {
     if (now.day == sent.day + 1 &&
         now.month == sent.month &&
         now.year == sent.year) {
-      return '${AppStrings.yesterdayOn.tr()} $formattedTime';
+      return '${AppStrings.yesterdayOn.tr(context)} $formattedTime';
     }
 
     if (now.day - 6 < sent.day &&

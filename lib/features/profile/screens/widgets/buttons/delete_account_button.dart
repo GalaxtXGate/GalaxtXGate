@@ -1,16 +1,16 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:galaxyxgate/core/data/services/context_services.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/helpers/cache_helper.dart';
 import 'package:galaxyxgate/core/routes/routes.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/core/widgets/message_snack_bar.dart';
+import 'package:galaxyxgate/core/widgets/snackbars/message_snack_bar.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
 import 'package:galaxyxgate/features/auth/screens/widgets/custom_text_field.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
@@ -54,7 +54,8 @@ class DeleteAccountButton extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                            AppStrings.areSureYouWantToDeleteYourAccount.tr(),
+                              AppStrings.areSureYouWantToDeleteYourAccount
+                                  .tr(context),
                               style: TextStyles.font16White700w.copyWith(
                                 fontWeight: FontWeight.w300,
                                 color: AppColors.offWhite,
@@ -65,7 +66,7 @@ class DeleteAccountButton extends StatelessWidget {
                               height: 10.h,
                             ),
                             Text(
-                            AppStrings.yourDataWillBeRemoved.tr(),
+                              AppStrings.yourDataWillBeRemoved.tr(context),
                               style: TextStyles.font10White700w.copyWith(
                                 fontWeight: FontWeight.w300,
                                 color: Colors.grey,
@@ -102,7 +103,7 @@ class DeleteAccountButton extends StatelessWidget {
                                   height: 40.h,
                                   width: 100.w,
                                   child: EditGradientButton(
-                                  title:AppStrings.no.tr(),
+                                    title: AppStrings.no.tr(context),
                                     onPressed: () {
                                       Navigator.pop(context);
                                     },
@@ -128,7 +129,9 @@ class DeleteAccountButton extends StatelessWidget {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             messageSnackBar(
-                                            message: AppStrings.deleteAccountSuccess.tr(),
+                                              message: AppStrings
+                                                  .deleteAccountSuccess
+                                                  .tr(context),
                                             ),
                                           );
                                           logOut();
@@ -149,7 +152,7 @@ class DeleteAccountButton extends StatelessWidget {
                                           );
                                         }
                                         return EditGradientButton(
-                                        title: AppStrings.yes.tr(),
+                                          title: AppStrings.yes.tr(context),
                                           onPressed: () async {
                                             if (SignUpCubit.passwordController
                                                 .text.isNotEmpty) {
@@ -180,7 +183,7 @@ class DeleteAccountButton extends StatelessWidget {
                 ));
       },
       child: Text(
-       AppStrings.deleteAccount.tr(),
+        AppStrings.deleteAccount.tr(context),
         style: TextStyles.font16White700w,
       ),
     );

@@ -8,9 +8,12 @@ class FavoriteIcon extends StatefulWidget {
       required this.isFavourite,
       required this.favFunction,
       required this.noFavFunction,
-      this.icon});
+      this.icon,
+      this.isInFavourite});
 
   final bool isFavourite;
+  final bool? isInFavourite;
+
   final VoidCallback? favFunction;
   final VoidCallback? noFavFunction;
   final IconData? icon;
@@ -32,49 +35,50 @@ class _FavoriteIconState extends State<FavoriteIcon> {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: isFavourite,
-      builder: (context, bool value, wiget) => value
-          ? ShaderMask(
-              shaderCallback: (Rect bounds) {
-                return const LinearGradient(
-                  colors: [
-                    AppColors.loginTextGradientPurple,
-                    AppColors.loginTextGradientPurple,
-                    AppColors.loginTextGradientBlue,
-                    AppColors.loginTextGradientGreen,
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.topCenter,
-                ).createShader(bounds);
-              },
-              child: IconButton(
-                iconSize: 29,
-                onPressed: () {
-                  if (widget.favFunction != null) {
-                    widget.favFunction!();
-                  }
-                  isFavourite.value = !isFavourite.value;
-                  HapticFeedback.heavyImpact();
-                },
-                icon: Icon(
-                  widget.icon,
-                  color: AppColors.white,
+      builder: (context, bool value, wiget) =>
+          (widget.isInFavourite != null && widget.isInFavourite!) || value
+              ? ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return const LinearGradient(
+                      colors: [
+                        AppColors.loginTextGradientPurple,
+                        AppColors.loginTextGradientPurple,
+                        AppColors.loginTextGradientBlue,
+                        AppColors.loginTextGradientGreen,
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.topCenter,
+                    ).createShader(bounds);
+                  },
+                  child: IconButton(
+                    iconSize: 29,
+                    onPressed: () {
+                      if (widget.favFunction != null) {
+                        widget.favFunction!();
+                      }
+                      isFavourite.value = !isFavourite.value;
+                      HapticFeedback.heavyImpact();
+                    },
+                    icon: Icon(
+                      widget.icon,
+                      color: AppColors.white,
+                    ),
+                  ),
+                )
+              : IconButton(
+                  iconSize: 29,
+                  onPressed: () {
+                    if (widget.noFavFunction != null) {
+                      widget.noFavFunction!();
+                    }
+                    isFavourite.value = !isFavourite.value;
+                    HapticFeedback.heavyImpact();
+                  },
+                  icon: Icon(
+                    widget.icon,
+                    color: AppColors.white,
+                  ),
                 ),
-              ),
-            )
-          : IconButton(
-              iconSize: 29,
-              onPressed: () {
-                if (widget.noFavFunction != null) {
-                  widget.noFavFunction!();
-                }
-                isFavourite.value = !isFavourite.value;
-                HapticFeedback.heavyImpact();
-              },
-              icon: Icon(
-                widget.icon,
-                color: AppColors.white,
-              ),
-            ),
     );
   }
 }

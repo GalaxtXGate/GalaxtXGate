@@ -4,7 +4,7 @@ import 'package:galaxyxgate/core/helpers/Internet_Connection_helper.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/core/utils/app_icons.dart';
-import 'package:galaxyxgate/core/widgets/no_connection_widget.dart';
+import 'package:galaxyxgate/core/widgets/columns/lost_page_&&_no_data_column.dart';
 import 'package:galaxyxgate/features/bottom_nav_bar/view/widgets/blured_bottom_nav_bar/blured_bottom_nav_bar.dart';
 import 'package:galaxyxgate/features/favourits/screen/favorites.dart';
 import 'package:galaxyxgate/features/home/view/home_screen.dart';
@@ -19,31 +19,39 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  late Timer connectionTimer ;
+  late Timer connectionTimer;
   @override
   void initState() {
-    connectionTimer = Timer.periodic(const Duration(seconds: 2), (timer) {context.checkInternet(); });
+    connectionTimer = Timer.periodic(const Duration(seconds: 2), (timer) {
+      context.checkInternet();
+    });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: AppGeneral.noConnection,
-      builder: (context,value,widget)=> BluredBottomNavBar(
+      builder: (context, value, widget) => BluredBottomNavBar(
         icons: const [
           AppIcons.compassIcon,
           AppIcons.favIcon,
           AppIcons.personIcon,
         ],
-        screens:  [
-          if(value)const NoConnectionWidget(),
-          if(value)const NoConnectionWidget(),
-          if(value)const NoConnectionWidget(),
-
-          if(!value)const HomeScreen(),
-          if(!value)const Favourites(),
-          if(!value)const ProfileScreen(),
-        ],
+        screens: value
+            ? List.generate(
+                3,
+                (index) => const LostPageAndNoDataColumn(
+                  mainText: 'No Internet Available',
+                  subText:
+                      'Please check your internet connection and try again',
+                ),
+              )
+            : [
+                const HomeScreen(),
+                const Favourites(),
+                const ProfileScreen(),
+              ],
         gradientColors: AppColors.maingGradientColor,
         notSelectedColor: AppColors.white,
       ),

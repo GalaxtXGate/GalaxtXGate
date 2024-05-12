@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/rocket_details_screen.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/cards/rocket_card.dart';
 import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
@@ -26,18 +27,18 @@ class AnimatedRocketsListView extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(10.w, 0, 10.w, 15.h),
                     child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  RocketDetailsScreen(rocket: rocket),
-                            ),
-                          );
-                        },
-                        child: RocketCard(
-                          rocket: rocket,
-                        )),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          LeftSlideTransition(
+                            page: RocketDetailsScreen(rocket: rocket),
+                          ),
+                        );
+                      },
+                      child: RocketCard(
+                        rocket: rocket,
+                      ),
+                    ),
                   ),
                 ),
               ),

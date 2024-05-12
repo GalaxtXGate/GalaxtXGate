@@ -7,9 +7,8 @@ import 'package:galaxyxgate/core/function/launch_url_browser.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
-import 'package:galaxyxgate/core/widgets/icon_text_row.dart';
+import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
 import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
-import 'package:galaxyxgate/features/favourits/data/service.dart/favorite_services.dart';
 import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
 import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
 
@@ -75,7 +74,7 @@ class RocketDetailsInfo extends StatelessWidget {
   }
 
   /// Widget for displaying rocket engine type, name, and description.
-  Widget _buildRocketDetails() {
+  Widget _buildRocketDetails({required BuildContext context}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,7 +116,7 @@ class RocketDetailsInfo extends StatelessWidget {
         ),
         FavoriteIcon(
           noFavFunction: () async {
-            await getIt<FavoriteServices>().addFav(
+            await getIt<FavoriteCubit>().addOneFav(
               addFav: AddFav(
                 id: rocket.id,
                 category: "Rockets",
@@ -125,11 +124,13 @@ class RocketDetailsInfo extends StatelessWidget {
                 image: rocket.flickrImages!.first,
                 description: rocket.description,
               ),
+              context: context,
             );
           },
           favFunction: () async {
-            await getIt<FavoriteServices>().removeFav(
+            await getIt<FavoriteCubit>().removeOneFav(
               id: rocket.id!,
+              context: context,
             );
           },
           icon: Icons.favorite,
@@ -218,7 +219,7 @@ class RocketDetailsInfo extends StatelessWidget {
         SizedBox(height: 5.h),
         _buildRocketInfo(),
         SizedBox(height: 25.h),
-        _buildRocketDetails(),
+        _buildRocketDetails(context: context),
         SizedBox(height: 25.h),
         _buildRocketLaunchInfo(),
       ],

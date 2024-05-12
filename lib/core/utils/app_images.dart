@@ -11,7 +11,7 @@ class AppImages {
 
   static const String crewCategory = 'assets/images/crew.png';
 
-    static const String aboutSpaceX = 'assets/images/about_sapec_x.png';
+  static const String aboutSpaceX = 'assets/images/about_sapec_x.png';
 
   static const String appIcon = 'assets/images/appIcon.png';
 
@@ -45,13 +45,14 @@ class AppImages {
 
   static const String astronaut = 'assets/images/astronaut.png';
 
+  static const String toogleCircle = 'assets/images/gradinet_circle.png';
+
+  static const String pageLost = 'assets/images/Page-lost.svg';
 
   static const String darkEarthInSpaceImage =
       'assets/images/dark_earth_in_space.png';
-  static const String spaceManImage =
-      'assets/images/space_man.png';
-  static const String semicircleImage =
-      'assets/images/semi_circle.png';
+  static const String spaceManImage = 'assets/images/space_man.png';
+  static const String semicircleImage = 'assets/images/semi_circle.png';
   static const String rotatedSemicircleImage =
       'assets/images/rotated_semi_circle.png';
 }
