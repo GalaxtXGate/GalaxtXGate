@@ -19,42 +19,27 @@ class FavoritsPlaceHolder extends StatelessWidget {
       child: Shimmer.fromColors(
         baseColor: AppColors.deepGrey,
         highlightColor: Colors.grey.withOpacity(0.5),
-        child: Column(
-          children: [
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  height: 100,
-                  width: 100,
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: 20.h),
-                    child: SizedBox(
-                      height: 210.h,
-                      child: Card(
-                        child: ListTile(
-                          title: Text('Item number $index as title'),
-                          subtitle: const Text('Subtitle here'),
-                          trailing: const Icon(Icons.ac_unit),
-                        ),
-                      ),
+        child: SizedBox(
+          height: 660.h,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.only(bottom: 20.h),
+                child: SizedBox(
+                  height: 100.h,
+                  child: Card(
+                    child: ListTile(
+                      title: Text('Item number $index as title'),
+                      subtitle: const Text('Subtitle here'),
+                      trailing: const Icon(Icons.ac_unit),
                     ),
-                  );
-                },
-              ),
-            ),
-          ],
+                  ),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

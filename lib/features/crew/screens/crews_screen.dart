@@ -5,8 +5,8 @@ import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart'
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/crew/logic/cubit/crews_cubit.dart';
-import 'package:galaxyxgate/features/crew/presentation/widget/animated_grid.dart';
-import 'package:galaxyxgate/features/crew/presentation/widget/place_holders/crew_place_holder.dart';
+import 'package:galaxyxgate/features/crew/screens/widget/animated_grid.dart';
+import 'package:galaxyxgate/features/crew/screens/widget/place_holders/crew_place_holder.dart';
 
 import '../../../core/utils/app_strings.dart';
 

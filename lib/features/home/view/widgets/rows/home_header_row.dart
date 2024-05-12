@@ -61,7 +61,9 @@ class _HomeHeaderRowState extends State<HomeHeaderRow>
             children: [
               BlocProvider<SignUpCubit>.value(
                 value: getIt<SignUpCubit>(),
-                child: const ProfilePic(),
+                child: ProfilePic(
+                  size: 40.w,
+                ),
               ),
               SizedBox(
                 width: 10.w,

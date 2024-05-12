@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/animated_rockets_listview.dart';
-import 'package:galaxyxgate/features/rockets/cubit/rockets_cubit.dart';
+import 'package:galaxyxgate/features/rockets/logic/rockets_cubit.dart';
 import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/place_holders/rockets_place_holder.dart';
 

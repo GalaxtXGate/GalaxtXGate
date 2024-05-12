@@ -6,12 +6,15 @@ import 'package:galaxyxgate/features/about_company/logic/cubit/about_company_cub
 import 'package:galaxyxgate/features/auth/data/services/auth_services.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_in_cubit/sign_in_cubit.dart';
 import 'package:galaxyxgate/features/auth/logic/sign_up_cubit/sign_up_cubit.dart';
+import 'package:galaxyxgate/features/community_posts/data/services/community_posts_services.dart';
+import 'package:galaxyxgate/features/community_posts/logic/community_posts/community_posts_cubit.dart';
+import 'package:galaxyxgate/features/community_posts/logic/posts_comments/posts_comments_cubit.dart';
 import 'package:galaxyxgate/features/favourits/data/service.dart/favorite_services.dart';
 import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
 import 'package:galaxyxgate/features/launches/data/services/launches_services.dart';
 import 'package:galaxyxgate/features/launches/logic/cubit/launches_cubit.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
-import 'package:galaxyxgate/features/rockets/cubit/rockets_cubit.dart';
+import 'package:galaxyxgate/features/rockets/logic/rockets_cubit.dart';
 import 'package:galaxyxgate/features/rockets/data/services/rockets_services.dart';
 import 'package:galaxyxgate/features/ships/logic/cubit/ships_cubit.dart';
 import '../../features/crew/logic/cubit/crews_cubit.dart';
@@ -113,6 +116,21 @@ void setUpServiceLocator() {
 
     getIt.registerSingleton<RocketsCubit>(
       RocketsCubit(rocketsService: getIt<RocketsService>()),
+    );
+    // CommunityPosts
+    getIt.registerSingleton<CommunityPostsService>(
+      CommunityPostsService(),
+    );
+
+    getIt.registerSingleton<CommunityPostsCubit>(
+      CommunityPostsCubit(
+          communityPostsService: getIt<CommunityPostsService>()),
+    );
+
+    // PostsComments
+
+    getIt.registerSingleton<PostsCommentsCubit>(
+      PostsCommentsCubit(communityPostsService: getIt<CommunityPostsService>()),
     );
     // Localization
     getIt.registerSingleton<LocalCubit>(
