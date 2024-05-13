@@ -6,15 +6,15 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
-import 'package:galaxyxgate/features/crew/data/models/crew_model.dart';
+import 'package:galaxyxgate/features/crew/data/models/crew.dart';
 import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
 
 import '../../../../core/di/dependency_injection.dart';
-import '../../../favourits/data/models/add_fav.dart';
+import '../../../favourits/data/models/add_fav/add_fav.dart';
 import '../../../favourits/logic/cubit/favourite_cubit.dart';
 
 class AnimatedCrewGrid extends StatelessWidget {
-  final List<CrewModel>? crewList;
+  final List<Crew>? crewList;
 
   const AnimatedCrewGrid({super.key, required this.crewList});
 

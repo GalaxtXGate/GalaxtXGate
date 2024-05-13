@@ -5,7 +5,7 @@ import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/images/defult_app_cached_network_image.dart';
 import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
 import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
-import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav/add_fav.dart';
 import 'package:galaxyxgate/features/onboarding/screens/widget/gradient_Text.dart';
 
 String getImagePathForStatus(String status) {

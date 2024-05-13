@@ -4,10 +4,10 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:galaxyxgate/core/animations/left_slide_transition.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/rocket_details_screen.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/cards/rocket_card.dart';
-import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
+import 'package:galaxyxgate/features/rockets/data/models/rockets/rockets.dart';
 
 class AnimatedRocketsListView extends StatelessWidget {
-  final List<RocketsModel> rockets;
+  final List<Rockets> rockets;
 
   const AnimatedRocketsListView({super.key, required this.rockets});
 

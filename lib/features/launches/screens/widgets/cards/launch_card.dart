@@ -4,7 +4,7 @@ import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/images/defult_app_cached_network_image.dart';
-import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav/add_fav.dart';
 import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
 import 'package:galaxyxgate/features/launches/data/models/launches/launches.dart';
 import 'package:galaxyxgate/features/launches/screens/widgets/rows/launch_status.dart';
