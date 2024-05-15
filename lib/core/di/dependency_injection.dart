@@ -16,6 +16,7 @@ import 'package:galaxyxgate/features/launches/logic/cubit/launches_cubit.dart';
 import 'package:galaxyxgate/features/profile/logic/profile_cubit.dart';
 import 'package:galaxyxgate/features/rockets/logic/rockets_cubit.dart';
 import 'package:galaxyxgate/features/rockets/data/services/rockets_services.dart';
+import 'package:galaxyxgate/features/ships/data/services/ships_local_data_source.dart';
 import 'package:galaxyxgate/features/ships/logic/cubit/ships_cubit.dart';
 import '../../features/crew/logic/cubit/crews_cubit.dart';
 import '../../features/crew/data/services/crews_services.dart';
@@ -92,9 +93,14 @@ void setUpServiceLocator() {
       ShipsServiceImp(dioHelper: getIt()),
     );
 
-    getIt.registerSingleton<ShipsRepository>(
-      ShipsRepository(shipsService: getIt()),
+    getIt.registerSingleton<ShipsLocalDataSource>(
+      ShipsLocalDataSourceImpl(),
     );
+    getIt.registerSingleton<ShipsRepository>(
+      ShipsRepository(shipsService: getIt(),shipsLocalDataSource:getIt() ),
+    );
+
+
 
     getIt.registerSingleton<ShipsCubit>(
       ShipsCubit(shipsRepository: getIt()),
@@ -139,4 +145,6 @@ void setUpServiceLocator() {
 
     _isServiceLocatorInitialized = true;
   }
+
+
 }

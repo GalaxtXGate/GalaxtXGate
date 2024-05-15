@@ -1,8 +1,10 @@
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'ships.g.dart';
 
 @JsonSerializable(explicitToJson: true)
+@HiveType(typeId: 0)
 class Ships {
   String? legacyId;
   String? type;
@@ -18,18 +20,18 @@ class Ships {
   String? id;
 
   Ships(
-      {this.legacyId,
-      this.type,
-      this.roles,
-      this.homePort,
-      this.status,
-      this.yearBuilt,
-      this.link,
-      this.image,
-      this.name,
-      this.active,
-      this.launches,
-      this.id});
+      {@HiveField(0) this.legacyId,
+      @HiveField(1) this.type,
+      @HiveField(2) this.roles,
+      @HiveField(3) this.homePort,
+      @HiveField(4) this.status,
+      @HiveField(5) this.yearBuilt,
+      @HiveField(6) this.link,
+      @HiveField(7) this.image,
+      @HiveField(8) this.name,
+      @HiveField(9) this.active,
+      @HiveField(10) this.launches,
+      @HiveField(11) this.id});
 
   factory Ships.fromJson(Map<String, dynamic> json) => _$ShipsFromJson(json);
 
