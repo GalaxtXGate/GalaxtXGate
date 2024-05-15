@@ -5,15 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
-import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
-import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
-import 'package:galaxyxgate/features/ships/presentation/widget/ship_features.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav/add_fav.dart';
+import 'package:galaxyxgate/features/ships/data/models/ships.dart';
+import 'package:galaxyxgate/features/ships/screens/widget/ship_features.dart';
 import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/widgets/favorite_icon.dart';
 import '../../../favourits/logic/cubit/favourite_cubit.dart';
 
 class ShipCard extends StatelessWidget {
-  final ShipsModel ship;
+  final Ships ship;
   const ShipCard({super.key, required this.ship});
 
   String getImagePathForStatus(bool? active) {

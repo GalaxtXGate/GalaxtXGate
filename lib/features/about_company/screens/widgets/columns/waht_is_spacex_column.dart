@@ -4,7 +4,7 @@ import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart'
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_images.dart';
 import 'package:galaxyxgate/core/utils/app_strings.dart';
-import 'package:galaxyxgate/features/about_company/data/models/company_info_model.dart';
+import 'package:galaxyxgate/features/about_company/data/models/company_info/company_info.dart';
 
 class WhatIsSpaceXColumn extends StatelessWidget {
   const WhatIsSpaceXColumn({

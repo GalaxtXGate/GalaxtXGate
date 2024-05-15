@@ -1,6 +1,6 @@
 import 'package:galaxyxgate/core/errors/server_failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
+import 'package:galaxyxgate/features/ships/data/models/ships.dart';
 import 'package:galaxyxgate/features/ships/data/services/ships_services.dart';
 
 class ShipsRepository {
@@ -9,7 +9,7 @@ class ShipsRepository {
   ShipsRepository({required ShipsService shipsService})
       : _shipsService = shipsService;
 
-  Future<Either<ServerFailure, List<ShipsModel>>> getAllShips() async {
+  Future<Either<ServerFailure, List<Ships>>> getAllShips() async {
     try {
       final ships = await _shipsService.getFilteredShips();
       return Right(ships);

@@ -4,10 +4,10 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/rocket_details_info.dart';
-import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
+import 'package:galaxyxgate/features/rockets/data/models/rockets/rockets.dart';
 
 class RocketDetailsScreen extends StatelessWidget {
-  final RocketsModel rocket;
+  final Rockets rocket;
   const RocketDetailsScreen({super.key, required this.rocket});
   @override
   Widget build(BuildContext context) {

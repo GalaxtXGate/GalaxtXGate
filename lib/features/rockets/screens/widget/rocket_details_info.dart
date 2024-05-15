@@ -8,12 +8,12 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/favorite_icon.dart';
 import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
-import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav/add_fav.dart';
 import 'package:galaxyxgate/features/favourits/logic/cubit/favourite_cubit.dart';
-import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
+import 'package:galaxyxgate/features/rockets/data/models/rockets/rockets.dart';
 
 class RocketDetailsInfo extends StatelessWidget {
-  final RocketsModel rocket;
+  final Rockets rocket;
 
   const RocketDetailsInfo({super.key, required this.rocket});
 

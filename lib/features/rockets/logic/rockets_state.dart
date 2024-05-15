@@ -1,7 +1,7 @@
 part of 'rockets_cubit.dart';
 
 sealed class RocketsState extends Equatable {
-  final List<RocketsModel>? rockets;
+  final List<Rockets>? rockets;
   final String? error;
 
   const RocketsState({
@@ -22,7 +22,7 @@ class RocketsLoading extends RocketsState {
 }
 
 class RocketsLoaded extends RocketsState {
-  const RocketsLoaded(List<RocketsModel> rockets) : super(rockets: rockets);
+  const RocketsLoaded(List<Rockets> rockets) : super(rockets: rockets);
 }
 
 class RocketsError extends RocketsState {

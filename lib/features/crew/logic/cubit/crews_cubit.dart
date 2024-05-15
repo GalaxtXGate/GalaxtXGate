@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:galaxyxgate/features/crew/data/models/crew_model.dart';
+import 'package:galaxyxgate/features/crew/data/models/crew.dart';
 import 'package:galaxyxgate/features/crew/data/services/crews_services.dart';
 part 'crews_state.dart';
 
