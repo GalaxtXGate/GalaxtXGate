@@ -32,6 +32,9 @@ Welcome to GalaxtXGate, your ultimate companion for exploring the cosmos! This a
 8. ⭐ **Favorites**:
    - Personalize your experience by favoriting specific launches, rockets, or capsules.
    - Easily access your favorites in a separate section for quick reference.
+  
+9. 💬 **Community Posts**:
+   - Engage with other users in real-time posying , creating a space for shared excitement and knowledge exchange , make up or down vote to make best post go up , you can comment also.
 
 
 ## How to Use:
@@ -49,5 +52,6 @@ Welcome to GalaxtXGate, your ultimate companion for exploring the cosmos! This a
    - Receive timely updates on SpaceX missions and projects, ensuring you never miss out on the latest news.
 
 Download GalaxtXGate now and join us as we embark on an exhilarating journey through the cosmos! 🚀🌌
+Download Link : https://play.google.com/store/apps/details?id=com.spacex.galaxyxgate&pcampaignid=web_share
 
-*Note: GalaxtXGate is currently under development and is not affiliated with SpaceX. All information is sourced from publicly available data.*
+
