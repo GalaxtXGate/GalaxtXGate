@@ -55,3 +55,7 @@ Download GalaxtXGate now and join us as we embark on an exhilarating journey thr
 Download Link : https://play.google.com/store/apps/details?id=com.spacex.galaxyxgate&pcampaignid=web_share
 
 
+
+https://github.com/GalaxtXGate/GalaxtXGate/assets/56634722/eee2f930-f36c-4b89-bb98-fdae05cd8431
+
+
