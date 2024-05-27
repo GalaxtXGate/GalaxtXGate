@@ -82,6 +82,11 @@ dependencies:
   animated_toggle_switch: ^0.8.2
   share_plus: ^9.0.0
 
+# Caching last data
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  hive_generator: ^2.0.1
+
 
 dev_dependencies:
   flutter_test:

@@ -39,4 +39,7 @@ class CacheHelper {
   static Future<bool> clearData() async {
     return await sharedPreferences.clear();
   }
+
+
+
 }
