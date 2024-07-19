@@ -1,37 +1,40 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:galaxyxgate/core/di/dependency_injection.dart';
 import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
-import 'package:galaxyxgate/features/community_posts/data/models/community_post/community_post.dart';
-import 'package:galaxyxgate/features/community_posts/logic/community_posts/community_posts_cubit.dart';
+import 'package:galaxyxgate/features/community_posts/data/models/comment/comment.dart';
+import 'package:galaxyxgate/features/community_posts/logic/posts_comments/posts_comments_cubit.dart';
 import 'package:share_plus/share_plus.dart';
 
-class MoreButton extends StatelessWidget {
-  const MoreButton({
+class CommentOptionButton extends StatelessWidget {
+  const CommentOptionButton({
     super.key,
     required this.buttonKey,
     required this.context,
-    required this.post,
-    this.isComments = false,
+    required this.comment,
+    required this.postId,
+    required this.child,
   });
 
   final GlobalKey<State<StatefulWidget>> buttonKey;
   final BuildContext context;
-  final CommunityPost post;
-  final bool? isComments;
+  final Comment comment;
+  final String postId;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
+    return GestureDetector(
       key: buttonKey,
-      onPressed: () async {
+      child: child,
+      onLongPress: () async {
         final RenderBox button =
             buttonKey.currentContext!.findRenderObject() as RenderBox;
         final RenderBox overlay =
@@ -60,16 +63,7 @@ class MoreButton extends StatelessWidget {
                 ),
               ),
             ),
-            PopupMenuItem(
-              value: 'share',
-              child: Center(
-                child: Text(
-                  'share'.tr(context),
-                  style: TextStyles.font12White700w,
-                ),
-              ),
-            ),
-            if (post.userId == AppGeneral.user.value!.uid)
+            if (comment.userId == AppGeneral.user.value!.uid)
               PopupMenuItem(
                 value: 'delete',
                 child: Center(
@@ -84,7 +78,7 @@ class MoreButton extends StatelessWidget {
         ).then(
           (value) async {
             if (value == 'copy') {
-              String postText = post.postText!;
+              String postText = comment.commentText!;
               Clipboard.setData(ClipboardData(text: postText));
               Fluttertoast.showToast(
                 msg: 'Copied to clipboard'.tr(context),
@@ -97,25 +91,24 @@ class MoreButton extends StatelessWidget {
               );
             } else if (value == 'share') {
               Share.share(
-                "GalaxyXGate\nPost from :${post.userName}\n\"${post.postText}\"",
+                "GalaxyXGate\nComment from :${comment.userName}\n\"${comment.commentText}\"",
               );
             } else if (value == 'delete') {
-              await getIt<CommunityPostsCubit>().deletePost(
+              await getIt<PostsCommentsCubit>().deleteComment(
                 context: context,
-                id: post.id!,
+                postId: postId,
+                commentId: comment.id!,
               );
-              if (isComments!) {
-                Navigator.pop(context);
-              }
+              PostsCommentsCubit.comments.remove(comment);
+              context.read<PostsCommentsCubit>().emit(
+                    GetCommentsSuccess(
+                      comments: PostsCommentsCubit.comments,
+                    ),
+                  );
             }
           },
         );
       },
-      icon: Icon(
-        Icons.more_horiz_rounded,
-        color: Colors.grey,
-        size: 25.w,
-      ),
     );
   }
 }

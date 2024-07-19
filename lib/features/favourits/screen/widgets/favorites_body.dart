@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/widgets/columns/lost_page_&&_no_data_column.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
@@ -20,8 +21,8 @@ class FavoritesBody extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 30.h),
-            child: const DefultAppHeader(
-              title: 'Favorites',
+            child: DefultAppHeader(
+              title: 'favorites'.tr(context),
               tag: 'Favorites',
               isFavourite: true,
               canback: false,

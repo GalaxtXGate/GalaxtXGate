@@ -29,7 +29,7 @@ class AppStrings {
       "Know about active Rockets, their description, company and more";
   static const String knowAboutActiveShipsTheirDescriptionCompany =
       "Know about active Ships, their description, company and more";
-  static const String rockets = "Rockets";
+  static const String rockets = "rockets";
   static const String launches = "launches";
   static const String knowAboutTheLaunchesNameStateDetails =
       "know about the launches name, state, details and more";

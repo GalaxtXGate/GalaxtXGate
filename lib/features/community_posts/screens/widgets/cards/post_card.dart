@@ -13,10 +13,12 @@ class PostCard extends StatefulWidget {
   const PostCard({
     super.key,
     required this.post,
-    this.isComments,
+    this.isComments = false,
+    required this.scrollController,
   });
   final CommunityPost post;
   final bool? isComments;
+  final ScrollController scrollController;
 
   @override
   State<PostCard> createState() => _PostCardState();
@@ -24,6 +26,7 @@ class PostCard extends StatefulWidget {
 
 class _PostCardState extends State<PostCard> {
   final buttonKey = GlobalKey();
+  double lastPosition = 0.0;
 
   ValueNotifier<bool> isExpanded = ValueNotifier<bool>(false);
 
@@ -43,58 +46,58 @@ class _PostCardState extends State<PostCard> {
                     width: 1.w,
                   ),
           ),
-          child: Column(
-            children: [
-              ProfilePicWithNameAndDateInPostCardRow(post: widget.post),
-              SizedBox(
-                height: 20.h,
-              ),
-              ValueListenableBuilder(
-                valueListenable: isExpanded,
-                builder: (BuildContext context, bool expanded, Widget? child) =>
-                    GestureDetector(
-                  onTap: () => isExpanded.value = !isExpanded.value,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.post.postText!,
-                        style: TextStyles.font14White700w,
-                        maxLines: expanded ? null : 6,
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      if (widget.post.postText!.length > 50)
-                        Text(
-                          expanded
-                              ? 'Read less....'.tr(context)
-                              : 'Read more....'.tr(context),
-                          style: TextStyles.font12White700w.copyWith(
-                            color: Colors.grey,
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                    ],
+          child: ValueListenableBuilder(
+            valueListenable: isExpanded,
+            builder: (BuildContext context, bool expanded, Widget? child) =>
+                ListView(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              children: [
+                ProfilePicWithNameAndDateInPostCardRow(post: widget.post),
+                SizedBox(
+                  height: 20.h,
+                ),
+                GestureDetector(
+                  onTap: () => onchangeExpande(expanded: expanded),
+                  child: Text(
+                    widget.post.postText!,
+                    style: TextStyles.font14White700w,
+                    maxLines: expanded ? null : 6,
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  UpDownButtonRow(
-                    post: widget.post,
+                SizedBox(
+                  height: 10.h,
+                ),
+                if (widget.post.postText!.length > 50)
+                  GestureDetector(
+                    onTap: () => onchangeExpande(expanded: expanded),
+                    child: Text(
+                      expanded
+                          ? 'Read less....'.tr(context)
+                          : 'Read more....'.tr(context),
+                      style: TextStyles.font12White700w.copyWith(
+                        color: Colors.grey,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                  CommentsButton(
-                    post: widget.post,
-                    isComments: widget.isComments,
-                  ),
-                ],
-              ),
-            ],
+                SizedBox(
+                  height: 20.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    UpDownButtonRow(
+                      post: widget.post,
+                    ),
+                    CommentsButton(
+                      post: widget.post,
+                      isComments: widget.isComments,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         Positioned(
@@ -110,5 +113,18 @@ class _PostCardState extends State<PostCard> {
         ),
       ],
     );
+  }
+
+  onchangeExpande({required bool expanded}) {
+    if (expanded) {
+      widget.scrollController.animateTo(
+        lastPosition,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeIn,
+      );
+    } else {
+      lastPosition = widget.scrollController.position.pixels;
+    }
+    isExpanded.value = !isExpanded.value;
   }
 }

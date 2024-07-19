@@ -1,7 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:galaxyxgate/core/errors/server_failure.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
+import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/features/community_posts/data/models/comment/comment.dart';
 import 'package:galaxyxgate/features/community_posts/data/services/community_posts_services.dart';
@@ -76,6 +80,35 @@ class PostsCommentsCubit extends Cubit<PostsCommentsState> {
         CommentFailuer(errorMessage: failure.errMessage),
       ),
       (_) => getAllComments(postId: postId),
+    );
+  }
+
+  Future<void> deleteComment({
+    required BuildContext context,
+    required String postId,
+    required String commentId,
+  }) async {
+    emit(AddCommentLoading());
+    Either<ServerFailure, void> result =
+        await _communityPostsService.deleteComment(
+      commentId: commentId,
+      postId: postId,
+    );
+    result.fold(
+      (failure) => emit(
+        CommentFailuer(errorMessage: failure.errMessage),
+      ),
+      (_) {
+        Fluttertoast.showToast(
+          msg: 'Comment Deleted Successfully'.tr(context),
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.TOP,
+          timeInSecForIosWeb: 1,
+          backgroundColor: AppColors.deepGrey,
+          textColor: Colors.white,
+          fontSize: 16.w,
+        );
+      },
     );
   }
 }

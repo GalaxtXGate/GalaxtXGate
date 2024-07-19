@@ -17,7 +17,7 @@
   "Explore Our Topics": "استكشف موضوعاتنا",
   "ships": "سفن الفضاء",
   "Know about active rockets, their description, company and more": "تعرف على الصواريخ النشطة ووصفها وشركتها والمزيد",
-  "Rockets": "الصواريخ",
+  "rockets": "الصواريخ",
   "launches": "الإطلاقات",
   "know about the launches name, state, details and more": "تعرف على الإطلاقات وحالتها وتفاصيلها والمزيد",
   "Capsules": "كبسولات",
@@ -98,7 +98,7 @@
   "post": "نشر",
   "Post added successfully": "تمت إضافة المنشور بنجاح",
   "No Posts Yet": "لا توجد منشورات بعد",
-  " Comments": " تعليقات ",
+  "Comments": "تعليقات ",
   "you": "أنت",
   "copy": "نسخ",
   "delete": "حذف",
@@ -108,7 +108,11 @@
   "No Comments Yet": "لا توجد تعليقات بعد",
   "Write a comment": "اكتب تعليقا",
   "Read less....": "اقرأ أقل..",
-  "Read more....": "اقرأ المزيد.."
+  "Read more....": "اقرأ المزيد..",
+  "favorites": "المفضلة",
+  "Comment Deleted Successfully": "تم حذف التعليق بنجاح"
+
+
 
 
 }

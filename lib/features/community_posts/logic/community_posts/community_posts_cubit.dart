@@ -9,6 +9,7 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
 import 'package:galaxyxgate/features/community_posts/data/models/community_post/community_post.dart';
 import 'package:galaxyxgate/features/community_posts/data/services/community_posts_services.dart';
+import 'package:galaxyxgate/features/community_posts/screens/widgets/cards/post_card.dart';
 part 'community_posts_state.dart';
 
 class CommunityPostsCubit extends Cubit<CommunityPostsState> {
@@ -19,6 +20,7 @@ class CommunityPostsCubit extends Cubit<CommunityPostsState> {
 
   late CommunityPostsService _communityPostsService;
   static List<CommunityPost> posts = [];
+  static GlobalKey<AnimatedListState> listKey = GlobalKey();
 
   static TextEditingController postController = TextEditingController();
 
@@ -66,18 +68,46 @@ class CommunityPostsCubit extends Cubit<CommunityPostsState> {
     required String postId,
     required bool isUpVote,
   }) async {
-    Either<ServerFailure, void> result =
+    Either<ServerFailure, CommunityPost> result =
         await _communityPostsService.updatePost(
       postId: postId,
       userId: AppGeneral.user.value!.uid!,
       isUpVote: isUpVote,
     );
     result.fold(
-      (failure) => emit(
-        PostFailuer(errorMessage: failure.errMessage),
-      ),
-      (_) => getAllPosts(),
-    );
+        (failure) => emit(
+              PostFailuer(errorMessage: failure.errMessage),
+            ), (post) {
+      //           posts.map((e) {
+      //   if (e.id == post.id) {
+      //     e = post;
+      //   }
+      // }).toList();
+      // emit(
+      //   GetPostsSuccess(
+      //     posts: [...posts],
+      //   ),
+      // ),
+
+      getAllPosts();
+      CommunityPost oldPost =
+          posts.firstWhere((element) => element.id == post.id);
+      int index = posts.indexOf(oldPost);
+      listKey.currentState!.removeItem(
+        index,
+        (context, animation) => PostCard(
+          post: oldPost,
+          scrollController: ScrollController(),
+          isComments: false,
+          key: UniqueKey(),
+        ),
+        duration: const Duration(milliseconds: 300),
+      );
+      listKey.currentState!.insertItem(
+        index,
+        duration: const Duration(milliseconds: 300),
+      );
+    });
   }
 
   Future<void> deletePost({

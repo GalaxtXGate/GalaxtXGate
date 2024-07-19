@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/widgets/defult_app_header.dart';
 import 'package:galaxyxgate/core/widgets/gradient_gray_background.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/animated_rockets_listview.dart';
@@ -20,8 +21,8 @@ class RocketsScreen extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(bottom: 30.h),
-              child: const DefultAppHeader(
-                title: "Rockets",
+              child:  DefultAppHeader(
+                title: "rockets".tr(context),
                 tag: "Rockets",
               ),
             ),

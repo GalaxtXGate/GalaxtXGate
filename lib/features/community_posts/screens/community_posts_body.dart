@@ -38,22 +38,33 @@ class CommunityPostsBody extends StatelessWidget {
                       return const PostsPlaceHolder();
                     }
                     return CommunityPostsCubit.posts.isNotEmpty
-                        ? ListView.builder(
+                        ? AnimatedList(
+                            key: CommunityPostsCubit.listKey,
                             controller: scrollController,
                             physics: const AlwaysScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: CommunityPostsCubit.posts.length,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(bottom: 30.0),
-                                child: AnimationConfiguration.staggeredList(
-                                  position: index,
-                                  duration: const Duration(milliseconds: 375),
-                                  child: SlideAnimation(
-                                    verticalOffset: 50.0,
-                                    child: FadeInAnimation(
-                                      child: PostCard(
-                                        post: CommunityPostsCubit.posts[index],
+                            initialItemCount: CommunityPostsCubit.posts.length,
+                            itemBuilder: (context, index, animation) {
+                              return SlideTransition(
+                                position: animation.drive(Tween<Offset>(
+                                  begin: const Offset(-1, 0),
+                                  end: const Offset(0, 0),
+                                )),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 30.0),
+                                  child: AnimationConfiguration.staggeredList(
+                                    position: index,
+                                    duration: const Duration(milliseconds: 375),
+                                    child: SlideAnimation(
+                                      duration:
+                                          const Duration(milliseconds: 200),
+                                      verticalOffset: 50.0,
+                                      child: FadeInAnimation(
+                                        child: PostCard(
+                                          post:
+                                              CommunityPostsCubit.posts[index],
+                                          scrollController: scrollController,
+                                        ),
                                       ),
                                     ),
                                   ),

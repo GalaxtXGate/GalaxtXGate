@@ -16,7 +16,7 @@
   "Explore Our Topics": "Explore Our Topics",
   "ships": "ships",
   "Know about active Rockets, their description, company and more": "Know about active Rockets, their description, company and more",
-  "Rockets": "Rockets",
+  "rockets": "Rockets",
   "launches":  "launches",
   "know about the launches name, state, details and more": "know about the launches name, state, details and more",
   "Capsules": "Capsules",
@@ -98,7 +98,7 @@
   "post": "Post",
   "Post added successfully": "Post added successfully",
   "No Posts Yet": "No Posts Yet",
-  " Comments": " Comments",
+  "Comments": "Comments",
   "you": "You",
   "copy": "Copy",
   "delete": "Delete",
@@ -108,5 +108,7 @@
   "No Comments Yet": "No Comments Yet",
   "Write a comment": "Write a comment",
   "Read less....": "Read less....",
-  "Read more....": "Read more...."
+  "Read more....": "Read more....",
+  "favorites": "Favorites",
+  "Comment Deleted Successfully": "Comment Deleted Successfully"
 }

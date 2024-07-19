@@ -13,10 +13,16 @@ import 'package:galaxyxgate/features/community_posts/screens/widgets/cards/post_
 import 'package:galaxyxgate/features/community_posts/screens/widgets/place_holders/comments_place_holder.dart';
 import 'package:galaxyxgate/features/community_posts/screens/widgets/text_fields/add_comment_text_field.dart';
 
-class PostsCommentsBody extends StatelessWidget {
+class PostsCommentsBody extends StatefulWidget {
   const PostsCommentsBody({super.key, required this.post});
   final CommunityPost post;
 
+  @override
+  State<PostsCommentsBody> createState() => _PostsCommentsBodyState();
+}
+
+class _PostsCommentsBodyState extends State<PostsCommentsBody> {
+  ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -34,76 +40,90 @@ class PostsCommentsBody extends StatelessWidget {
                 onRefresh: () async {
                   await context
                       .read<PostsCommentsCubit>()
-                      .getAllComments(postId: post.id!);
+                      .getAllComments(postId: widget.post.id!);
                 },
-                child: ListView(
+                child: Column(
                   children: [
-                    Divider(
-                      color: Colors.grey.withOpacity(0.5),
-                    ),
-                    PostCard(
-                      post: CommunityPostsCubit.posts
-                          .firstWhere((element) => element.id == post.id),
-                      isComments: true,
-                    ),
-                    Divider(
-                      color: Colors.grey.withOpacity(0.5),
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    BlocBuilder<PostsCommentsCubit, PostsCommentsState>(
-                      builder: (context, state) {
-                        if (state is GetCommentsLoading) {
-                          return const CommentsPlaceHolder();
-                        }
-                        return PostsCommentsCubit.comments.isNotEmpty
-                            ? ListView.builder(
-                                physics: const NeverScrollableScrollPhysics(),
-                                shrinkWrap: true,
-                                itemCount: PostsCommentsCubit.comments.length,
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding:
-                                        const EdgeInsets.only(bottom: 30.0),
-                                    child: AnimationConfiguration.staggeredList(
-                                      position: index,
-                                      duration:
-                                          const Duration(milliseconds: 375),
-                                      child: SlideAnimation(
-                                        verticalOffset: 50.0,
-                                        child: FadeInAnimation(
-                                          child: CommentCard(
-                                            comment: PostsCommentsCubit
-                                                .comments[index],
-                                            postId: post.id!,
+                    Expanded(
+                      child: ListView(
+                        controller: scrollController,
+                        children: [
+                          Divider(
+                            color: Colors.grey.withOpacity(0.5),
+                          ),
+                          PostCard(
+                            scrollController: scrollController,
+                            post: CommunityPostsCubit.posts.firstWhere(
+                                (element) => element.id == widget.post.id),
+                            isComments: true,
+                          ),
+                          Divider(
+                            color: Colors.grey.withOpacity(0.5),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          BlocBuilder<PostsCommentsCubit, PostsCommentsState>(
+                            builder: (context, state) {
+                              if (state is GetCommentsLoading) {
+                                return const CommentsPlaceHolder();
+                              }
+                              return PostsCommentsCubit.comments.isNotEmpty
+                                  ? ListView.builder(
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      shrinkWrap: true,
+                                      itemCount:
+                                          PostsCommentsCubit.comments.length,
+                                      itemBuilder: (context, index) {
+                                        return Padding(
+                                          padding: const EdgeInsets.only(
+                                              bottom: 30.0),
+                                          child: AnimationConfiguration
+                                              .staggeredList(
+                                            position: index,
+                                            duration: const Duration(
+                                                milliseconds: 375),
+                                            child: SlideAnimation(
+                                              verticalOffset: 50.0,
+                                              child: FadeInAnimation(
+                                                child: CommentCard(
+                                                  comment: PostsCommentsCubit
+                                                      .comments[index],
+                                                  postId: widget.post.id!,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    )
+                                  : ListView(
+                                      shrinkWrap: true, // Add this line
+                                      children: [
+                                        SizedBox(
+                                          height: 300.h,
+                                          child: Center(
+                                            child: Text(
+                                              'No Comments Yet'.tr(context),
+                                              style: TextStyles.font14White700w,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  );
-                                },
-                              )
-                            : ListView(
-                                shrinkWrap: true, // Add this line
-                                children: [
-                                  SizedBox(
-                                    height: 300.h,
-                                    child: Center(
-                                      child: Text(
-                                        'No Comments Yet'.tr(context),
-                                        style: TextStyles.font14White700w,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              );
-                      },
+                                      ],
+                                    );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                     Divider(
                       color: Colors.grey.withOpacity(0.5),
                     ),
-                    AddCommentTextField(post: post),
+                    AddCommentTextField(post: widget.post),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                   ],
                 ),
               ),

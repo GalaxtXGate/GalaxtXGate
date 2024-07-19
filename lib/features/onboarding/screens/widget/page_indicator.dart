@@ -16,17 +16,17 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      right: 0,
-      left: 0,
+    return Positioned.fill(
       top: MediaQuery.of(context).size.height * 0.54.h,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(
-          contentLength,
-          (index) => AnimatedPageIndicator(
-            isSelected: currentIndex == index,
-            duration: animationDuration,
+      child: SizedBox(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(
+            contentLength,
+            (index) => AnimatedPageIndicator(
+              isSelected: currentIndex == index,
+              duration: animationDuration,
+            ),
           ),
         ),
       ),

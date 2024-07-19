@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
+import 'package:galaxyxgate/core/logic/local_cubit/local_cubit.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/core/widgets/images/defult_app_cached_network_image.dart';
@@ -89,7 +92,11 @@ class _FavCardState extends State<FavCard> {
                             AppColors.cyan,
                           ],
                           child: Text(
-                            widget.addFav.category ?? "No Category",
+                            widget.addFav.category != null
+                                ? widget.addFav.category!
+                                    .toLowerCase()
+                                    .tr(context)
+                                : "No Category",
                           ),
                         ),
                       const SizedBox(
@@ -157,8 +164,13 @@ class _FavCardState extends State<FavCard> {
           ),
         ),
         Positioned(
-          top: 5.w,
-          right: 5.w,
+          top: 5.h,
+          right: context.read<LocalCubit>().state.locale.languageCode != "ar"
+              ? 5.w
+              : null,
+          left: context.read<LocalCubit>().state.locale.languageCode == "ar"
+              ? 5.w
+              : null,
           child: FavoriteIcon(
             isFavourite: true,
             isInFavourite: true,

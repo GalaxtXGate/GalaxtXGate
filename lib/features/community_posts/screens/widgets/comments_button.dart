@@ -57,7 +57,7 @@ class CommentsButton extends StatelessWidget {
                           style: TextStyles.font12White700w,
                         ),
                         Text(
-                          ' Comments'.tr(context),
+                          'Comments'.tr(context),
                           style: TextStyles.font12White700w,
                         ),
                       ],

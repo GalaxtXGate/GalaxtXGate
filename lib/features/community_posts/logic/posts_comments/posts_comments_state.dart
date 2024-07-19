@@ -24,3 +24,7 @@ final class CommentFailuer extends PostsCommentsState {
   String errorMessage;
   CommentFailuer({required this.errorMessage});
 }
+
+final class DeleteCommentLoading extends PostsCommentsState {}
+
+final class DeleteCommentSuccess extends PostsCommentsState {}

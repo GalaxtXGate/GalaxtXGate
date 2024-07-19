@@ -49,7 +49,7 @@ class CommunityPostsService {
     }
   }
 
-  Future<Either<ServerFailure, void>> updatePost({
+  Future<Either<ServerFailure, CommunityPost>> updatePost({
     required String postId,
     required String userId,
     required bool isUpVote,
@@ -97,8 +97,13 @@ class CommunityPostsService {
           'down_vote_count': downCountList,
         },
       );
+      var newDoc = await FirebaseFirestore.instance
+          .collection('CommunityPosts')
+          .doc(postId)
+          .get();
 
-      return right(null);
+      return right(
+          CommunityPost.fromJson(newDoc.data() as Map<String, dynamic>));
     } on FirebaseException catch (_, error) {
       return left(ServerFailure(errMessage: error.toString()));
     } catch (error) {
@@ -218,6 +223,26 @@ class CommunityPostsService {
           'down_vote_count': downCountList,
         },
       );
+
+      return right(null);
+    } on FirebaseException catch (_, error) {
+      return left(ServerFailure(errMessage: error.toString()));
+    } catch (error) {
+      return left(ServerFailure(errMessage: error.toString()));
+    }
+  }
+
+  Future<Either<ServerFailure, void>> deleteComment({
+    required String postId,
+    required String commentId,
+  }) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('CommunityPosts')
+          .doc(postId)
+          .collection('comments')
+          .doc(commentId)
+          .delete();
 
       return right(null);
     } on FirebaseException catch (_, error) {
