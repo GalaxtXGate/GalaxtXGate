@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/core/errors/server_failure.dart';
-import 'package:galaxyxgate/features/about_company/data/models/company_info_model.dart';
+import 'package:galaxyxgate/features/about_company/data/models/company_info/company_info.dart';
 import 'package:galaxyxgate/features/about_company/data/services/about_company_services.dart';
 
 part 'about_company_state.dart';

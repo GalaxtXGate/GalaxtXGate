@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxyxgate/core/function/launch_url_browser.dart';
 import 'package:galaxyxgate/core/widgets/rows/icon_text_row.dart';
-import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
+import 'package:galaxyxgate/features/ships/data/models/ships.dart';
 
 class ShipFeatures extends StatelessWidget {
-  final ShipsModel ship;
+  final Ships ship;
 
   const ShipFeatures({super.key, required this.ship});
 

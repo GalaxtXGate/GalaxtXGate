@@ -49,7 +49,7 @@ class _BluredBottomNavBarState extends State<BluredBottomNavBar> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (_) async => false,
+      onPopInvoked: (_) async => bottom.value = baseBottom,
       child: Scaffold(
         body: Stack(
           children: [

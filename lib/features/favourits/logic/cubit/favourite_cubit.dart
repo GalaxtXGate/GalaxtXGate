@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:galaxyxgate/core/helpers/app_localization/app_localization.dart';
 import 'package:galaxyxgate/core/themes/app_colors.dart';
-import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav/add_fav.dart';
 import 'package:galaxyxgate/features/favourits/data/service.dart/favorite_services.dart';
 
 import '../../../../core/errors/server_failure.dart';

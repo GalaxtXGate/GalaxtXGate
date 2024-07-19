@@ -7,10 +7,10 @@ import 'package:galaxyxgate/core/themes/app_colors.dart';
 import 'package:galaxyxgate/core/themes/text_styles.dart';
 import 'package:galaxyxgate/features/profile/screens/widgets/edit_button.dart';
 import 'package:galaxyxgate/features/rockets/screens/widget/rocket_details_screen.dart';
-import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
+import 'package:galaxyxgate/features/rockets/data/models/rockets/rockets.dart';
 
 class RocketCard extends StatefulWidget {
-  final RocketsModel rocket;
+  final Rockets rocket;
 
   const RocketCard({super.key, required this.rocket});
 

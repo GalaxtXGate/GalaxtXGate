@@ -2,7 +2,7 @@ part of 'crews_cubit.dart';
 
 @immutable
 sealed class CrewsState extends Equatable {
-  final List<CrewModel>? crews;
+  final List<Crew>? crews;
   final String? error;
 
   const CrewsState({
@@ -23,7 +23,7 @@ class CrewsLoading extends CrewsState {
 }
 
 class CrewsLoaded extends CrewsState {
-  const CrewsLoaded(List<CrewModel> crews) : super(crews: crews);
+  const CrewsLoaded(List<Crew> crews) : super(crews: crews);
 }
 
 class CrewsError extends CrewsState {

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
-import 'package:galaxyxgate/features/ships/presentation/widget/ship_card.dart';
+import 'package:galaxyxgate/features/ships/data/models/ships.dart';
+import 'package:galaxyxgate/features/ships/screens/widget/ship_card.dart';
 
 class AnimatedShipsList extends StatelessWidget {
-  final List<ShipsModel> ships;
+  final List<Ships> ships;
   const AnimatedShipsList({super.key, required this.ships});
 
   @override

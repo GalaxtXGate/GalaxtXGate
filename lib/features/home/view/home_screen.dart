@@ -13,7 +13,7 @@ import 'package:galaxyxgate/features/rockets/screens/rockets_bloc_provider.dart'
 
 import '../../../core/utils/app_strings.dart';
 import '../../crew/screens/crew_bloc_provider.dart';
-import '../../ships/presentation/ships_bloc_provider.dart';
+import '../../ships/screens/ships_bloc_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, required this.scrollController});

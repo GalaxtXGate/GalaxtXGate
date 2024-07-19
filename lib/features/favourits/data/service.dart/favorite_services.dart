@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:galaxyxgate/core/utils/app_general.dart';
-import 'package:galaxyxgate/features/favourits/data/models/add_fav.dart';
+import 'package:galaxyxgate/features/favourits/data/models/add_fav/add_fav.dart';
 
 import '../../../../core/errors/server_failure.dart';
 

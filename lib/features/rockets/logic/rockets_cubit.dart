@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galaxyxgate/core/errors/server_failure.dart';
-import 'package:galaxyxgate/features/rockets/data/models/rockets_model.dart';
+import 'package:galaxyxgate/features/rockets/data/models/rockets/rockets.dart';
 import 'package:galaxyxgate/features/rockets/data/services/rockets_services.dart';
 part 'rockets_state.dart';
 
@@ -14,7 +14,7 @@ class RocketsCubit extends Cubit<RocketsState> {
   late RocketsService _rocketsService;
   Future<void> getRockets() async {
     emit(const RocketsLoading());
-    Either<ServerFailure, List<RocketsModel>> result =
+    Either<ServerFailure, List<Rockets>> result =
         await _rocketsService.getAllRockets();
 
     result.fold(

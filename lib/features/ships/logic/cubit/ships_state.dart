@@ -1,7 +1,7 @@
 part of 'ships_cubit.dart';
 
 sealed class ShipsState extends Equatable {
-   final List<ShipsModel>? ships;
+  final List<Ships>? ships;
   final String? error;
 
   const ShipsState({
@@ -22,7 +22,7 @@ class ShipsLoading extends ShipsState {
 }
 
 class ShipsLoaded extends ShipsState {
-  const ShipsLoaded(List<ShipsModel> ships) : super(ships: ships);
+  const ShipsLoaded(List<Ships> ships) : super(ships: ships);
 }
 
 class ShipsError extends ShipsState {

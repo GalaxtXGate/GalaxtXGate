@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:galaxyxgate/features/ships/data/models/ships_model.dart';
+import 'package:galaxyxgate/features/ships/data/models/ships.dart';
 import 'package:galaxyxgate/features/ships/data/repository/ships_repository.dart';
 
 part 'ships_state.dart';
