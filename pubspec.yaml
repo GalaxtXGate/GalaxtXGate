@@ -81,6 +81,7 @@ dependencies:
   bloc: ^8.1.4
   animated_toggle_switch: ^0.8.2
   share_plus: ^9.0.0
+  firebase_pagination: ^3.1.0
 
 
 dev_dependencies:
